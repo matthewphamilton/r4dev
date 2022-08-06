@@ -68,8 +68,8 @@ languageName ="English"
 # Weight used for sorting.
 weight = 1
 [languages.no]
-title = "Goldydocs"
-description = "Docsy er operativsystem for skyen"
+title = "readyforwhatsnext"
+description = "readyforwhatsnext er operativsystem for skyen"
 languageName ="Norsk"
 contentDir = "content/no"
 time_format_default = "02.01.2006"
@@ -125,9 +125,9 @@ version = "0.0"
 url_latest_version = "https://example.com"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/matthewphamilton/ready4-dev"
+github_repo = "https://github.com/matthewphamilton/ready4-dev/ready4web"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://github.com/ready4-dev"
+#github_project_repo = "https://github.com/ready4-dev"
 
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""
