@@ -3,6 +3,7 @@
 title: "Models"
 linkTitle: "Models"
 date: 2017-01-05
+weight: 6
 description: >
   Currently available ready4 models.
 ---
