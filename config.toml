@@ -62,14 +62,14 @@ anchor = "smart"
 
 [languages]
 [languages.en]
-title = "readyforwhatsnext"
+title = "ready4"
 description = "An open source health economic model of young people's mental health"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
 [languages.no]
-title = "readyforwhatsnext"
-description = "readyforwhatsnext er operativsystem for skyen"
+title = "ready4"
+description = "ready4 er operativsystem for skyen"
 languageName ="Norsk"
 contentDir = "content/no"
 time_format_default = "02.01.2006"
