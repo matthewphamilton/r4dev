@@ -1,6 +1,6 @@
 ---
 title: "Introducing ready4 modules"
-linkTitle: "Introducing ready4 modules"
+linkTitle: "Modules"
 date: 2017-01-05
 weight: 62
 description: >

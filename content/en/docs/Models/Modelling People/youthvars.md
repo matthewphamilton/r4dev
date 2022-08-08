@@ -1,6 +1,6 @@
 ---
 title: "Describe and validate youth mental health datasets"
-linkTitle: "Describe and validate youth mental health datasets"
+linkTitle: "Describe and validate data"
 date: 2017-01-05
 weight: 66
 description: >
