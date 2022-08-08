@@ -2,7 +2,7 @@
 title: "Analyses"
 linkTitle: "Analyses"
 date: 2017-01-05
-weight: 8
+weight: 80
 description: >
   Currently available ready4 analysis programs.
 ---

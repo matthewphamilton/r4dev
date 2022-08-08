@@ -1,8 +1,8 @@
 ---
 title: "Introducing ready4 modules"
-linkTitle: "Why ready4 is object oriented"
+linkTitle: "Introducing ready4 modules"
 date: 2017-01-05
-weight: 1
+weight: 62
 description: >
   ready4 supports a modular approach to model development. This article describes what that means and why it is useful.
 ---

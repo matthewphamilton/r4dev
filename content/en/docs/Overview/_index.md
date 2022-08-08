@@ -1,7 +1,7 @@
 ---
 title: "Overview"
 linkTitle: "Overview"
-weight: 1
+weight: 10
 description: >
   How ready4 aims to improve the availability, quality and usefulness of decision models in youth mental health.
 ---

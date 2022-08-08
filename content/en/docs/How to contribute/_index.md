@@ -1,7 +1,7 @@
 ---
 title: "How to Contribute"
 linkTitle: "How to Contribute"
-weight: 11
+weight: 110
 description: >
   How to contribute to the docs
 ---

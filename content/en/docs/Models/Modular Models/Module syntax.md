@@ -2,7 +2,7 @@
 title: "Module Syntax"
 linkTitle: "Module Syntax"
 date: 2017-01-05
-weight: 2
+weight: 63
 description: >
   ready4 modules use a simple and consistent syntax. This brief article outlines the key elements of this syntax.
 ---

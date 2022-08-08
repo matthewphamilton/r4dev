@@ -1,6 +1,6 @@
 ---
 title: "Tutorials for Analysts"
-linkTitle: "Tutorials for Analysts"
+linkTitle: "For Analysts"
 date: 2017-01-05
 weight: 3
 description: >

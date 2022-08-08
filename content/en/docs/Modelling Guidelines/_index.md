@@ -1,7 +1,7 @@
 ---
 title: "Guidelines for Open Source Health Economic Models"
-linkTitle: "Guidelines for Open Source Health Economic Models"
-weight: 4
+linkTitle: "Modelling Guidelines"
+weight: 50
 description: >
   This section outlines a set of guidelines that we have developed (and which ready4 implements) for open source health economic models. 
 ---

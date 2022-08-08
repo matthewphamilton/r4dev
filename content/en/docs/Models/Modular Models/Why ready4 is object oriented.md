@@ -2,7 +2,7 @@
 title: "Why ready4 is object oriented"
 linkTitle: "Why ready4 is object oriented"
 date: 2017-01-05
-weight: 3
+weight: 64
 description: >
   ready4 modules are implemented using object oriented programming. This brief article explains what this term means and why it is useful.
 ---

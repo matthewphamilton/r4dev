@@ -2,7 +2,7 @@
 ---
 title: "Tutorials"
 linkTitle: "Tutorials"
-weight: 8
+weight: 90
 date: 2017-01-04
 description: >
   Learn how to apply ready4.
