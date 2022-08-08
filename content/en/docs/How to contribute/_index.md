@@ -1,6 +1,6 @@
 ---
-title: "Contribution Guidelines"
-linkTitle: "Contribution Guidelines"
+title: "How to Contribute"
+linkTitle: "How to Contribute"
 weight: 11
 description: >
   How to contribute to the docs
@@ -24,7 +24,7 @@ Here's a quick guide to updating the docs. It assumes you're familiar with the
 GitHub workflow and you're happy to use the automated preview of your doc
 updates:
 
-1. Fork the [ready4web repo](https://github.com/gready4-dev/ready4web) on GitHub.
+1. Fork the [ready4web repo](https://github.com/ready4-dev/ready4web) on GitHub.
 1. Make your changes and send a pull request (PR).
 1. If you're not yet ready for a review, add "WIP" to the PR name to indicate 
   it's a work in progress. (**Don't** add the Hugo property 

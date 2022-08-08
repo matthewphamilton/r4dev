@@ -1,10 +1,10 @@
 ---
-title: "Framework"
-linkTitle: "Framework"
+title: "Template"
+linkTitle: "Template"
 date: 2017-01-05
 weight: 5
 description: >
-  Currently available ready4 analysis programs.
+  This section describes the purpose and features of the ready4 module template.
 ---
 
 {{% pageinfo %}}
