@@ -1,10 +1,10 @@
 ---
-title: "Why ready4 is object oriented"
+title: "Introducing ready4 modules"
 linkTitle: "Why ready4 is object oriented"
 date: 2017-01-05
-weight: 3
+weight: 1
 description: >
-  ready4 is implemented using object oriented programming. This brief article explains what this means and why it is useful.
+  ready4 supports a modular approach to model development. This article describes what that means and why it is useful.
 ---
 
 {{% pageinfo %}}
@@ -14,4 +14,4 @@ This below section embeds an article from the documentation website of the ready
 * [edit its contents](https://github.com/ready4-dev/ready4/edit/main/vignettes/V_01.Rmd) (requires a GitHub account).
 {{% /pageinfo %}}
 
-{{< iframe src = "https://ready4-dev.github.io/ready4/articles/V_03.html" style = "min-height:200vh;">}}
+{{< iframe src = "https://ready4-dev.github.io/ready4/articles/V_01.html" >}}
