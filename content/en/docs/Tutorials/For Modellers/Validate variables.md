@@ -1,10 +1,10 @@
 ---
-title: "Label and Share Datasets"
-linkTitle: "Label and Share Data"
+title: "Validate Variable Total Scores"
+linkTitle: "Validate Variables"
 date: 2017-01-05
-weight: 62
+weight: 93
 description: >
-  Appending appropriate metadata to your dataset can make it more useful. This tutorial describes how a module from the youthvars R package can help you to label (and if appropriate, to disseminate) a youth mental health dataset so that it can be more readily used by other ready4 modules.
+  Within the ready4 framework, vector based classes can be used to validate variable values. This tutorial describes how to do that with classes exported as part of the youthvars R package.
 ---
 
 {{% pageinfo %}}

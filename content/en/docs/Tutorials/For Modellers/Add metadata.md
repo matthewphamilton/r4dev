@@ -1,10 +1,10 @@
 ---
-title: "Validate Variable Total Scores"
-linkTitle: "Validate Variables"
+title: "Add Metadata To Datasets Of Individual Human Records"
+linkTitle: "Add Metadata"
 date: 2017-01-05
-weight: 63
+weight: 94
 description: >
-  Within the ready4 framework, vector based classes can be used to validate variable values. This tutorial describes how to do that with classes exported as part of the youthvars R package.
+  Appending appropriate metadata to datasets of individual unit records can facilitate partial automation of some modelling tasks. This tutorial describes how a module from the youthvars R package can help you to add metadata to a youth mental health dataset so that it can be more readily used by other ready4 modules.
 ---
 
 {{% pageinfo %}}

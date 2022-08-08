@@ -2,7 +2,7 @@
 title: "Tutorials for Analysts"
 linkTitle: "For Analysts"
 date: 2017-01-05
-weight: 3
+weight: 93
 description: >
   Tutorials outlining how policy analyst and service planning users can use ready4.
 ---
