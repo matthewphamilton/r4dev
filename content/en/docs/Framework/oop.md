@@ -12,4 +12,4 @@ This is a placeholder page. Replace it with your own content.
 {{% /pageinfo %}}
 
 
-{{< iframe src = "https://ready4-dev.github.io/ready4/articles/V_03.html" >}}
+{{< iframe src = "https://ready4-dev.github.io/ready4/articles/V_03.html" style = min-height:98vh; border:none;>}}
