@@ -12,4 +12,4 @@ This page reproduces an article from the documentation website of the ready4 R p
 {{% /pageinfo %}}
 
 
-{{< iframe src = "https://ready4-dev.github.io/ready4/articles/V_03.htmll#motivation" style = "min-height:200vh;">}}
+{{< iframe src = "https://ready4-dev.github.io/ready4/articles/V_03.html#motivation" style = "min-height:200vh;">}}
