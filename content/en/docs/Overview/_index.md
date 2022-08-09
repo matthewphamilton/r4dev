@@ -6,26 +6,24 @@ description: >
   How ready4 aims to improve the availability, quality and usefulness of decision models in youth mental health.
 ---
 
-Context
+## What is ready4?
 
-## What is it?
+ready4 is a framework for developing an open source model of the people, places, platforms and programs that shape young people's mental health.
 
-Brief desc
+## What do you mean by framework?
+
+ready4 specifies a set of good practice guidelines for open source health economic models and provides software (written in R) to help implement models that adhere to those guidelines.
+
+## Why is that useful?
+
+Using the ready4 framework allows us to make the readyforwhatsnext model *modular*. That means multiple self-contained modelling projects can be combined (to model more extensive systems) or reused (in other models).
 
 ## Why do I want it?
 
-Help your user know if your project will help them. Useful information can include: 
-
-* **What is it good for?**: What types of problems does your project solve? What are the benefits of using it?
-
-* **What is it not good for?**: For example, point out situations that might intuitively seem suited for your project, but aren't for some reason. Also mention known limitations, scaling issues, or anything else that might let your users know if the project is not for them.
-
-* **What is it *not yet* good for?**: Highlight any useful features that are coming soon.
+The ready4 framework and the modelling projects we are developing with it are free for you to inspect (to find tools you trust and find useful), apply (to generate novel insights into decision problems of interest to you) and to derive your own derivative works from (that both leverage and enhances the work of other modellers).
 
 ## Where should I go next?
 
-If this sounds like something of potential help to you, then jump to one of the following sections:
+We'd recommend reading the documentation in the order in which sections appear in the table of contents (so go next to [Getting Started](/docs/getting-started/), then to [Examples](/docs/examples/) and so on. The relevance to you of some parts of the documentation will depend on whether you see yourself primarily as a developer (you write code for a living), a modeller (you build model based decision aids) or an analyst (you work in policy development or service planning). For this reason some sections (for example Tutorials and Contribution Guidelines) of the documentation are segmented based on the type of reader. If you see yourself as an Analyst you can skip any content earmarked for Developers and Modellers and Modellers can skip bits targeted at Developers. Modellers would probably benefit from also reading content marked for Analysts while if you are a Developer, all content in the documentation may be worth reading.
 
-* [Getting Started](/docs/getting-started/): Get started with ready4
-* [Examples](/docs/examples/): Check out some example code!
 

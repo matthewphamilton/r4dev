@@ -3,7 +3,7 @@
 title: "Modules for Modelling People"
 linkTitle: "Modelling People"
 date: 2017-01-05
-weight: 65
+weight: 66
 description: >
   Currently available ready4 modules that are used for modelling people.
 ---
