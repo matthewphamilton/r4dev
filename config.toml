@@ -63,7 +63,7 @@ anchor = "smart"
 [languages]
 [languages.en]
 title = "ready4"
-description = "A framework for open source models in youth mental health"
+description = "A framework for developing an open source model of youth mental health"
 languageName ="English"
 # Weight used for sorting.
 weight = 1

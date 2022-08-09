@@ -4,7 +4,7 @@ linkTitle: "Contribution Guidelines for Modellers"
 date: 2017-01-05
 weight: 1
 description: >
-  Guidelines outlining how decision modellers can contribtue to the development of ready4.
+  Guidelines outlining how decision modellers in youth mental health can contribute to the development of ready4.
 ---
 
 

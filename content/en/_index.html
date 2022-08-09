@@ -4,36 +4,49 @@ linkTitle = "ready4"
 
 +++
 
-{{< blocks/cover title="Toolkits for open source modelling in youth mental health" image_anchor="top" height="min" color="orange" >}}
-<div class="mx-auto">
-	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs" >}}">
-		Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
-	</a>
-	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/ready4-dev/">
-		Code <i class="fab fa-github ml-2 "></i>
-	</a>
-	<p class="lead mt-5"> </p>
-	{{< blocks/link-down color="info" >}}
-</div>
-{{< /blocks/cover >}}
+  <div class="container">
+        <div class="row justify-content-center align-items-center">
+                <div class="col-xl-7 col-lg-6 col-md-6">
+                          <h1>
+                            Open source<br />
+                            framework<br />
+                            for modelling<br />
+                            youth mental health
+                            </h1>
+                            <br />
+                            <a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs" >}}">
+                                                                              	  		Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+                                                                              	  		</a>
+                                                                              	  		<a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/ready4-dev/">
+                                                                              	  		                                                  	  		          	  		  		Code <i class="fab fa-github ml-2 "></i>
+                                                                              	  		                                                  	  		          	  		  		</a>
+                                                                              	  		                                                  	  		          	  		  		<p class="lead mt-5"> </p>
+                                                                              	  		                                                  	  		          	  		  		</div>
+                                                                              	  		                                                  	  		          	  		  		<div class="col-xl-5 col-lg-6 col-md-6">
+                                                                              	  		                                                  	  		          	  		  		  <img class="img-fluid"
+                                                                              	  		                                                  	  		          	  		  		  src="/images/default.svg"
+                                                                              	  		                                                  	  		          	  		  		  alt-text="ready4 logo"/>
+                                                                              	  		                                                  	  		          	  		  		  </div>
+                                                                              	  		                                                  	  		          	  		  		  </div>
+                                                                              	  		                                                  	  		          	  		  		  </div>
 
 
 {{% blocks/lead color="primary" %}}
-We develop three categories of toolkit.
+ready4 provides tools for developing, retrieving, extending and applying the three core components of an open source youth mental health modelling project.
 
 {{% /blocks/lead %}}
 
 {{< blocks/section color="dark">}}
-{{% blocks/feature icon="fa-lightbulb" title="Models" %}}
-Models are abstract and generalised representations of systems described in "modules" of computer code. 
+{{% blocks/feature icon="fa-lightbulb" title="Models" url = "docs/models/" %}}
+Models are abstract and generalised representations of systems described in computer code. 
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fab fa-github" title="Data" url="https://github.com/google/docsy-example" %}}
-Models can be applied to a specific decision context by feeding them data that describe that context.
+{{% blocks/feature icon="fab fa-github" title="Data" url="docs/data/" %}}
+Data that describe a specific decision context context can be fed to models so they can be applied to that context.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fab fa-twitter" title="Analyses" url="https://twitter.com/mph_economist" %}}
-Each unique model-data pairing generates analysis of potential policy or service design decisions.
+{{% blocks/feature icon="fab fa-twitter" title="Analyses" url="docs/analyses/" %}}
+Analyses pair models with data, specifying which algorithms from the former are applied to the later and  generating insights to inform potential policy or service design decisions.
 {{% /blocks/feature %}}
 
 
