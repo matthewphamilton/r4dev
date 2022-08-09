@@ -2,9 +2,10 @@
 title = "ready4"
 linkTitle = "ready4"
 +++
-<div>
-  <div class="container">
-        <div class="row justify-content-center align-items-center">
+
+{{< blocks/cover image_anchor="top" >}}
+<div class="mx-auto">
+<div class="row justify-content-center align-items-center">
                 <div class="col-xl-7 col-lg-6 col-md-6">
                           <h1>
                             Open source<br />
@@ -27,8 +28,8 @@ linkTitle = "ready4"
                                                                               	  		                                                  	  		          	  		  		  alt-text="ready4 logo"/>
                                                                               	  		                                                  	  		          	  		  		  </div>
                                                                               	  		                                                  	  		          	  		  		  </div>
-                                                                              	  		                                                  	  		          	  		  		  </div>
-</div>
+          </div>
+            {{< /blocks/cover >}}
 
 {{% blocks/lead color="primary" %}}
 ready4 provides tools for developing, retrieving, extending and applying the three core components of an open source youth mental health modelling project.
@@ -36,15 +37,15 @@ ready4 provides tools for developing, retrieving, extending and applying the thr
 {{% /blocks/lead %}}
 
 {{< blocks/section color="dark">}}
-{{% blocks/feature icon="fa-lightbulb" title="Models" %}}
+{{% blocks/feature icon="fa-lightbulb" title="Models" url="/docs/models" %}}
 Models are abstract and generalised representations of systems described in computer code. 
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fab fa-github" title="Data" %}}
+{{% blocks/feature icon="fab fa-github" title="Data" url="/docs/data" %}}
 Data that describe a specific decision context context can be fed to models so they can be applied to that context.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fab fa-twitter" title="Analyses" %}}
+{{% blocks/feature icon="fab fa-twitter" title="Analyses" url="/docs/analyses" %}}
 Analyses pair models with data, specifying which algorithms from the former are applied to the later and  generating insights to inform potential policy or service design decisions.
 {{% /blocks/feature %}}
 
