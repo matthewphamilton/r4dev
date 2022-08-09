@@ -8,7 +8,7 @@ description: >
 
 ## What is ready4?
 
-ready4 is a framework for developing an open source model of the people, places, platforms and programs that shape young people's mental health.
+ready4 is a framework for developing an open source model of the people, places, platforms and programs that shape young people's mental health. That model is called readyforwhatsnext.
 
 ## What do you mean by framework?
 
@@ -24,6 +24,6 @@ The ready4 framework and the modelling projects we are developing with it are fr
 
 ## Where should I go next?
 
-We'd recommend reading the documentation in the order in which sections appear in the table of contents (so go next to [Getting Started](/docs/getting-started/), then to [Examples](/docs/examples/) and so on. The relevance to you of some parts of the documentation will depend on whether you see yourself primarily as a developer (you write code for a living), a modeller (you build model based decision aids) or an analyst (you work in policy development or service planning). For this reason some sections (for example Tutorials and Contribution Guidelines) of the documentation are segmented based on the type of reader. If you see yourself as an Analyst you can skip any content earmarked for Developers and Modellers and Modellers can skip bits targeted at Developers. Modellers would probably benefit from also reading content marked for Analysts while if you are a Developer, all content in the documentation may be worth reading.
+We'd recommend reading the documentation in the order in which sections appear in the table of contents (so go next to [Getting Started](/docs/getting-started/), then to [Examples](/docs/examples/) and so on). The relevance to you of some parts of the documentation will depend on whether you see yourself primarily as a developer (you write code for a living), a modeller (you build model based decision aids) or an analyst (you work in policy development or service planning). For this reason some sections (for example Tutorials and Contribution Guidelines) of the documentation are labelled as being written for a specific type of reader. If you see yourself as an Analyst you can skip any content labelled for Developers and  Modellers. Similarly, Modellers can skip bits targeted at Developers but may benefit from also reading content marked for Analysts. If you are a Developer, all content in the documentation may be worth reading.
 
 

@@ -5,28 +5,16 @@ title: "Getting Started"
 linkTitle: "Getting Started"
 weight: 20
 description: >
-  What does your user need to know to try your project?
+  Prerequisites, installation and setup.
 ---
-
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
-
-Information in this section helps your user try your project themselves.
-
-* What do your users need to do to start using your project? This could include downloading/installation instructions, including any prerequisites or system requirements.
-
-* Introductory “Hello World” example, if appropriate. More complex tutorials should live in the Tutorials section.
-
-Consider using the headings below for your getting started page. You can delete any that are not applicable to your project.
 
 ## Prerequisites
 
-Are there any system requirements for using your project? What languages are supported (if any)? Do users need to already have any software or tools installed?
+A pre-requisite for developers and modellers is to have an up to date version of R installed on your machine. In most (but not all) of the anticipated ways that analysts will use ready4 tools, there is no not need to have R installed.
 
 ## Installation
 
-Where can your user find your project code? How can they install it (binaries, installable package, build from source)? Are there multiple options/versions they can install and how should they choose the right one for them?
+
 
 ## Setup
 
