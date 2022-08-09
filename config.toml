@@ -67,21 +67,6 @@ description = "A framework for developing an open source model of youth mental h
 languageName ="English"
 # Weight used for sorting.
 weight = 1
-[languages.no]
-title = "ready4"
-description = "ready4 er operativsystem for skyen"
-languageName ="Norsk"
-contentDir = "content/no"
-time_format_default = "02.01.2006"
-time_format_blog = "02.01.2006"
-
-[languages.fa]
-title = "اسناد گلدی"
-description = "یک نمونه برای پوسته داکسی"
-languageName ="فارسی"
-contentDir = "content/fa"
-time_format_default = "2006.01.02"
-time_format_blog = "2006.01.02"
 
 [markup]
   [markup.goldmark]
@@ -226,3 +211,28 @@ enable = false
   [[module.imports]]
     path = "github.com/google/docsy/dependencies"
     disable = false
+
+[menu]
+[[menu.main]]
+name = "Documentation"
+url = "/docs/"
+pre = "<i class='fas fa-book'></i>"
+weight = 10
+[[menu.main]]
+name = "Blog"
+url = "/blog/"
+pre = "<i class='fas fa-blog'></i>"
+weight = 11
+[[menu.main]]
+name = "GitHub"
+url = "https://github.com/ready4-dev"
+pre = "<i class='fab fa-github'></i>"
+weight = 12
+[[menu.main]]
+name = "About"
+url = "/about/"
+pre = "<i class='fas fa-store'></i>"
+weight = 13
+
+
+
