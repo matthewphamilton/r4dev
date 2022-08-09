@@ -14,7 +14,7 @@ A pre-requisite for developers and modellers is to have an up to date version of
 
 ## Installation
 
-
+Both developers and modellers need to install the ready4 package.
 
 ## Setup
 
