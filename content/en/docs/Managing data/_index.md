@@ -1,7 +1,7 @@
 
 ---
-title: "Data"
-linkTitle: "Data"
+title: "Managing Data"
+linkTitle: "Managing Data"
 date: 2017-01-05
 weight: 70
 description: >

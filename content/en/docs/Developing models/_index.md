@@ -1,7 +1,7 @@
 
 ---
-title: "Models"
-linkTitle: "Models"
+title: "Developing Models"
+linkTitle: "Developing Models"
 date: 2017-01-05
 weight: 60
 description: >

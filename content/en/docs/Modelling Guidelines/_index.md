@@ -1,5 +1,5 @@
 ---
-title: "Guidelines for Open Source Health Economic Models"
+title: "Guidelines for Open Source Computational Models"
 linkTitle: "Modelling Guidelines"
 weight: 50
 description: >

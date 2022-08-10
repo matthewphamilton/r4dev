@@ -1,6 +1,6 @@
 ---
-title: "Analyses"
-linkTitle: "Analyses"
+title: "Running reproducible analyses"
+linkTitle: "Reproducible analyses"
 date: 2017-01-05
 weight: 80
 description: >
