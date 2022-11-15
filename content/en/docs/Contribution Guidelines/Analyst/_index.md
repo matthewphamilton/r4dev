@@ -1,6 +1,6 @@
 ---
-title: "Contribution Guidelines for Analysts"
-linkTitle: "Contribution Guidelines for Analysts"
+title: "Contribution Guidelines for Planners"
+linkTitle: "Contribution Guidelines for Planners"
 date: 2017-01-05
 weight: 3
 description: >

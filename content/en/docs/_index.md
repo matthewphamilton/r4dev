@@ -8,6 +8,6 @@ menu:
     weight: 20
 ---
 
-The main purpose of this website is to consolidate the documentation from the growing number of development version ready4 modelling toolkits that are publicly available. These toolkits each have their own dedicated websites, but this is the most comprehensive and contextual source of ready4 documentation.
+The main purpose of this website is to consolidate the documentation from the multiple sub-components of the ready4 framework project. There is a growing number of websites dedicated to different aspects of the development and application of the ready4 framework, but this parent website aims to be most comprehensive and contextual source of ready4 documentation.
 
 
