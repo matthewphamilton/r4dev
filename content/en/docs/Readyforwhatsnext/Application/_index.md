@@ -1,7 +1,7 @@
 
 ---
 title: "Applications of the readyforwhatsnext model"
-linkTitle: "Model Applications"
+linkTitle: "Use"
 date: 2017-01-05
 weight: 68
 description: >

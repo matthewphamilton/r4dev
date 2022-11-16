@@ -1,7 +1,7 @@
 
 ---
 title: "readyforwhatsnext model Modules"
-linkTitle: "Model Modules"
+linkTitle: "Modules"
 date: 2017-01-05
 weight: 66
 description: >

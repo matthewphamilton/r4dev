@@ -1,6 +1,6 @@
 ---
 title: "Tutorials for using readyforwhatsnext model modules"
-linkTitle: "Tutorials - Readyforwhatsnext"
+linkTitle: "Tutorials"
 date: 2017-01-05
 weight: 91
 description: >

@@ -1,7 +1,7 @@
 
 ---
 title: "readyforwhatsnext Model Datasets"
-linkTitle: "Model Data"
+linkTitle: "Data"
 date: 2017-01-05
 weight: 67
 description: >

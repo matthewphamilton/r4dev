@@ -1,7 +1,7 @@
 
 ---
 title: "Ways to use the ready4 framework"
-linkTitle: "Using The Framework"
+linkTitle: "Using ready4"
 weight: 30
 date: 2017-01-05
 description: >

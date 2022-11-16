@@ -1,6 +1,6 @@
 ---
-title: "Apply Models"
-linkTitle: "Apply models"
+title: "Run Analyses"
+linkTitle: "Run Analyses"
 date: 2017-01-05
 weight: 80
 description: >
