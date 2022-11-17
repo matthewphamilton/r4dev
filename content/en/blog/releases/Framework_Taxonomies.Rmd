@@ -1,0 +1,20 @@
+---
+title: "ready4 framework taxonomies"
+linkTitle: "Framework taxonomies"
+date: "`r Sys.Date()`"
+description: "Releases of taxonomies used to help standardise computational models developed with the ready4 framework."
+weight: 2
+categories: 
+- Releases
+tags: 
+- Datasets
+- Framework taxonomies
+output: hugodown::md_document
+---
+
+````{=html}
+```{r, echo=FALSE, results='asis'}
+xfun::file_string('Framework_Taxonomies_Body.html')
+```
+````
+

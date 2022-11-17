@@ -1,4 +1,20 @@
-<!DOCTYPE html>
+---
+title: "ready4 framework taxonomies"
+linkTitle: "Framework taxonomies"
+date: "2022-11-17"
+description: "Releases of taxonomies used to help standardise computational models developed with the ready4 framework."
+weight: 2
+categories: 
+- Releases
+tags: 
+- Datasets
+- Framework taxonomies
+output: hugodown::md_document
+rmd_hash: c7440a9859284d30
+
+---
+
+<div class='highlight'><!DOCTYPE html>
 
 <html>
 
@@ -11,7 +27,7 @@
 
 
 
-<title>Framework_Software_HTML.knit</title>
+<title>Framework_Taxonomies_Body.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -576,860 +592,68 @@ display: none;
 </div>
 
 
-<table class="table" style="margin-left: auto; margin-right: auto;">
+<p>Developers using the ready4 framework can either use the same
+taxonomies we do in our models or else develop their own. We
+periodically release updated versions of our taxonomies. Currently
+available releases are described below.</p>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:left;">
-Package
-</th>
-<th style="text-align:left;">
-Release
-</th>
 <th style="text-align:left;">
 Date
 </th>
 <th style="text-align:left;">
-Description
+DOI
 </th>
 <th style="text-align:left;">
-URL
+Version
+</th>
+<th style="text-align:right;">
+Number of files
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
-ready4
+25-May-2022
 </td>
 <td style="text-align:left;">
-Documentation_0.0
+<a href="https://doi.org/10.7910/DVN/RIQTKK" class="uri">https://doi.org/10.7910/DVN/RIQTKK</a>
 </td>
 <td style="text-align:left;">
-2022-11-07 06:06:23
+2.1
 </td>
-<td style="text-align:left;">
-Latest package manual PDFs.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102" class="uri">https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102</a>
+<td style="text-align:right;">
+1
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-ready4show
+14-Jan-2022
 </td>
 <td style="text-align:left;">
-Release 0.0.0.90985
+<a href="https://doi.org/10.7910/DVN/RIQTKK" class="uri">https://doi.org/10.7910/DVN/RIQTKK</a>
 </td>
 <td style="text-align:left;">
-2022-09-13 03:30:23
+2.0
 </td>
-<td style="text-align:left;">
-ready4show provides tools for authoring technical documentation,
-analysis reports and scientific summaries to showcase insights generated
-by open, modular mental health system models.This release corrects
-citation information.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985" class="uri">https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985</a>
+<td style="text-align:right;">
+1
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-ready4use
+14-Jan-2022
 </td>
 <td style="text-align:left;">
-Release 0.0.0.92225
+<a href="https://doi.org/10.7910/DVN/RIQTKK" class="uri">https://doi.org/10.7910/DVN/RIQTKK</a>
 </td>
 <td style="text-align:left;">
-2022-09-13 03:08:23
+1.0
 </td>
-<td style="text-align:left;">
-ready4use provides a set of tools for authoring and working with
-datasets when developing open source, modular mental health systems
-models.This release corrects package citation details.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225" class="uri">https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4show
-</td>
-<td style="text-align:left;">
-Release 0.0.0.90981
-</td>
-<td style="text-align:left;">
-2022-09-13 03:05:45
-</td>
-<td style="text-align:left;">
-ready4show provides tools for authoring technical documentation,
-analysis reports and scientific summaries to showcase insights generated
-by open, modular mental health system models.This release corrects
-citation information.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985" class="uri">https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4use
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9222
-</td>
-<td style="text-align:left;">
-2022-09-13 02:08:55
-</td>
-<td style="text-align:left;">
-ready4use provides a set of tools for authoring and working with
-datasets when developping open source, modular mental health systems
-models.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225" class="uri">https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4show
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9098
-</td>
-<td style="text-align:left;">
-2022-09-13 02:06:49
-</td>
-<td style="text-align:left;">
-ready4show provides tools for authoring technical documentation,
-analysis reports and scientific summaries to showcase insights generated
-by open, modular mental health system models.This release contains very
-minor updates.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985" class="uri">https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9102
-</td>
-<td style="text-align:left;">
-2022-09-13 01:44:56
-</td>
-<td style="text-align:left;">
-ready4 provides the foundational elements (classes, generics, methods,
-functions) of a framework for implementing open source youth mental
-health systems modelling projects.This release includes a number of
-additional helper functions.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102" class="uri">https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4pack
-</td>
-<td style="text-align:left;">
-Documentation_0.0
-</td>
-<td style="text-align:left;">
-2022-09-08 07:34:36
-</td>
-<td style="text-align:left;">
-Latest package manual PDFs.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4pack/releases/tag/Documentation_0.0" class="uri">https://github.com/ready4-dev/ready4pack/releases/tag/Documentation_0.0</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4class
-</td>
-<td style="text-align:left;">
-Documentation_0.0
-</td>
-<td style="text-align:left;">
-2022-09-08 07:28:40
-</td>
-<td style="text-align:left;">
-Latest package manual PDFs.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4class/releases/tag/Documentation_0.0" class="uri">https://github.com/ready4-dev/ready4class/releases/tag/Documentation_0.0</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4fun
-</td>
-<td style="text-align:left;">
-Documentation_0.0
-</td>
-<td style="text-align:left;">
-2022-09-08 07:04:36
-</td>
-<td style="text-align:left;">
-Latest package manual PDFs.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461" class="uri">https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4use
-</td>
-<td style="text-align:left;">
-v0.0.0.92220
-</td>
-<td style="text-align:left;">
-2022-09-08 06:55:16
-</td>
-<td style="text-align:left;">
-updated for fns_dmt_tb
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225" class="uri">https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4use
-</td>
-<td style="text-align:left;">
-v0.0.0.9221
-</td>
-<td style="text-align:left;">
-2022-09-08 06:55:16
-</td>
-<td style="text-align:left;">
-updated for fns_dmt_tb
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225" class="uri">https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4use
-</td>
-<td style="text-align:left;">
-Documentation_0.0
-</td>
-<td style="text-align:left;">
-2022-09-08 06:52:59
-</td>
-<td style="text-align:left;">
-Latest package manual PDFs.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225" class="uri">https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4show
-</td>
-<td style="text-align:left;">
-v0.0.0.90981
-</td>
-<td style="text-align:left;">
-2022-09-08 06:38:15
-</td>
-<td style="text-align:left;">
-added fns_dmt_tb to release
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985" class="uri">https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4show
-</td>
-<td style="text-align:left;">
-v0.0.0.90980
-</td>
-<td style="text-align:left;">
-2022-09-08 06:38:15
-</td>
-<td style="text-align:left;">
-added fns_dmt_tb to release
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985" class="uri">https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4show
-</td>
-<td style="text-align:left;">
-Documentation_0.0
-</td>
-<td style="text-align:left;">
-2022-09-08 06:37:07
-</td>
-<td style="text-align:left;">
-Latest package manual PDFs.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985" class="uri">https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4show
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9096
-</td>
-<td style="text-align:left;">
-2022-04-19 06:25:52
-</td>
-<td style="text-align:left;">
-ready4show provides tools for authoring technical documentation,
-analysis reports and scientific summaries to showcase insights generated
-by open, modular mental health system models.This release references an
-updated R Markdown subroutine for generating scientific manuscripts.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985" class="uri">https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4use
-</td>
-<td style="text-align:left;">
-Release 0.0.0.92201
-</td>
-<td style="text-align:left;">
-2022-02-15 01:45:00
-</td>
-<td style="text-align:left;">
-ready4use provides a set of tools for authoring and working with
-datasets when developping open source, modular mental health systems
-models.This release corrects an error with the citation file.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225" class="uri">https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4show
-</td>
-<td style="text-align:left;">
-Release 0.0.0.90951
-</td>
-<td style="text-align:left;">
-2022-02-15 01:41:25
-</td>
-<td style="text-align:left;">
-ready4show provides tools for authoring technical documentation,
-analysis reports and scientific summaries to showcase insights generated
-by open, modular mental health system models.This release corrects an
-error in the citation file.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985" class="uri">https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4
-</td>
-<td style="text-align:left;">
-Release 0.0.0.90891
-</td>
-<td style="text-align:left;">
-2022-02-15 01:36:36
-</td>
-<td style="text-align:left;">
-ready4 provides bare bones foundational elements (classes, generics,
-methods, functions) of a framework for ensuring that the computational
-model components of mental health systems modelling projects adhere to
-open science principles.This release fixes an error in the CITATION.cff
-file.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102" class="uri">https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4use
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9220
-</td>
-<td style="text-align:left;">
-2022-02-15 01:05:53
-</td>
-<td style="text-align:left;">
-ready4use provides a set of tools for authoring and working with
-datasets when developing open source, modular mental health systems
-models.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225" class="uri">https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4show
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9095
-</td>
-<td style="text-align:left;">
-2022-02-15 00:32:21
-</td>
-<td style="text-align:left;">
-ready4show provides tools for authoring technical documentation,
-analysis reports and scientific summaries to showcase insights generated
-by open, modular mental health system models.This release includes minor
-updates including addition of a CITATION.cff file.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985" class="uri">https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9089
-</td>
-<td style="text-align:left;">
-2022-02-15 00:14:42
-</td>
-<td style="text-align:left;">
-ready4 provides bare bones foundational elements (classes, generics,
-methods, functions) of a framework for ensuring that the computational
-model components of mental health systems modelling projects adhere to
-open science principles.This release includes minor updates including
-new functions to generate CITATION.cff files and update the dictionary
-of recognised terms for the coding house-style.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102" class="uri">https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9088
-</td>
-<td style="text-align:left;">
-2022-02-14 06:36:59
-</td>
-<td style="text-align:left;">
-Minor updates and fixes.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102" class="uri">https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4
-</td>
-<td style="text-align:left;">
-Release v0.0.0.9078
-</td>
-<td style="text-align:left;">
-2022-01-14 01:16:57
-</td>
-<td style="text-align:left;">
-Release with first version of Framework syntax and foundational
-Ready4Module. Vignettes include details of initial applications of
-framework.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102" class="uri">https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4
-</td>
-<td style="text-align:left;">
-Documentation
-</td>
-<td style="text-align:left;">
-2021-10-29 05:39:47
-</td>
-<td style="text-align:left;">
-fix of write to repo fn
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102" class="uri">https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4fun
-</td>
-<td style="text-align:left;">
-0.0.0.9461
-</td>
-<td style="text-align:left;">
-2021-10-29 03:13:06
-</td>
-<td style="text-align:left;">
-First release indexed with a Zenodo DOI.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461" class="uri">https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4
-</td>
-<td style="text-align:left;">
-v0.0.0.9022
-</td>
-<td style="text-align:left;">
-2021-10-28 03:36:34
-</td>
-<td style="text-align:left;">
-Initial release of ready4 R package
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102" class="uri">https://github.com/ready4-dev/ready4/releases/tag/v0.0.0.9102</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4show
-</td>
-<td style="text-align:left;">
-0.0.0.9048
-</td>
-<td style="text-align:left;">
-2021-10-26 23:19:11
-</td>
-<td style="text-align:left;">
-Data release
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985" class="uri">https://github.com/ready4-dev/ready4show/releases/tag/v0.0.0.90985</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4fun
-</td>
-<td style="text-align:left;">
-Doc_0.0
-</td>
-<td style="text-align:left;">
-2021-10-26 06:01:41
-</td>
-<td style="text-align:left;">
-more s4 mthd dmtn fixes
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461" class="uri">https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4use
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9122
-</td>
-<td style="text-align:left;">
-2021-04-08 09:15:56
-</td>
-<td style="text-align:left;">
-This release includes some changed argument names and updated
-documentation.The user documentation ready4use_user_0.0.0.9122.pdf is
-the manual that is recommended for most package users as it lists only
-functions intended for use. There is an extended version of the manual
-ready4use_developer_0.0.0.9122.pdf) that provides a full list of all
-functions in the package (potentially including buggy, poorly tested in
-development functions or helper functions not meant for end-users), but
-this is only potentially useful for developers who want a quick guide to
-what’s under the hood.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225" class="uri">https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4use
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9120
-</td>
-<td style="text-align:left;">
-2021-04-07 05:06:47
-</td>
-<td style="text-align:left;">
-This release addresses a build failure in the previous release due to a
-improper class creation.The user documentation
-ready4use_user_0.0.0.9120.pdf is the manual that is recommended for most
-package users as it lists only functions intended for use. There is an
-extended version of the manual ready4use_developer_0.0.0.9120.pdf that
-provides a full list of all functions in the package (potentially
-including buggy, poorly tested in development functions or helper
-functions not meant for end-users), but this is only potentially useful
-for developers who want a quick guide to what’s under the hood.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225" class="uri">https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4use
-</td>
-<td style="text-align:left;">
-Release v0.0.0.9119
-</td>
-<td style="text-align:left;">
-2021-04-07 04:38:43
-</td>
-<td style="text-align:left;">
-This release addresses a build failure in the previous release due to a
-problematic dependency.The user documentation
-ready4use_user_0.0.0.9119.pdf is the manual that is recommended for most
-package users as it lists only functions intended for use. There is an
-extended version of the manual ready4use_developer_0.0.0.9119.pdf that
-provides a full list of all functions in the package (potentially
-including buggy, poorly tested in development functions or helper
-functions not meant for end-users), but this is only potentially useful
-for developers who want a quick guide to what’s under the hood.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225" class="uri">https://github.com/ready4-dev/ready4use/releases/tag/v0.0.0.92225</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4class
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9193
-</td>
-<td style="text-align:left;">
-2021-04-07 04:22:59
-</td>
-<td style="text-align:left;">
-This release includes updated dependencies to address potential build
-problems.The user documentation ready4class_user_0.0.0.9193.pdf is the
-manual that is recommended for most package users as it lists only
-functions intended for use. There is an extended version of the manual
-ready4class_developer_0.0.0.9193.pdf that provides a full list of all
-functions in the package (potentially including buggy, poorly tested in
-development functions or helper functions not meant for end-users), but
-this is only potentially useful for developers who want a quick guide to
-what’s under the hood.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4class/releases/tag/Documentation_0.0" class="uri">https://github.com/ready4-dev/ready4class/releases/tag/Documentation_0.0</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4fun
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9289
-</td>
-<td style="text-align:left;">
-2021-04-07 04:07:50
-</td>
-<td style="text-align:left;">
-Updates from previous release include adding an internal helper function
-for removing labels from dataframes that replaces a dependency that was
-causing build fails on Mac installs.The user documentation
-ready4fun_user_0.0.0.9289.pdf is the manual that is recommended for most
-package users as it lists only functions intended for use. There is an
-extended version of the manual ready4fun_developer_0.0.0.9289.pdf that
-provides a full list of all functions in the package (potentially
-including buggy, poorly tested in development functions or helper
-functions not meant for end-users), but this is only potentially useful
-for developers who want a quick guide to what’s under the hood.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461" class="uri">https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4class
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9189 (Initial)
-</td>
-<td style="text-align:left;">
-2021-04-07 01:32:52
-</td>
-<td style="text-align:left;">
-This is the initial release of the ready4class package.The user
-documentation ready4class_user_0.0.0.9189.pdf is the manual that is
-recommended for most package users as it lists only functions intended
-for use. There is an extended version of the manual
-ready4class_developer_0.0.0.9189.pdf that provides a full list of all
-functions in the package (potentially including buggy, poorly tested in
-development functions or helper functions not meant for end-users), but
-this is only potentially useful for developers who want a quick guide to
-what’s under the hood.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4class/releases/tag/Documentation_0.0" class="uri">https://github.com/ready4-dev/ready4class/releases/tag/Documentation_0.0</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4fun
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9279
-</td>
-<td style="text-align:left;">
-2021-04-07 01:28:44
-</td>
-<td style="text-align:left;">
-Updates from previous release include (another) bug fix for the
-write_links_for_website function.The user documentation
-ready4fun_user_0.0.0.9279.pdf is the manual that is recommended for most
-package users as it lists only functions intended for use. There is an
-extended version of the manual ready4fun_developer_0.0.0.9279.pdf that
-provides a full list of all functions in the package (potentially
-including buggy, poorly tested in development functions or helper
-functions not meant for end-users), but this is only potentially useful
-for developers who want a quick guide to what’s under the hood
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461" class="uri">https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4class
-</td>
-<td style="text-align:left;">
-v0.0.0.9187
-</td>
-<td style="text-align:left;">
-2021-04-06 02:16:19
-</td>
-<td style="text-align:left;">
-updated v nbr
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4class/releases/tag/Documentation_0.0" class="uri">https://github.com/ready4-dev/ready4class/releases/tag/Documentation_0.0</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4class
-</td>
-<td style="text-align:left;">
-v0.0.0.9186
-</td>
-<td style="text-align:left;">
-2021-04-06 02:07:52
-</td>
-<td style="text-align:left;">
-updates to authoring workflow
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4class/releases/tag/Documentation_0.0" class="uri">https://github.com/ready4-dev/ready4class/releases/tag/Documentation_0.0</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4fun
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9278
-</td>
-<td style="text-align:left;">
-2021-04-01 23:47:16
-</td>
-<td style="text-align:left;">
-Updates from previous release include bug fixes for the
-write_links_for_website.The user documentation
-(ready4fun_user_0.0.0.9278.pdf) is the manual that is recommended for
-most package users as it lists only functions intended for use. There is
-an extended version of the manual (ready4fun_developer_0.0.0.9278.pdf)
-that provides a full list of all functions in the package (potentially
-including buggy, poorly tested in development functions or helper
-functions not meant for end-users), but this is only potentially useful
-for developers who want a quick guide to what’s under the hood.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461" class="uri">https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4fun
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9276
-</td>
-<td style="text-align:left;">
-2021-04-01 23:20:10
-</td>
-<td style="text-align:left;">
-Updates from previous release includes some function and argument
-renaming (to improve self-documentation), improvements to the
-write_links_for_website function and reduction of the number of
-functions listed in the default user manual. This release comes bundled
-with two versions of package documentation. The user documentation
-(ready4fun_user_0.0.0.9276.pdf) is the manual that is recommended for
-most package users as it lists only functions intended for use. There is
-an extended version of the manual (ready4fun_developer_0.0.0.9276.pdf)
-that provides a full list of all functions in the package (potentially
-including buggy, poorly tested in development functions or helper
-functions not meant for end-users), but this is only potentially useful
-for developers who want a quick guide to what’s under the hood.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461" class="uri">https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ready4fun
-</td>
-<td style="text-align:left;">
-Release 0.0.0.9270 (Initial)
-</td>
-<td style="text-align:left;">
-2021-03-30 02:37:15
-</td>
-<td style="text-align:left;">
-Initial releaseThis initial release of the ready4fun package includes
-functions that have been successfully deployed to help author other
-packages in the ready4 suite. However, only self-authored documentation
-(i.e. documentation created by the functions contained in ready4fun) is
-available in this release. We intend expanding on this very basic
-documentation in future releases.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461" class="uri">https://github.com/ready4-dev/ready4fun/releases/tag/0.0.0.9461</a>
+<td style="text-align:right;">
+1
 </td>
 </tr>
 </tbody>
@@ -1482,3 +706,5 @@ $(document).ready(function () {
 
 </body>
 </html>
+</div>
+

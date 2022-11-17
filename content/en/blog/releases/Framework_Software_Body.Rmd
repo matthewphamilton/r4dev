@@ -1,0 +1,15 @@
+---
+output: html_document
+---
+
+```{r child="XX_Functions.Rmd", eval=TRUE}
+```
+
+```{r echo=F, message=FALSE, warning=FALSE, results='asis'}
+ make_release_ds("Framework",
+                as_kable_1L_lgl = T,
+                bootstrap_options = "striped")
+```
+
+
+
