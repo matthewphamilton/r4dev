@@ -1,7 +1,7 @@
 baseURL = "/"
 title = "ready4-dev"
 
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$","_cache$",'\.knit\.md$', '\.utf8\.md$', '_files$']
 
 # Language settings
 contentDir = "content/en"
@@ -35,8 +35,8 @@ taxonomyPageHeader = ["tags", "categories"]
 
 
 # Highlighting config
-pygmentsCodeFences = true
-pygmentsUseClasses = false
+#pygmentsCodeFences = true
+pygmentsUseClasses = true
 # Use the new Chroma Go highlighter in Hugo.
 pygmentsUseClassic = false
 #pygmentsOptions = "linenos=table"
@@ -69,6 +69,7 @@ languageName ="English"
 weight = 1
 
 [markup]
+  defaultMarkdownHandler = "goldmark"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true

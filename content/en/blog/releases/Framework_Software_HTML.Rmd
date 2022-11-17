@@ -1,0 +1,18 @@
+---
+output: html_document
+---
+
+```{r child="XX_Functions.Rmd", eval=TRUE}
+```
+
+```{r echo=F, message=FALSE, warning=FALSE, results='asis'}
+ make_release_ds("Framework",
+                as_kable_1L_lgl = T)
+# ds_tb %>% dplyr::mutate(Release = Release %>% stringr::str_remove_all("Release "),
+#                         Date = Date %>% format.Date("%d-%b-%Y") %>% as.character()) %>%
+#   dplyr::select(Date, dplyr::everything()) %>%
+#   knitr::kable("simple") 
+```
+
+
+
