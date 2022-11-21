@@ -18,7 +18,7 @@ weight: 67
 ```{r echo=F, message=FALSE, warning=FALSE}
 #releases_tb <- 
   # fw_repos %>%
-  make_release_ds("Framework")
+  make_code_releases_tbl("Framework")
   # purrr::map_dfr(~tidyRSS::tidyfeed(paste0("https://github.com/ready4-dev/",.x,"/releases.atom"))) %>%
   # dplyr::arrange(dplyr::desc(entry_last_updated))
 ```
@@ -32,7 +32,7 @@ weight: 67
 ## Model modules (R packages)
 
 ```{r echo=F, message=FALSE, warning=FALSE}
-make_release_ds("Module")
+make_code_releases_tbl("Module")
 ```
 
 ## Model datasets
@@ -40,5 +40,6 @@ make_release_ds("Module")
 ## Analyses (R Markdown)
 
 ```{r echo=F, message=FALSE, warning=FALSE}
-make_release_ds("Program")
+make_code_releases_tbl("Program",
+                as_kable_1L_lgl = F) ->ds_tb
 ```

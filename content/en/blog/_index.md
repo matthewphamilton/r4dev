@@ -1,5 +1,5 @@
 ---
-title: "Docsy Blog"
+title: "ready4 Framework Blog"
 linkTitle: "Blog"
 menu:
   main:

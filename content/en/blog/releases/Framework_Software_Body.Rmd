@@ -2,13 +2,16 @@
 output: html_document
 ---
 
-```{r child="XX_Functions.Rmd", eval=TRUE}
+```{r, include=FALSE}
+source("Functions.R", local = knitr::knit_global())
+# or sys.source("your-script.R", envir = knitr::knit_global())
 ```
 
 ```{r echo=F, message=FALSE, warning=FALSE, results='asis'}
- make_release_ds("Framework",
+ make_code_releases_tbl("Framework",
                 as_kable_1L_lgl = T,
-                bootstrap_options = "striped")
+                bootstrap_options = c("hover", 
+                                      "condensed"))
 ```
 
 

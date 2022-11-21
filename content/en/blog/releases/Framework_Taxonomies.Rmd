@@ -8,9 +8,11 @@ categories:
 - Releases
 tags: 
 - Datasets
-- Framework taxonomies
+- Framework - Taxonomies
 output: hugodown::md_document
 ---
+
+Developers using the ready4 framework can either use the same taxonomies as we do in our computational models or else develop their own. We periodically release updated versions of our taxonomies. Currently available releases are described below.
 
 ````{=html}
 ```{r, echo=FALSE, results='asis'}
