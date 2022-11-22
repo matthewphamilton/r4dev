@@ -1,6 +1,6 @@
 ---
 title: "Contribution Guidelines for Modellers"
-linkTitle: "Contribution Guidelines for Modellers"
+linkTitle: "Modellers"
 date: 2017-01-05
 weight: 1
 description: >

@@ -10,7 +10,7 @@ description: >
 
 ## Prerequisites
 
-A pre-requisite for developers and modellers is to have an up to date version of R installed on your machine. In most (but not all) of the anticipated ways that analysts will use ready4 tools, there is no not need to have R installed.
+A pre-requisite for data scientists and modellers is to have an up to date version of R installed on your machine. In most (but not all) of the anticipated ways that analysts will use ready4 tools, there is no not need to have R installed.
 
 ## Installation
 

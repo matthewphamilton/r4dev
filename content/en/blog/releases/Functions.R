@@ -68,12 +68,17 @@ make_code_releases_tbl <- function(repository_type_1L_chr = "Framework",
                   Date = entry_last_updated,
                   Description = entry_content,
                   URL = entry_link
-    )
+    ) %>%
+    dplyr::filter(Release != "Documentation_0.0")
   if(as_kable_1L_lgl){
     releases_xx <- releases_xx  %>% 
-      dplyr::mutate(Release = Release %>% stringr::str_remove_all("Release "),
+      dplyr::mutate(Release = Release %>% stringr::str_remove_all("Release ") %>%
+                      stringr::str_remove_all("v") %>%
+                      kableExtra::cell_spec(format = "html", link = URL),
                     Date = Date %>% format.Date(format_1L_chr) %>% as.character()) %>%
-      dplyr::select(Date, dplyr::everything()) 
+      # dplyr::mutate(Release = cell_spec(row.names(.), "html", link = dt_url)) %>% 
+      dplyr::select(Date, !!rlang::sym(repository_type_1L_chr), Release, Description#dplyr::everything()
+                    ) 
     if(repository_type_1L_chr %in% c("Package","Module","Framework")){
       logos_chr <- purrr::map_chr(releases_xx %>% dplyr::pull(repository_type_1L_chr), 
                                   ~paste0("https://ready4-dev.github.io/", .x, "/logo.png"))
