@@ -1,6 +1,6 @@
 ---
 title: "The Spring To Life model of people"
-linkTitle: "Modelling People"
+linkTitle: "A model of people"
 date: 2017-01-05
 weight: 91
 description: >

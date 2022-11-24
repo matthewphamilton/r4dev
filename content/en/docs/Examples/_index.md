@@ -8,11 +8,11 @@ description: >
   See ready4 in action!
 ---
 
-The initial set of ready4 toolkits to be released implemented a utility mapping project. Briefly, that project aimed to address a key challenge in evaluating youth mental health services - the outcomes routinely collected in those services do not have any well understood economic value. 
+Some examples of practical applications of computational models developed with the ready4 framework include:
 
-* Manuscript
-* Modules
-* Dataset
-* Analyses program
+- Assessing the heterogeneity of quality of life amongst a clinical sample of young people (peer-reviewed manuscript and R package). 
+- Mapping psychological and functional measures to health utility for young people using primary mental health services (pre-print manuscript, results and replication dataset and R packages for developing and applying models);
+- Developing and analysing discrete choice experiments in youth mental health (R package);
+- Predicting the future spatial distribution of mental disorder in young people (sample reports dataset and policy briefing).
 
 
