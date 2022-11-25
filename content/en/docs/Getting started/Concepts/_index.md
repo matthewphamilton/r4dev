@@ -1,7 +1,7 @@
 ---
 title: "Concepts"
 linkTitle: "Concepts"
-weight: 28
+weight: 22
 description: >
   A number of concepts that are helpful to understand when reading content on this website.
 ---

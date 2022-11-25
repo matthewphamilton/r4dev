@@ -19,15 +19,15 @@ By framework we mean a set of good practice guidelines for open source health ec
 
 ## Why is that useful?
 
-Using the ready4 framework supports *modular* approaches to computational model development. That means multiple self-contained computational modelling projects can be both combined (to model more extensive systems) and reused (in other models).
+ready4 supports *modular* approaches to computational model development. That means multiple self-contained computational modelling projects can be both combined (to model more extensive systems) and reused (in other models).
 
 ## Why do I want it?
 
-The ready4 framework and the modelling projects we are developing with it are free for you to inspect (to find tools you trust and find useful), apply (to generate novel insights into decision problems of interest to you) and to derive your own derivative works from (that both leverage and enhances the work of other modellers).
+ready4 is free for you to inspect (to find tools you trust and find useful), apply (to generate novel insights into decision problems of interest to you) and to derive your own derivative works from (that both leverage and enhances the work of other modellers).
 
 ## Why is it called ready4?
 
-We originally developed ready4 to help us implement an open source computational model of youth mental health called readyforwhatsnext. That remains the overarching purpose of our open source health economic modelling work at Orygen, but we have made the ready4 framework publicly available so that others can use it for their own projects.
+We originally developed ready4 to help us implement an open source computational model of youth mental health called readyforwhatsnext. That remains the overarching purpose of our open source health economic modelling work at Orygen, but we have made ready4 publicly available so that others can use it for their own projects.
 
 ## Where should I go next?
 

@@ -51,7 +51,7 @@ blog = "/:section/:year/:month/:day/:slug/"
 [imaging]
 resampleFilter = "CatmullRom"
 quality = 75
-anchor = "smart"
+anchor = "center"
 
 [services]
 [services.googleAnalytics]
