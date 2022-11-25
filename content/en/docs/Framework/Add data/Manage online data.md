@@ -1,6 +1,6 @@
 ---
 title: "Manage access to and sharing of data via online repositories"
-linkTitle: "Open Access"
+linkTitle: "Open access"
 date: 2017-01-05
 tags:
 - Data management

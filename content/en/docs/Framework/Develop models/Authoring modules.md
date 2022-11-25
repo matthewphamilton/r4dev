@@ -1,5 +1,5 @@
 ---
-title: "ready4 framework developer tools for defining model data structures"
+title: "ready4 tools for defining model data structures"
 linkTitle: "Data structures"
 date: 2017-01-05
 tags:
@@ -10,7 +10,7 @@ categories:
 - Documentation
 weight: 64
 description: >
-  The ready4 framework supports partially automated and standardised workflows for defining the data structures to be used in computational models. This brief article outlines the key elements that help make this possible.
+  ready4 supports partially automated and standardised workflows for defining the data structures to be used in computational models. 
 ---
 
 {{% pageinfo %}}

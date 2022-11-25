@@ -1,5 +1,5 @@
 ---
-title: "Add A Data Dictionary To A Dataset"
+title: "Add a data dictionary to a dataset"
 linkTitle: "Labelling"
 date: 2017-01-05
 tags:

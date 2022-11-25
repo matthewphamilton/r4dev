@@ -1,12 +1,9 @@
 ---
-title: "Run Analyses"
-linkTitle: "Run Analyses"
+title: "Run analyses"
+linkTitle: "Run analyses"
 date: 2017-01-05
 weight: 80
 description: >
-  Currently available ready4 analysis programs.
+  ready4 aims to support an unbroken chain between model analyses and reporting.
 ---
-
-
-This is the section landing page.
 

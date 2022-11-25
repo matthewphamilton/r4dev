@@ -5,9 +5,7 @@ linkTitle: "Modelling projects"
 date: 2017-01-05
 weight: 55
 description: >
-  The ready4 framework is being applied to develop a youth mental health systems model, that is iteself comprised of sub-models of the people, places, platforms and programs that shape young people's mental health.
+  The ready4 framework is being applied to a number of projects to inform better policy and systems design in youth mental health.
 ---
 
-
-This is the section landing page.
-
+The ready4 framework is being used to develop, combine and apply computational models of the people, places, platforms and programs hat shape young people's mental health.

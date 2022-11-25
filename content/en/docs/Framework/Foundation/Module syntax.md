@@ -1,5 +1,5 @@
 ---
-title: "ready4 framework syntax"
+title: "ready4 syntax"
 linkTitle: "Syntax"
 date: 2017-01-05
 tags:
@@ -9,7 +9,7 @@ categories:
 - Documentation
 weight: 63
 description: >
-  ready4 modules use a simple and consistent syntax. This brief article outlines the key elements of this syntax.
+  ready4 modules use a simple and consistent syntax. 
 ---
 
 {{% pageinfo %}}

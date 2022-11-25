@@ -9,7 +9,7 @@ tags:
 categories:
 weight: 92
 description: >
-  An essential element of scientific research is reproducibility. This tutorial describes how a module from the ready4show R package can help you maintain an unbroken chain between model analyses and reporting.
+  An essential element of scientific research is reproducibility. 
 ---
 
 {{% pageinfo %}}

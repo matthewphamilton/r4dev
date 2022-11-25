@@ -1,10 +1,9 @@
 ---
-categories: ["Examples", "Placeholders"]
-tags: ["test","docs"] 
-title: "Getting Started"
-linkTitle: "Getting Started"
+categories: ["Documentation"]
+title: "Getting started"
+linkTitle: "Getting started"
 weight: 20
 description: >
-  Prerequisites, installation and setup.
+  Things to know before you start using ready4.
 ---
 

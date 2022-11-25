@@ -1,5 +1,5 @@
 ---
-title: "ready4 framework model modules"
+title: "ready4 modules"
 linkTitle: "Modules"
 date: 2017-01-05
 tags:
@@ -9,7 +9,7 @@ categories:
 - Documentation
 weight: 62
 description: >
-  ready4 supports a modular approach to model development. This article describes what that means and the template it provides to support implementation of this approach.
+  ready4 supports a modular approach to computational model development. 
 ---
 
 {{% pageinfo %}}

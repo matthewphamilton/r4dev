@@ -1,5 +1,5 @@
 ---
-title: "ready4 framework developer tools for dissemating citable, documented and quality assured model modules"
+title: "ready4 tools for dissemating citable, documented and quality assured model modules"
 linkTitle: "Distribution"
 date: 2017-01-05
 tags:
@@ -10,7 +10,7 @@ categories:
 - Documentation
 weight: 66
 description: >
-  The ready4 framework supports tools to streamline the testing, description and distribution of computational model modules. This brief article outlines the key elements that help make this possible.
+  ready4 supports tools to streamline the testing, description and distribution of computational model modules. 
 ---
 
 {{% pageinfo %}}

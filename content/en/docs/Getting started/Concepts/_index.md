@@ -3,7 +3,7 @@ title: "Concepts"
 linkTitle: "Concepts"
 weight: 22
 description: >
-  A number of concepts that are helpful to understand when reading content on this website.
+  A number of concepts that are helpful to understand when using ready4.
 ---
 
 ## Model

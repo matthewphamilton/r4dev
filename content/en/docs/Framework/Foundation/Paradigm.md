@@ -1,5 +1,5 @@
 ---
-title: "Why the ready4 framework adopts an object oriented paradigm"
+title: "Why ready4 is object oriented"
 linkTitle: "Paradigm"
 date: 2017-01-05
 tags:
@@ -9,7 +9,7 @@ categories:
 - Documentation
 weight: 61
 description: >
-  ready4 modules are implemented using object oriented programming (OOP). This brief article explains what this term means and why it is useful.
+  ready4 modules are implemented using object oriented programming (OOP).
 ---
 
 {{% pageinfo %}}

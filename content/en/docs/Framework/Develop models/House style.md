@@ -1,5 +1,5 @@
 ---
-title: "ready4 framework developer tools for authoring algorithms with a consistent house style"
+title: "ready4 tools for authoring algorithms with a consistent house style"
 linkTitle: "Algorithms"
 date: 2017-01-05
 tags:
@@ -11,7 +11,7 @@ categories:
 - Documentation
 weight: 65
 description: >
-  The ready4 framework supports standardised approaches to algorithm development that facilitate partial automation of the documenting of those algorithms. This brief article outlines the key elements that help make this possible.
+  ready4 supports standardised approaches to algorithm development that facilitate partial automation of the documenting of those algorithms. 
 ---
 
 {{% pageinfo %}}
