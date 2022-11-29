@@ -11,7 +11,7 @@ categories:
 - Documentation
 weight: 92
 description: >
-  Using sub-modules from the youthvars R package, vector based classes can be used to validate variable values. This tutorial describes how to do that with classes exported as part of the youthvars R package.
+  Vector based classes can be used to help validate variable values. This tutorial describes how to do that with sub-module classes exported as part of the youthvars R package.
 ---
 
 {{% pageinfo %}}

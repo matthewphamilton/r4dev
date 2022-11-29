@@ -3,7 +3,7 @@ title: "Installation"
 linkTitle: "Installation"
 weight: 266
 description: >
-  Prerequisites, discclaimer and installation
+  Important information to review before installing and using our software
 ---
 
 ## Pre-requisites
@@ -12,18 +12,18 @@ A pre-requisite to install and use ready4 is to have an up to date version of R 
 
 If you plan on using ready4's computational model authoring tools, you will need to have set-up and appropriately configured your own accounts in:
 
-- GitHub (you will need write permissions to a GitHub organisation and enable GitHub actions and GitHub pages support for the repositories you create in that organisation);
-- Zenodo (you will need to have write linked each GitHub repository related to your ready4 projects to your Zenodo account); and
-- Codecov (linked to your GitHub organisation)
+- [GitHub](https://github.com) (you will need write permissions to a GitHub organisation and enable GitHub actions and GitHub pages support for the repositories you create in that organisation);
+- [Zenodo](https://zenodo.org) (you will need to have linked each GitHub repository rused for your ready4 projects to your Zenodo account); and
+- [Codecov](https://about.codecov.io) (linked to your GitHub organisation)
 
-If you wish to use ready4's data management tools you will need to have set up an account on a Dataverse installation (we recommend using the Harvard Dataverse) and have write permissions to the repositories that you plan to use in conjunction with ready4.
+If you wish to share data using ready4's data management tools you will need to have set up an account on a [Dataverse](https://dataverse.org) installation (we recommend using the [Harvard Dataverse](https://dataverse.harvard.edu)) and have write permissions to the Dataverse Datasets that you plan to use in conjunction with ready4.
 
 Holders of GitHub and Dataverse accounts will ensure that the machine onto which they install ready4 has securely stored their credentials for these services (specifically, values for GITHUB_PAT, DATAVERSE_KEY and DATAVERSE_SERVER tokens).
 
 ## Disclaimer
 All ready4 software is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-Furthermore, no ready4 software has been sufficiently well documented and tested to be given a production release. All ready4 software should therefore viewed as in-development pre-releases.
+Furthermore, no ready4 software is yet sufficiently well documented and tested to be given a production release. All ready4 software should therefore viewed as in-development pre-releases.
 
 ## Installation
 As ready4 R packages have yet to be submitted to CRAN as production releases, you will need to use a tool like devtools to assist with installing ready4 R packages. If you do not have devtools on your machine you can install it as follows:
@@ -70,7 +70,7 @@ devtools::install_github("ready4-dev/ready4use")
 ## Set-up
 A small number of ready4 modules require that you configure some of the dependencies installed with them before they can be used. In particular:
 
-- If you are using modules from the TTU package to undertake a utility mapping study, you will need to have both installed and configured the cmdstanr package as per the instructions on [that package's documentation website](https://mc-stan.org/cmdstanr/)
+- If you are using modules from the TTU package to undertake a utility mapping study, you will need to have both installed and configured the cmdstanr R package as per the instructions on [that package's documentation website](https://mc-stan.org/cmdstanr/)
 
 - If you are using the mychoice package to undertake a discrete choice experiment study and are using a Mac, you need to ensure that you have a Fortran compiler installed. Some relevant advice on this: https://mac.r-project.org/tools/
 

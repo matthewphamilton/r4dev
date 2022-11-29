@@ -1,5 +1,5 @@
 ---
-title: "ready4 tools for defining model data structures"
+title: "Defining model data structures"
 linkTitle: "Data structures"
 date: 2017-01-05
 tags:
@@ -10,7 +10,7 @@ categories:
 - Documentation
 weight: 64
 description: >
-  ready4 supports partially automated and standardised workflows for defining the data structures to be used in computational models. 
+  The ready4class R package supports partially automated and standardised workflows for defining the data structures to be used in computational models. 
 ---
 
 {{% pageinfo %}}

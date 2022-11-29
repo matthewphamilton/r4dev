@@ -1,7 +1,7 @@
 
 ---
 title: "Datasets for use with ready4 framework computational models"
-linkTitle: "Datasets"
+linkTitle: "Model data"
 date: 2017-01-05
 weight: 67
 description: >

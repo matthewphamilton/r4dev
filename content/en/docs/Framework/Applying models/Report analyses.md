@@ -1,5 +1,5 @@
 ---
-title: "ready4 framework tools for reproducible analyses"
+title: "Tools for reproducible analyses"
 linkTitle: "Reproducibility"
 date: 2017-01-05
 tags:
@@ -9,7 +9,7 @@ tags:
 categories:
 weight: 92
 description: >
-  An essential element of scientific research is reproducibility. 
+  Tools from the ready4show R package facilitate an unbroken chain between model analyses and reporting.
 ---
 
 {{% pageinfo %}}

@@ -1,5 +1,5 @@
 ---
-title: "Predict choice"
+title: "Develop choice models"
 linkTitle: "Predict choice"
 date: 2017-01-05
 tags:
@@ -11,7 +11,7 @@ categories:
 - Documentation
 weight: 97
 description: >
-  Using tools (soon to be formalised into ready4 framework modules) from the mychoice R package, it is possible todevelop choice models from responses to a discrete choice experiment survey.
+  Using tools (soon to be formalised into ready4 framework modules) from the mychoice R package, it is possible to develop choice models from responses to a discrete choice experiment survey.
 ---
 
 {{% pageinfo %}}

@@ -1,5 +1,5 @@
 ---
-title: "Contribution Guidelines"
+title: "Contribution guidelines"
 linkTitle: "Contribute"
 weight: 110
 description: >

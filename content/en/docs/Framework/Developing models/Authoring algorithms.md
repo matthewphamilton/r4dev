@@ -1,5 +1,5 @@
 ---
-title: "ready4 tools for authoring algorithms with a consistent house style"
+title: "Authoring model algorithms"
 linkTitle: "Algorithms"
 date: 2017-01-05
 tags:
@@ -11,7 +11,7 @@ categories:
 - Documentation
 weight: 65
 description: >
-  ready4 supports standardised approaches to algorithm development that facilitate partial automation of the documenting of those algorithms. 
+  The ready4fun R package supports standardised approaches to code authoring that facilitate partial automation of the documenting of model algorithms. 
 ---
 
 {{% pageinfo %}}

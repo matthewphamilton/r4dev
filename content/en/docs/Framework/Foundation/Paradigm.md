@@ -9,7 +9,7 @@ categories:
 - Documentation
 weight: 61
 description: >
-  ready4 modules are implemented using object oriented programming (OOP).
+  ready4 uses an object oriented programming (OOP) paradigm to implement computational models.
 ---
 
 {{% pageinfo %}}

@@ -1,5 +1,4 @@
 ---
-categories: ["Documentation"]
 title: "Getting started"
 linkTitle: "Getting started"
 weight: 20

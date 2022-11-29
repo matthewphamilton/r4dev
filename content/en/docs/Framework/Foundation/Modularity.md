@@ -1,6 +1,6 @@
 ---
-title: "ready4 modules"
-linkTitle: "Modules"
+title: "Modular computational models"
+linkTitle: "Modularity"
 date: 2017-01-05
 tags:
 - Modules

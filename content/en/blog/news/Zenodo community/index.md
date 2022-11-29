@@ -9,7 +9,7 @@ tags:
 - Framework
 - Model
 categories:
-- Code repository
+- Code repositories
 - News
 resources:
 - src: "**.{png,jpg}"
