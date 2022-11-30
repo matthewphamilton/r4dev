@@ -1,7 +1,7 @@
 ---
 title: "Spring To Life model module releases"
 linkTitle: "People model modules"
-date: "2022-11-22"
+date: "2022-11-30"
 description: "Releases of modules for modelling people."
 weight: 3
 categories: 
@@ -15,7 +15,7 @@ rmd_hash: 0eea2e81f6a35c4f
 
 ---
 
-One goal of the *readyforwhatsnext* model is to model the people relevant to youth mental health systems design and policy development. The name of the "people" model we are developing for this task is Spring To Life. The Spring To Life model is comprised of modules that each focus on discrete tasks (e.g. describing data, scoring variables, mapping health utility, modelling choice). Currently available (as at 22-Nov-2022) releases of the R packages of modules used in developing the Spring To Life model are reproduced below.
+One goal of the *readyforwhatsnext* model is to model the people relevant to youth mental health systems design and policy development. The name of the "people" model we are developing for this task is Spring To Life. The Spring To Life model is comprised of modules that each focus on discrete tasks (e.g. describing data, scoring variables, mapping health utility, modelling choice). Currently available (as at 30-Nov-2022) releases of the R packages of modules used in developing the Spring To Life model are reproduced below.
 
 <div class='highlight'><!DOCTYPE html>
 

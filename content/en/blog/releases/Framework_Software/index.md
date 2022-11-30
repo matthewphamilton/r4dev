@@ -1,7 +1,7 @@
 ---
 title: "ready4 framework software releases"
 linkTitle: "Framework software"
-date: "2022-11-22"
+date: "2022-11-30"
 description: "Releases of software to help standardise implementation of computational modelling projects that use the ready4 framework."
 weight: 1
 categories: 
@@ -14,7 +14,7 @@ rmd_hash: 4ccfb1a81e7fe376
 
 ---
 
-A key aspect of the ready4 framework is support for standardised and partially automated workflows for computational model development. The ready4 modelling toolkit is a set of tools to support implementation of these workflows. Currently available (as at 22-Nov-2022) releases of the R packages that collectively comprise the ready4 modelling toolkit are described below.
+A key aspect of the ready4 framework is support for standardised and partially automated workflows for computational model development. The ready4 modelling toolkit is a set of tools to support implementation of these workflows. Currently available (as at 30-Nov-2022) releases of the R packages that collectively comprise the ready4 modelling toolkit are described below.
 
 <div class='highlight'><!DOCTYPE html>
 

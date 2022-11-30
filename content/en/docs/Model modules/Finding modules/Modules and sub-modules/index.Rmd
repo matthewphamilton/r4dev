@@ -1,0 +1,19 @@
+---
+title: "ready4 modules and sub-modules"
+linkTitle: "Modules and sub-modules"
+date: "`r Sys.Date()`"
+description: "How to find individual ready4 modules and sub-modules."
+weight: 2
+categories: 
+- Documentation
+tags: 
+- Modules
+- Sub-modules
+output: hugodown::md_document
+---
+
+````{=html}
+```{r, echo=FALSE, message=F,results='asis'}
+xfun::file_string('index_Body.html')
+```
+````

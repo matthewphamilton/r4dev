@@ -18,6 +18,26 @@ make_ds_releases_tbl <- function(ds_dois_chr,
     dplyr::arrange(dplyr::desc(Date)) %>%
     dplyr::mutate(Date = Date %>% format.Date(format_1L_chr) %>% as.character())
 }
+make_framework_pkgs_chr <- function(){
+  framework_pkgs_chr <- c("ready4","ready4fun","ready4class","ready4pack","ready4use","ready4show")
+  return(framework_pkgs_chr)
+}
+make_modules_pks_chr <- function(what_chr = "all"){
+  modules_pks_chr <- character(0)
+  if("people" %in% what_chr | "all" %in% what_chr)
+    modules_pks_chr <- c(modules_pks_chr,
+                         c("youthvars","scorz","specific","TTU","youthu","mychoice","heterodox"))
+  if("places" %in% what_chr)
+    modules_pks_chr <- c(modules_pks_chr,
+                         character(0))
+  if("platforms" %in% what_chr)
+    modules_pks_chr <- c(modules_pks_chr,
+                         ccharacter(0))
+  if("programs" %in% what_chr)
+    modules_pks_chr <- c(modules_pks_chr,
+                         c("bimp"))
+  return(modules_pks_chr)
+} 
 make_code_releases_tbl <- function(repository_type_1L_chr = "Framework",
                             as_kable_1L_lgl = T,
                             brochure_repos_chr = character(0),
@@ -36,10 +56,10 @@ make_code_releases_tbl <- function(repository_type_1L_chr = "Framework",
     exclude_chr <- "rebuild"
   }
   if(identical(framework_repos_chr,character(0))){
-    framework_repos_chr <- c("ready4","ready4fun","ready4class","ready4pack","ready4use","ready4show")
+    framework_repos_chr <- make_framework_pkgs_chr()
   }
   if(identical(model_repos_chr,character(0))){
-    model_repos_chr <- c("youthvars","scorz","specific","TTU","youthu","mychoice","heterodox", "bimp")
+    model_repos_chr <- make_modules_pks_chr(what_chr = "all")
   }
   if(identical(program_repos_chr,character(0))){
     program_repos_chr <- setdiff(natmanager::list_repo(organisation_1L_chr),
@@ -96,4 +116,35 @@ make_code_releases_tbl <- function(repository_type_1L_chr = "Framework",
                                                              height = 160, width = 160)) 
   }
   return(releases_xx)
+}
+write_blog_entries <- function(dir_path_1L_chr,
+                               fl_nm_1L_chr){
+  rmarkdown::render(paste0(dir_path_1L_chr,"/",fl_nm_1L_chr,"/index_Body.Rmd"), 
+                    output_dir = paste0(dir_path_1L_chr,"/",fl_nm_1L_chr))
+  rmarkdown::render(paste0(dir_path_1L_chr,"/",fl_nm_1L_chr,"/index.Rmd"), 
+                    output_dir = paste0(dir_path_1L_chr,"/",fl_nm_1L_chr))
+  unlink(paste0(dir_path_1L_chr,"/",fl_nm_1L_chr,"/index_Body.html"))
+  if(file.exists(paste0(dir_path_1L_chr,"/",fl_nm_1L_chr,"/index.html")))
+    unlink(paste0(dir_path_1L_chr,"/",fl_nm_1L_chr,"/index.html"))
+}
+write_new_credentials <- function(path_to_file_1L_chr,
+                                  new_credentials_1L_chr,
+                                  old_credentials_1L_chr){
+  readLines(path_to_file_1L_chr) %>%
+    stringr::str_replace(
+      pattern = old_credentials_1L_chr, 
+      replace = new_credentials_1L_chr) %>%
+    writeLines(con = path_to_file_1L_chr)
+}
+write_to_copy_rmds <- function(dir_path_1L_chr,
+                               fl_nm_1L_chr,
+                               rmds_dir_1L_chr = "R/RMD Templates"){
+  file_nms_chr <- list.files(rmds_dir_1L_chr)
+  destination_1L_chr <- paste0(dir_path_1L_chr,"/",fl_nm_1L_chr)
+  if(!dir.exists(destination_1L_chr))
+    dir.create(destination_1L_chr)
+  purrr::walk(file_nms_chr,
+              ~   write_new_files(destination_1L_chr,
+                                  source_paths_ls = list(paste0(rmds_dir_1L_chr,"/",.x)),
+                                  fl_nm_1L_chr = .x))
 }

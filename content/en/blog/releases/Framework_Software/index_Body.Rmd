@@ -3,7 +3,7 @@ output: html_document
 ---
 
 ```{r, include=FALSE}
-source("../Functions.R", local = knitr::knit_global())
+source("../../../../../R/Functions.R", local = knitr::knit_global())
 # or sys.source("your-script.R", envir = knitr::knit_global())
 ```
 
