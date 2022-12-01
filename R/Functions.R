@@ -38,32 +38,7 @@ make_modules_pks_chr <- function(what_chr = "all"){
                          c("bimp"))
   return(modules_pks_chr)
 } 
-make_network_plt <- function(dependencies_fn){
-  framework_pkgs_chr <- make_framework_pkgs_chr()
-  modules_pks_chr <- make_modules_pks_chr()
-  functions_xx <- rlang::exec(dependencies_fn,
-                              c(framework_pkgs_chr, modules_pks_chr))
-  nodes_tb <- functions_xx[[1]] 
-  nodes_tb$group <- c("ready4 Foundation",
-                      rep("ready4 authoring",length(framework_pkgs_chr)-1),
-                      rep("ready4 module",length(modules_pks_chr)),
-                      rep("Third party dependency",nrow(nodes_tb)-(length(framework_pkgs_chr)+length(modules_pks_chr))))
-  edges_tb <- functions_xx[[2]]
-  network_plt <- visNetwork::visNetwork(nodes_tb, edges_tb) %>%
-    visNetwork::visGroups(groupname = "ready4 foundation", color = "orange",  shadow = list(enabled = TRUE)) %>%
-    visNetwork::visGroups(groupname = "ready4 authoring", color = "darkred" ,  shadow = list(enabled = TRUE))  %>%
-    visNetwork::visGroups(groupname = "ready4 module", color = "green",  shadow = list(enabled = TRUE))  %>%
-    visNetwork::visGroups(groupname = "Third party dependency", color = "grey",  shadow = list(enabled = TRUE))  %>%
-    visNetwork::visEdges(arrows = "from") %>% 
-    visNetwork::visOptions(highlightNearest = TRUE, 
-                           selectedBy = "group",
-                           nodesIdSelection = list(enabled = TRUE,
-                                                   selected = "1")) %>% 
-    visNetwork::visInteraction(dragNodes = T) %>% 
-    visNetwork::visPhysics(solver = "repulsion", stabilization = list(enabled = FALSE, iterations = 5000, onlyDynamicEdges = FALSE)) %>%
-    visNetwork::visLegend()
-  return(network_plt)
-}
+
 make_code_releases_tbl <- function(repository_type_1L_chr = "Framework",
                             as_kable_1L_lgl = T,
                             brochure_repos_chr = character(0),
