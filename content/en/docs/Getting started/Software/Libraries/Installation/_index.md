@@ -20,11 +20,6 @@ If you wish to share data using ready4's data management tools you will need to 
 
 Holders of GitHub and Dataverse accounts will ensure that the machine onto which they install ready4 has securely stored their credentials for these services (specifically, values for GITHUB_PAT, DATAVERSE_KEY and DATAVERSE_SERVER tokens).
 
-## Disclaimer
-All ready4 software is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-Furthermore, no ready4 software is yet sufficiently well documented and tested to be given a production release. All ready4 software should therefore viewed as in-development pre-releases.
-
 ## Installation
 As ready4 R packages have yet to be submitted to CRAN as production releases, you will need to use a tool like devtools to assist with installing ready4 R packages. If you do not have devtools on your machine you can install it as follows:
 

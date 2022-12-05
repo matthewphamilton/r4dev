@@ -1,7 +1,7 @@
 
 ---
-title: "Applying computational models to data to generate insight"
-linkTitle: "Model applications"
+title: "Applying computational models to data to undertake analyses"
+linkTitle: "Analyses"
 date: 2017-01-05
 weight: 68
 description: >

@@ -122,11 +122,18 @@ write_blog_entries <- function(dir_path_1L_chr,
                                fl_nm_1L_chr){
   rmarkdown::render(paste0(dir_path_1L_chr,"/",fl_nm_1L_chr,"/index_Body.Rmd"), 
                     output_dir = paste0(dir_path_1L_chr,"/",fl_nm_1L_chr))
+  write_to_trim_html(paste0(dir_path_1L_chr,"/",fl_nm_1L_chr,"/index_Body.html"))
   rmarkdown::render(paste0(dir_path_1L_chr,"/",fl_nm_1L_chr,"/index.Rmd"), 
                     output_dir = paste0(dir_path_1L_chr,"/",fl_nm_1L_chr))
   unlink(paste0(dir_path_1L_chr,"/",fl_nm_1L_chr,"/index_Body.html"))
   if(file.exists(paste0(dir_path_1L_chr,"/",fl_nm_1L_chr,"/index.html")))
     unlink(paste0(dir_path_1L_chr,"/",fl_nm_1L_chr,"/index.html"))
+  file_chr <- readLines(paste0(dir_path_1L_chr,"/",fl_nm_1L_chr,"/index.md"))
+  file_chr <- file_chr[file_chr != "<div class='highlight'>"]
+  file_chr <- file_chr[c(1:(max(which(file_chr=="</div>"))-1),
+                         (max(which(file_chr=="</div>"))+1):length(file_chr))]
+  writeLines(file_chr,
+             paste0(dir_path_1L_chr,"/",fl_nm_1L_chr,"/index.md"))
 }
 write_new_credentials <- function(path_to_file_1L_chr,
                                   new_credentials_1L_chr,
@@ -148,4 +155,20 @@ write_to_copy_rmds <- function(dir_path_1L_chr,
               ~   write_new_files(destination_1L_chr,
                                   source_paths_ls = list(paste0(rmds_dir_1L_chr,"/",.x)),
                                   fl_nm_1L_chr = .x))
+}
+write_to_trim_html <- function(path_to_html_1L_chr){
+  # html_1L_chr <- xfun::file_string(path_to_html_1L_chr)
+  file_chr <- readLines(path_to_html_1L_chr)
+  file_chr <- file_chr[file_chr != "<!DOCTYPE html>"]
+  file_chr <- file_chr[c(1:(which(file_chr=="<head>")-1),
+                         (which(file_chr=="</head>")+1):length(file_chr))]
+  file_chr <- file_chr[file_chr != '<div class="container-fluid main-container">']
+  file_chr <- file_chr[c(1:(max(which(file_chr=="</div>"))-1),
+                         (max(which(file_chr=="</div>"))+1):length(file_chr))]
+  # file_chr <- file_chr[file_chr != "<div class='highlight'>"]
+  # file_chr <- file_chr[c(1:(max(which(file_chr=="</div>"))-1),
+  #                        (max(which(file_chr=="</div>"))+1):length(file_chr))]
+  writeLines(file_chr,
+             path_to_html_1L_chr)
+
 }

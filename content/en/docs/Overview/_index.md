@@ -11,7 +11,7 @@ description: >
 ready4 is a framework for developing open source computational models of the people, places, platforms and programs that shape young people's mental health. 
 
 ## What is a computational model?
- When we use the term computational model, we are typically referring to the part of a modelling project that is implemented in computer code.
+When we use the term computational model, we are typically referring to a simplified representation of a system of interest that is implemented in computer code.
 
 ## What do you mean by framework?
 

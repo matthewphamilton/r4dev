@@ -6,11 +6,13 @@ source("R/Functions.R")
 #                    rmds_dir_1L_chr = "R/RMD Templates")
 write_blog_entries(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Framework/Developing models",
                    fl_nm_1L_chr = "Helper functions")
+#
 purrr::walk(c("Module libraries",
               "Modules and sub-modules"
 ),
 ~write_blog_entries(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model modules/Finding modules",
                     fl_nm_1L_chr = .x))
+#
 purrr::walk(c("Framework_Software",
               "Framework_Taxonomies", 
               "Spring_To_Life_Modules"
