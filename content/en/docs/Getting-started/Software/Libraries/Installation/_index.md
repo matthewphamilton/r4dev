@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 linkTitle: "Installation"
-weight: 266
+weight: 268
 description: >
   Important information to review before installing and using our software
 ---
@@ -32,7 +32,7 @@ Once you have devtools installed, you can now install the ready4 framework libra
 devtools::install_github("ready4-dev/ready4")
 ```
 
-If you are planning on writing new ready4 computational model modules (only recommended for data scientists), then you can install the relevant ready4 authoring tools (otherwise skip this step).
+If you are planning on writing new ready4 computational model modules (only recommended for coders), then you can install the relevant ready4 authoring tools (otherwise skip this step).
 
 ```r
 devtools::install_github("ready4-dev/ready4pack")

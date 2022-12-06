@@ -3,7 +3,7 @@ output: html_document
 ---
 
 ```{r, include=FALSE}
-source("../../../../../../R/Functions.R", local = knitr::knit_global())
+source("../../../../../../../../../R/Functions.R", local = knitr::knit_global())
 ```
 
 You can search for libraries of ready4 modules using tools from the ready4 R package. 

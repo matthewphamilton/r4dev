@@ -31,6 +31,6 @@ We developed ready4 to help us implement a computational model of youth mental h
 
 ## Where should I go next?
 
-We'd recommend reading the documentation in the order in which sections appear in the table of contents (so go next to [Getting Started](/docs/getting-started/), then to [Examples](/docs/examples/) and so on). The relevance to you of some parts of the documentation will depend on whether you see yourself primarily as a data scientist (you write code for a living), a modeller (you build model based decision aids) or a planner (you work in policy development or service planning). For this reason some sections of the documentation are labelled as being written for a specific type of reader. 
+We'd recommend reading the documentation in the order in which sections appear in the table of contents (so go next to [Getting Started](/docs/getting-started/), then to [Examples](/docs/examples/) and so on). The relevance to you of some parts of the documentation will depend on whether you see yourself primarily as a coder (you write code for a living), a modeller (you develop models to undertake decision analysis) or a planner (you work in policy development or service planning). For this reason some sections of the documentation are labelled as being written for a specific type of reader. 
 
 

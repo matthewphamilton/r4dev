@@ -9,7 +9,7 @@ description: >
 ## Computational Modelling Project
 In the context we use it, a computational modelling project involves the three steps of:
 
-- Developing a *model*;
+- Developing a computational *model*;
 
 - Adding context-specific *data* to that computational model; and
 
@@ -18,7 +18,7 @@ In the context we use it, a computational modelling project involves the three s
 ## Model
 By "model", we mean a simplified representation of a system of interest. We also mean that a model is:
 
-- abstract and general (i.e. largely free of data that is assumption- or context- specific) and
+- abstract and general (i.e. largely free of non-modifiable data, including numeric values, that are assumption- or context- specific) and
 - an analytic tool, not an analysis (i.e. a model can be used to help undertake an analysis, it is not the analysis itself).
 
 If a model is developed primarily to inform a decision or set of decisions (e.g. relating to youth mental health policy and system design) it can be called a *decision model*. 

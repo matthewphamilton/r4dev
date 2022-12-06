@@ -4,14 +4,19 @@ source("R/Functions.R")
 # write_to_copy_rmds(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Framework/Developing models",
 #                    fl_nm_1L_chr = "Helper functions",
 #                    rmds_dir_1L_chr = "R/RMD Templates")
-write_blog_entries(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Framework/Developing models",
-                   fl_nm_1L_chr = "Helper functions")
+# write_blog_entries(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Framework/Developing-models",
+#                    fl_nm_1L_chr = "Helper functions")
+write_blog_entries(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Types",
+                   fl_nm_1L_chr = "Framework")
+write_blog_entries(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Types",
+                  fl_nm_1L_chr = "Module")
 #
-purrr::walk(c("Module libraries",
-              "Modules and sub-modules"
+purrr::walk(c("Module-libraries",
+              "Modules-and-sub-modules"
 ),
-~write_blog_entries(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model modules/Finding modules",
+~write_blog_entries(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model-modules/Finding-modules",
                     fl_nm_1L_chr = .x))
+rmarkdown::render("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/blog/news/2022-12-05-test/index.en.Rmarkdown")
 #
 purrr::walk(c("Framework_Software",
               "Framework_Taxonomies", 
