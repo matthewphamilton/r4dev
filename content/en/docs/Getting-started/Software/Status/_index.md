@@ -1,5 +1,5 @@
 ---
-title: "Understanding the release status of ready4 software"
+title: "Understanding ready4 software release statuses"
 linkTitle: "Release statuses"
 weight: 261
 description: >

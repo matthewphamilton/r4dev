@@ -6,10 +6,15 @@ source("R/Functions.R")
 #                    rmds_dir_1L_chr = "R/RMD Templates")
 # write_blog_entries(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Framework/Developing-models",
 #                    fl_nm_1L_chr = "Helper functions")
+## Render itemisation of currently available ready4 libraries
 write_blog_entries(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Types",
                    fl_nm_1L_chr = "Framework")
 write_blog_entries(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Types",
                   fl_nm_1L_chr = "Module")
+# Render installation instructions of currenly available ready4 libraries
+rmarkdown::render("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Installation/Foundation/index.en.Rmarkdown")
+rmarkdown::render("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Installation/Authoring-Tools/index.en.Rmarkdown")
+rmarkdown::render("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Installation/Modules/index.en.Rmarkdown")
 #
 purrr::walk(c("Module-libraries",
               "Modules-and-sub-modules"

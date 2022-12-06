@@ -1,8 +1,8 @@
 ---
-title: "Software tools"
+title: "The ready4 suite of software"
 linkTitle: "Software"
 weight: 26
 description: >
-  ready4 includes a range of different software types and statuses, each with its own distinctive purpose.
+  ready4 includes a range of different types of software, each with its own distinctive purpose and release status.
 ---
 

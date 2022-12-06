@@ -2,7 +2,7 @@
 ---
 title: "Examples"
 linkTitle: "Examples"
-weight: 30
+weight: 18
 date: 2017-01-05
 description: >
   See ready4 in action!

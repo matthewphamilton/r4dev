@@ -1,15 +1,18 @@
 ---
 title: test
-author: Package Build
-date: '2022-12-05'
+author: Matthew Hamilton
+date: "`r Sys.Date()`"
+description: DESCRIPTION GOES HERE
 slug: test
-categories: []
-tags: []
+categories: 
+- Documentation
+tags: 
+- Installing libraries
 output: hugodown::md_document
 ---
 
 ```{r, include=FALSE}
-source("../../../../../R/Functions.R", local = knitr::knit_global())
+source("../../../../../../../../../R/Functions.R", local = knitr::knit_global())
 ```
 
 You can search for libraries of ready4 modules using tools from the ready4 R package. 

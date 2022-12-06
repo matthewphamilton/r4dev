@@ -1,5 +1,5 @@
 ---
-title: "Terms of use for ready4"
+title: "Terms of use"
 linkTitle: "Terms"
 weight: 266
 description: >

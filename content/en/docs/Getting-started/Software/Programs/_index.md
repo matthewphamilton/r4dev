@@ -3,7 +3,7 @@ title: "Programs and subroutines"
 linkTitle: "Programs"
 weight: 262
 description: >
-  Software to apply computational models to data and to report the resulting analyses are released as programs or sub-routines.
+  Programs or sub-routines are used to apply computational models to data and to report the resulting analyses.
 ---
 
 ## Language and output formats

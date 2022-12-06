@@ -3,6 +3,6 @@ title: "Applications"
 linkTitle: "Apps"
 weight: 264
 description: >
-  Decision aids with simple user interfaces.
+  Applications make it easier for non-technical users to explore and use our tools.
 ---
 

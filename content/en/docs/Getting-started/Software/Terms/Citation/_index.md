@@ -3,7 +3,7 @@ title: "Citing ready4"
 linkTitle: "Citation"
 weight: 268
 description: >
-  ready4 is easy to appropriately cite.
+  If you find ready4 useful, please cite it appropriately - it is easy to do!
 ---
 
 To make it easier to cite our software, each software item bundle includes a CITATION.cff file. Inclusion of this file means that the repositories storing our software can generate appropriate citations in the format of most relevance to you. 
