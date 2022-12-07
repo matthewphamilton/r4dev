@@ -2,7 +2,7 @@
 title: Installing ready4 computational model modules
 linkTitle: "Modules"
 author: Matthew Hamilton
-date: "2022-12-06"
+date: "2022-12-07"
 description: To implement a modelling analysis with ready4 you need to install computational model modules.
 slug: Modules
 weight: 3
@@ -12,11 +12,11 @@ tags:
 - Installing libraries
 - Modules
 output: hugodown::md_document
-rmd_hash: 1232f722cd5d4e98
+rmd_hash: 7c165b2e2020bbec
 
 ---
 
-If you plan on using existing ready4 modules for a modelling project, you can review currently available modules, before installing the libraries that are relevant to your project.
+If you plan on using existing ready4 modules for a modelling project, you can review [currently available modules](../../types/module), before installing the libraries that are relevant to your project.
 
 The command to install each ready4 module takes the following format.
 
@@ -34,11 +34,15 @@ For example, if you are planning to predict health utility using some of the map
 
 </div>
 
+## Configuration
+
 A small number of ready4 modules require that you configure some of the dependencies installed with them before they can be used. In particular:
 
--   If you are using modules from the [TTU](https://ready4-dev.github.io/TTU/) package to undertake a utility mapping study, you will need to have both installed and configured the cmdstanr R package as per the instructions on [that package's documentation website](https://mc-stan.org/cmdstanr/)
+-   if you are using modules from the [TTU](https://ready4-dev.github.io/TTU/) package to undertake a utility mapping study, you will need to have both installed and configured the cmdstanr R package as per the instructions on [that package's documentation website](https://mc-stan.org/cmdstanr/); and
 
--   If you are using the [mychoice](https://ready4-dev.github.io/mychoice/) package to undertake a discrete choice experiment study and are using a Mac, you need to ensure that you have a Fortran compiler installed. Some relevant advice on this: <https://mac.r-project.org/tools/>
+-   if you are using the [mychoice](https://ready4-dev.github.io/mychoice/) package to undertake a discrete choice experiment study and are using a Mac, you need to ensure that you have a Fortran compiler installed. Some relevant advice on this: <https://mac.r-project.org/tools/> .
 
-Before you apply ready4 modules to your own project, you should make sure you can run some or all of the example code included in relevant library vignette articles. The package website URL takes the form of `https://ready4-dev.github.io/PACKAGE_NAME/articles/)` (so the vignettes for the youthvars package are available at website is at <https://ready4-dev.github.io/youthvars/articles/>).
+## Try it out!
+
+Before you apply ready4 modules to your own project, you should make sure you can run some or all of the example code included in relevant library vignette articles. The package website URL takes the form of `https://ready4-dev.github.io/PACKAGE_NAME/articles/` (e.g. the vignettes for the youthvars package are available at <https://ready4-dev.github.io/youthvars/articles/>).
 

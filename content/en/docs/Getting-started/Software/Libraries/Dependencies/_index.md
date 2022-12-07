@@ -13,7 +13,7 @@ description: >
   Search for ready4 library and function dependencies using our interactive app.
 ---
 
-Most of the "under the hood" work performed by ready4 software is implemented by brief multi-purpose algorithms called functions. These in turn are powered by software written by contributors to other third party open-source projects. Using the DependenciesGraphs R package, we have created a Shiny app to:
+As an open-source project, ready4 depends on the software created and shared by others. Using the [DependenciesGraphs R package](http://datastorm-open.github.io/DependenciesGraphs/), we have created the Shiny app below to:
 
 - explore the inter-dependencies between ready4 libraries;
 - highlight how our software depends on other R packages;

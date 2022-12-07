@@ -13,7 +13,9 @@ write_blog_entries(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/
                   fl_nm_1L_chr = "Module")
 # Render installation instructions of currenly available ready4 libraries
 rmarkdown::render("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Installation/Foundation/index.en.Rmarkdown")
-rmarkdown::render("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Installation/Authoring-Tools/index.en.Rmarkdown")
+rmarkdown::render("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Installation/Authoring-Tools/Reporting/index.en.Rmarkdown")
+rmarkdown::render("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Installation/Authoring-Tools/Datasets/index.en.Rmarkdown")
+rmarkdown::render("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Installation/Authoring-Tools/Code-Development/index.en.Rmarkdown")
 rmarkdown::render("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Installation/Modules/index.en.Rmarkdown")
 #
 purrr::walk(c("Module-libraries",
