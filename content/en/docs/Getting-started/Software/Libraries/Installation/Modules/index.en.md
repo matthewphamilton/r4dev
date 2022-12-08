@@ -2,7 +2,7 @@
 title: Installing ready4 computational model modules
 linkTitle: "Modules"
 author: Matthew Hamilton
-date: "2022-12-07"
+date: "2022-12-08"
 description: To implement a modelling analysis with ready4 you need to install computational model modules.
 slug: Modules
 weight: 3
@@ -12,11 +12,17 @@ tags:
 - Installing libraries
 - Modules
 output: hugodown::md_document
-rmd_hash: 7c165b2e2020bbec
+rmd_hash: 7dbe818419869057
 
 ---
 
-If you plan on using existing ready4 modules for a modelling project, you can review [currently available modules](../../types/module), before installing the libraries that are relevant to your project.
+## Before you install
+
+If you plan on using existing ready4 modules for a modelling project, you can review [currently available module libraries](../../types/module), to identify which libraries are relevant to your project.
+
+**However, please note that no ready4 module library is yet available as a [production release](../../../../status/production-releases/). You should therefore understand the limitations of using ready4 software [development releases](../../../../status/development-releases/) before you make the decision to install this software.**
+
+## Installation
 
 The command to install each ready4 module takes the following format.
 
@@ -36,7 +42,7 @@ For example, if you are planning to predict health utility using some of the map
 
 ## Configuration
 
-A small number of ready4 modules require that you configure some of the dependencies installed with them before they can be used. In particular:
+A small number of ready4 modules require that you configure some of the [dependencies](../../dependencies/) installed with them before they can be used. In particular:
 
 -   if you are using modules from the [TTU](https://ready4-dev.github.io/TTU/) package to undertake a utility mapping study, you will need to have both installed and configured the cmdstanr R package as per the instructions on [that package's documentation website](https://mc-stan.org/cmdstanr/); and
 

@@ -1,8 +1,8 @@
 ---
-title: "Libraries of computational model modules"
+title: "Model module libraries"
 linkTitle: "Module"
-date: "2022-12-06"
-description: "There are three types of computational model module libraries - those for describing input data, developing models and maing predictions."
+date: "2022-12-08"
+description: "There are three types of model module libraries - those for describing input data, developing models and maing predictions."
 weight: 2662
 categories: 
 - Documentation
@@ -10,7 +10,7 @@ tags:
 - Modules
 - R packages
 output: hugodown::md_document
-rmd_hash: d299f0a912e49528
+rmd_hash: 9a04b60f4a69e91d
 
 ---
 

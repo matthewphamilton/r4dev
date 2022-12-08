@@ -1,7 +1,7 @@
 ---
 title: "Archived releases of ready4 software"
 linkTitle: "Archived"
-weight: 2612
+weight: 2614
 description: >
   Archived releases are permanent, uniquely identified records of key project milestones.
 ---

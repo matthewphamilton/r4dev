@@ -2,9 +2,9 @@
 title: Installing tools for authoring computational models
 linkTitle: "Models"
 author: Matthew Hamilton
-date: "2022-12-07"
+date: "2022-12-08"
 description: Instructions for installing the ready4class, ready4fun and ready4pack libraries.
-weight: 3
+weight: 1
 categories: 
 - Documentation
 tags: 
@@ -16,7 +16,7 @@ tags:
 - ready4fun
 - ready4pack
 output: hugodown::md_document
-rmd_hash: 6df0c9cc9275d041
+rmd_hash: 2d69d57721c56f8e
 
 ---
 
@@ -40,9 +40,9 @@ As ready4class and ready4fun are bundled as [dependencies](../../../dependencies
 
 To use these computational model authoring tools, you will need to have set-up and appropriately configured your own accounts in:
 
--   [GitHub](https://github.com) (you will need write permissions to a GitHub organisation and enable GitHub actions and GitHub pages support for the repositories you create in that organisation);
--   [Zenodo](https://zenodo.org) (you will need to have linked each GitHub repository rused for your ready4 projects to your Zenodo account); and
--   [Codecov](https://about.codecov.io) (linked to your GitHub organisation)
+-   [GitHub](https://github.com) (you will need write permissions to a GitHub organisation and to then enable GitHub actions and GitHub pages support for the repositories you create in that organisation);
+-   [Zenodo](https://zenodo.org) (you will need to have linked each GitHub repository used for your ready4 projects to your Zenodo account); and
+-   [Codecov](https://about.codecov.io) (linked to your GitHub organisation).
 
 The machine onto which you install ready4pack will also need to be securely storing your GitHub credentials (i.e. the value for the GITHUB_PAT token).
 

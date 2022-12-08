@@ -2,9 +2,9 @@
 title: Installing tools for authoring reproducible analyses
 linkTitle: "Analyses"
 author: Matthew Hamilton
-date: "2022-12-07"
+date: "2022-12-08"
 description: Instructions for installing the ready4show library.
-weight: 1
+weight: 3
 categories: 
 - Documentation
 tags: 
@@ -13,7 +13,7 @@ tags:
 - Framework authoring
 - ready4show
 output: hugodown::md_document
-rmd_hash: 0bd7d8325c2eba61
+rmd_hash: 9604759cc47025bd
 
 ---
 
@@ -23,7 +23,7 @@ If you are a [coder](../../../../../users/coder) or [modeller](../../../../../us
 
 **However, please note that ready4show is not yet available as a [production release](../../../../status/production-releases/). You should therefore understand the limitations of using ready4 software [development releases](../../../../status/development-releases/) before you make the decision to install this software.**
 
-If you have installed other ready4 libraries, then ready4show may have already been installed as a [dependency](../../../dependencies/)). If you can run the following command without producing an error message, then you already have it.
+If you have installed other ready4 libraries, then ready4show may have already been installed as a [dependency](../../../dependencies/). If you can run the following command without producing an error message, then you already have it.
 
 <div class="highlight">
 

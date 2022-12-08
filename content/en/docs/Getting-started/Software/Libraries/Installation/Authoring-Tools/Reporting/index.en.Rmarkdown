@@ -4,7 +4,7 @@ linkTitle: "Analyses"
 author: Matthew Hamilton
 date: "`r Sys.Date()`"
 description: Instructions for installing the ready4show library.
-weight: 1
+weight: 3
 categories: 
 - Documentation
 tags: 

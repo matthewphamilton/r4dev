@@ -1,6 +1,103 @@
 library(ready4)
 library(tidyRSS)
-library(zen4R) # https://cran.r-project.org/web/packages/zen4R/vignettes/zen4R.html#package_overview
+#library(zen4R) # https://cran.r-project.org/web/packages/zen4R/vignettes/zen4R.html#package_overview
+make_code_releases_tbl <- function(repository_type_1L_chr = "Framework",
+                                   as_kable_1L_lgl = T,
+                                   brochure_repos_chr = character(0),
+                                   exclude_chr = character(0),
+                                   format_1L_chr = "%d-%b-%Y",
+                                   framework_repos_chr = character(0),
+                                   model_repos_chr = character(0),
+                                   program_repos_chr = character(0),
+                                   organisation_1L_chr = "ready4-dev",
+                                   repositories_chr = character(0),
+                                   subroutine_repos_chr = character(0),
+                                   tidy_desc_1L_lgl = T,
+                                   ...){
+  if(identical(brochure_repos_chr,character(0))){
+    brochure_repos_chr <- "ready4web"
+  }
+  if(identical(exclude_chr,character(0))){
+    exclude_chr <- "rebuild"
+  }
+  if(identical(framework_repos_chr,character(0))){
+    framework_repos_chr <- make_framework_pkgs_chr()
+  }
+  if(identical(model_repos_chr,character(0))){
+    model_repos_chr <- make_modules_pks_chr(what_chr = "all")
+  }
+  if(identical(subroutine_repos_chr,character(0))){
+    subroutine_repos_chr <- c( "ttu_mdl_ctlg","ms_tmpl","ttu_lng_ss")
+  }
+  if(identical(program_repos_chr,character(0))){
+    program_repos_chr <- setdiff(natmanager::list_repo(organisation_1L_chr),
+                                 c(brochure_repos_chr, exclude_chr, framework_repos_chr, model_repos_chr, subroutine_repos_chr))
+  }
+  if(identical(repositories_chr,character(0))){
+    if(repository_type_1L_chr == "Framework"){
+      repositories_chr <- framework_repos_chr 
+    }
+    if(repository_type_1L_chr == "Module"){
+      repositories_chr <- model_repos_chr 
+    }
+    if(repository_type_1L_chr %in% c("Program","Subroutine","Program_and_Subroutine")){
+      if(repository_type_1L_chr == "Subroutine"){
+        repositories_chr <- subroutine_repos_chr
+      }
+      if(repository_type_1L_chr == "Program"){
+        repositories_chr <- program_repos_chr
+      }
+      if(repository_type_1L_chr == "Program_and_Subroutine"){
+        repositories_chr <- c(program_repos_chr, subroutine_repos_chr)
+      }
+    }else{
+      repository_type_1L_chr <- "Package"
+    }
+  }
+  releases_xx <- repositories_chr %>%
+    purrr::map_dfr(~tidyRSS::tidyfeed(paste0("https://github.com/",organisation_1L_chr,"/",.x,"/releases.atom"))) %>%
+    dplyr::arrange(dplyr::desc(entry_last_updated)) %>%
+    dplyr::select(feed_title, entry_title, entry_last_updated, entry_content, entry_link) %>%
+    dplyr::mutate(feed_title = feed_title %>% stringr::str_remove_all("Release notes from ")) %>%
+    dplyr::rename(!!rlang::sym(repository_type_1L_chr) := feed_title,
+                  Release = entry_title,
+                  Date = entry_last_updated,
+                  Description = entry_content,
+                  URL = entry_link
+    ) %>%
+    dplyr::filter(Release != "Documentation_0.0")
+  if(tidy_desc_1L_lgl){
+    releases_xx <- releases_xx %>%
+      dplyr::mutate(Description = Description %>% purrr::map2_chr(Program,
+                                                                  ~ stringr::str_remove(.x,paste0(.y,": "))))
+  }
+  if(as_kable_1L_lgl){
+    releases_xx <- releases_xx  %>% 
+      dplyr::mutate(Release = Release %>% stringr::str_remove_all("Release ") %>%
+                      stringr::str_remove_all("v") %>%
+                      kableExtra::cell_spec(format = "html", link = URL),
+                    Date = Date %>% format.Date(format_1L_chr) %>% as.character()) %>%
+      # dplyr::mutate(Release = cell_spec(row.names(.), "html", link = dt_url)) %>% 
+      dplyr::select(Date, !!rlang::sym(repository_type_1L_chr), Release, Description#dplyr::everything()
+      ) 
+    if(repository_type_1L_chr %in% c("Package","Module","Framework")){
+      logos_chr <- purrr::map_chr(releases_xx %>% dplyr::pull(repository_type_1L_chr), 
+                                  ~paste0("https://ready4-dev.github.io/", .x, "/logo.png"))
+      releases_xx <- releases_xx %>%
+        dplyr::mutate(!!rlang::sym(repository_type_1L_chr) := "")
+      indx_1L_int <-which(names(releases_xx) %in% c("Package","Module","Framework"))
+    }
+    releases_xx <- releases_xx %>%
+      kableExtra::kable("html", escape = FALSE) %>% # kableExtra::kbl() %>%
+      kableExtra::kable_styling(...)   # kableExtra::kable_styling(...) %>% 
+    if(repository_type_1L_chr %in% c("Package","Module","Framework"))
+      releases_xx <- releases_xx %>%
+      kableExtra::column_spec(indx_1L_int, 
+                              image = kableExtra::spec_image(logos_chr, 
+                                                             height = 160, width = 160)) 
+  }
+  return(releases_xx)
+}
 make_ds_releases_tbl <- function(ds_dois_chr,
                              format_1L_chr = "%d-%b-%Y",
                              server_1L_chr = "dataverse.harvard.edu"){
@@ -103,8 +200,6 @@ make_libraries_tb <- function (include_1L_chr = "modules",
                                         by = "pt_ns_chr")
   return(pkg_extensions_tb)
 }
-
-
 make_modules_pks_chr <- function(what_chr = "all"){
   modules_pks_chr <- character(0)
   if("people" %in% what_chr | "all" %in% what_chr)
@@ -121,85 +216,53 @@ make_modules_pks_chr <- function(what_chr = "all"){
                          c("bimp"))
   return(modules_pks_chr)
 } 
-
-make_code_releases_tbl <- function(repository_type_1L_chr = "Framework",
-                            as_kable_1L_lgl = T,
-                            brochure_repos_chr = character(0),
-                            exclude_chr = character(0),
-                            format_1L_chr = "%d-%b-%Y",
-                            framework_repos_chr = character(0),
-                            model_repos_chr = character(0),
-                            program_repos_chr = character(0),
-                            organisation_1L_chr = "ready4-dev",
-                            repositories_chr = character(0),
-                            ...){
-  if(identical(brochure_repos_chr,character(0))){
-    brochure_repos_chr <- "ready4web"
-  }
-  if(identical(exclude_chr,character(0))){
-    exclude_chr <- "rebuild"
-  }
-  if(identical(framework_repos_chr,character(0))){
-    framework_repos_chr <- make_framework_pkgs_chr()
-  }
-  if(identical(model_repos_chr,character(0))){
-    model_repos_chr <- make_modules_pks_chr(what_chr = "all")
-  }
-  if(identical(program_repos_chr,character(0))){
-    program_repos_chr <- setdiff(natmanager::list_repo(organisation_1L_chr),
-                                 c(brochure_repos_chr, exclude_chr, framework_repos_chr, model_repos_chr))
-  }
-  if(identical(repositories_chr,character(0))){
-    if(repository_type_1L_chr == "Framework"){
-      repositories_chr <- framework_repos_chr 
-    }
-    if(repository_type_1L_chr == "Module"){
-      repositories_chr <- model_repos_chr 
-    }
-    if(repository_type_1L_chr == "Program"){
-      repositories_chr <- program_repos_chr
-    }else{
-      repository_type_1L_chr <- "Package"
-    }
-  }
-  releases_xx <- repositories_chr %>%
-    purrr::map_dfr(~tidyRSS::tidyfeed(paste0("https://github.com/",organisation_1L_chr,"/",.x,"/releases.atom"))) %>%
-    dplyr::arrange(dplyr::desc(entry_last_updated)) %>%
-    dplyr::select(feed_title, entry_title, entry_last_updated, entry_content, entry_link) %>%
-    dplyr::mutate(feed_title = feed_title %>% stringr::str_remove_all("Release notes from ")) %>%
-    dplyr::rename(!!rlang::sym(repository_type_1L_chr) := feed_title,
-                  Release = entry_title,
-                  Date = entry_last_updated,
-                  Description = entry_content,
-                  URL = entry_link
-    ) %>%
-    dplyr::filter(Release != "Documentation_0.0")
+make_programs_tbl <- function(what_1L_chr = "Program",
+                              as_kable_1L_lgl = F,
+                              exclude_chr = "dce_sa_cards",
+                              format_1L_chr = "%d-%b-%Y",
+                              tidy_desc_1L_lgl = T,
+                              zenodo_1L_chr = "ready4",
+                              ...){
+  programs_xx <- make_code_releases_tbl(what_1L_chr,
+                                        as_kable_1L_lgl = F,
+                                        exclude_chr = exclude_chr,
+                                        tidy_desc_1L_lgl = F) %>% 
+    dplyr::group_by(!!rlang::sym(what_1L_chr)) %>% 
+    dplyr::filter(dplyr::row_number()==1) %>% 
+    dplyr::arrange(!!rlang::sym(what_1L_chr)) %>% 
+    dplyr::ungroup()
+  zenodo_records_ls <- zenodo$getRecords(q = paste0("communities:(",zenodo_1L_chr,")"))
+  descriptions_chr <- zenodo_records_ls %>% 
+    purrr::map_chr(~rvest::html_text(rvest::read_html(.x$metadata$description %>% 
+                                                        stringr::str_remove_all("&nbsp;"))) %>% 
+                     stringr::str_replace_all("[\r\n]" , ""))
+  indices_int <- programs_xx$Description %>% purrr::map_int(~which(.x == descriptions_chr))
+  programs_xx$DOI <- indices_int %>%
+    purrr::map_chr(~zenodo_records_ls[[.x]]$links$conceptdoi)
+  programs_xx$GitHub <- gsub("/releases/.*","",programs_xx$URL)
+  if(tidy_desc_1L_lgl)
+    programs_xx <- programs_xx %>%
+    dplyr::mutate(Description = Description %>% 
+                    purrr::map2_chr(!!rlang::sym(what_1L_chr),
+                                    ~ stringr::str_remove(.x,paste0(.y,": "))))
   if(as_kable_1L_lgl){
-    releases_xx <- releases_xx  %>% 
+    programs_xx <- programs_xx  %>% 
       dplyr::mutate(Release = Release %>% stringr::str_remove_all("Release ") %>%
-                      stringr::str_remove_all("v") %>%
-                      kableExtra::cell_spec(format = "html", link = URL),
+                      stringr::str_remove_all("v"),
                     Date = Date %>% format.Date(format_1L_chr) %>% as.character()) %>%
-      # dplyr::mutate(Release = cell_spec(row.names(.), "html", link = dt_url)) %>% 
-      dplyr::select(Date, !!rlang::sym(repository_type_1L_chr), Release, Description#dplyr::everything()
-                    ) 
-    if(repository_type_1L_chr %in% c("Package","Module","Framework")){
-      logos_chr <- purrr::map_chr(releases_xx %>% dplyr::pull(repository_type_1L_chr), 
-                                  ~paste0("https://ready4-dev.github.io/", .x, "/logo.png"))
-      releases_xx <- releases_xx %>%
-        dplyr::mutate(!!rlang::sym(repository_type_1L_chr) := "")
-      indx_1L_int <-which(names(releases_xx) %in% c("Package","Module","Framework"))
-    }
-    releases_xx <- releases_xx %>%
-     kableExtra::kable("html", escape = FALSE) %>% # kableExtra::kbl() %>%
-      kableExtra::kable_styling(...)   # kableExtra::kable_styling(...) %>% 
-    if(repository_type_1L_chr %in% c("Package","Module","Framework"))
-      releases_xx <- releases_xx %>%
-      kableExtra::column_spec(indx_1L_int, 
-                              image = kableExtra::spec_image(logos_chr, 
-                                                             height = 160, width = 160)) 
+      dplyr::mutate(Source = purrr::pmap(list(GitHub, DOI),
+                                         ~{
+                                           kableExtra::cell_spec(c("Dev", "Archive"), 
+                                                                 format = "html", 
+                                                                 link = c(..1, ..2))
+                                         }
+      )) %>%
+      dplyr::select(!!rlang::sym(what_1L_chr), Release, Date, Description, Source) 
+    programs_xx <- programs_xx %>%
+      kableExtra::kable("html", escape = FALSE) %>%  
+      kableExtra::kable_styling(...)   
   }
-  return(releases_xx)
+  return(programs_xx)
 }
 write_blog_entries <- function(dir_path_1L_chr,
                                fl_nm_1L_chr){
@@ -238,6 +301,22 @@ write_to_copy_rmds <- function(dir_path_1L_chr,
               ~   write_new_files(destination_1L_chr,
                                   source_paths_ls = list(paste0(rmds_dir_1L_chr,"/",.x)),
                                   fl_nm_1L_chr = .x))
+}
+write_to_render_post <- function(included_dirs_chr,
+                                 path_to_main_dir_1L_chr,
+                                 
+                                 is_RMD_1L_lgl = T){
+  included_dirs_chr %>%
+    purrr::walk(~{
+      if(is_RMD_1L_lgl){
+        write_blog_entries(dir_path_1L_chr = path_to_main_dir_1L_chr,
+                           fl_nm_1L_chr = .x)
+      }else{
+        rmarkdown::render(paste0(path_to_main_dir_1L_chr,
+                                 "/",
+                                 .x,
+                                 "/index.en.Rmarkdown"))
+      }})
 }
 write_to_trim_html <- function(path_to_html_1L_chr){
   # html_1L_chr <- xfun::file_string(path_to_html_1L_chr)
