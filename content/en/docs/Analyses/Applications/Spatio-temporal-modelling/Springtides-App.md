@@ -1,5 +1,5 @@
 ---
-title: "User interface for the Springtides model"
+title: "User interface for a spatial epidemiology model"
 linkTitle: "User Interface"
 date: 2017-01-05
 tags:
@@ -12,7 +12,7 @@ categories:
 - Documentation
 weight: 97
 description: >
- We previously developed a user interface for our Springtides model.
+ We previously developed a user interface for the epidemiology modules of our Springtides model of places.
 ---
 
 {{% pageinfo %}}

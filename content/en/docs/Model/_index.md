@@ -1,6 +1,6 @@
 
 ---
-title: "A modular computational model of youth mental health"
+title: "A modular computational model"
 linkTitle: "Model"
 date: 2017-01-05
 weight: 66
