@@ -10,4 +10,4 @@ Currently, all ready4 software is written in [R](https://www.r-project.org) (for
 
 - to use ready4 libraries and programs / subroutines you must have an up to date version of R installed on your machine and it is recommended that you install the [RStudio IDE](https://posit.co/products/open-source/rstudio/); and
 
-- the requirements for using ready4 applications depend on whether you are running a version we have deployed to the web (in which case you just need a [supported browser](https://support.posit.co/hc/en-us/articles/221311328-Supported-browsers-for-Shiny-Server)) or whether you are running the app on your local machine (in which case you will need both R and RStudio).
+- the requirements for using ready4 user interfaces depend on whether you are running a version we have deployed to the web (in which case you just need a [supported browser](https://support.posit.co/hc/en-us/articles/221311328-Supported-browsers-for-Shiny-Server)) or whether you are running the app on your local machine (in which case you will need both R and RStudio).

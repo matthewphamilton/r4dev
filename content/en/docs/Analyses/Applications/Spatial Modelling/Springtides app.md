@@ -1,0 +1,24 @@
+---
+title: "User interface for the Springtides model"
+linkTitle: "User Interface"
+date: 2017-01-05
+tags:
+- Choice modelling
+- Discrete choice experiments
+- Model - People
+- mychoice
+categories:
+- Analysis programs
+- Documentation
+weight: 97
+description: >
+ We previously developed a user interface for our Springtides model.
+---
+
+{{% pageinfo %}}
+**The Springtides app is currently deprecated,** pending a new version to be released in 2023. We don't encourage use of this app as the input data is dated and the current web based version often fails if generating large / or customised geometries. The app is reproduced below purely for illustrative purposes. If you try it out, we recommend that you **only select the default type of geometry ("Select from a menu of existing options")** as the web version is not configured to render all bar the simplest custom geometries. To use the app you need to use confirm your selections for in the "Where" tab, before confirming selections from the "What" box, then from the "Who" box and finally the "When" box before an orange box appears that gives you the option to generate a report. When trying this app out, we recommend keeping the number of simulations low (e.g. 10) as it takes several minutes for even small numbers of runs to execute.
+
+{{% /pageinfo %}}
+
+
+{{< iframe src = "https://orygen-au.shinyapps.io/springtides/" >}}
