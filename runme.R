@@ -14,8 +14,9 @@ c("Foundation",
   "Modules") %>%
 write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Installation",
                      is_RMD_1L_lgl = F)
-# c("Modules-and-sub-modules") %>%
-#   write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model-modules/Finding-modules")
+c("Modularity","Paradigm", "Syntax") %>%
+  write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Framework",
+                     is_RMD_1L_lgl = F)
 write_to_render_post("Finding-Modules",
                      path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model",
                      is_RMD_1L_lgl = F)

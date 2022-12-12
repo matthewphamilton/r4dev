@@ -1,6 +1,6 @@
 ---
-title: "Subroutines for authoring analysis reports"
-linkTitle: "Reporting"
+title: "Subroutine templates for authoring analysis reports"
+linkTitle: "Templates"
 date: 2017-01-05
 weight: 68
 description: >
