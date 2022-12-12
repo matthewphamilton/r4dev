@@ -1,8 +1,8 @@
 ---
-title: Installing the ready4 framework foundation library
+title: Installing the framework foundation
 linkTitle: "Foundation"
 author: Matthew Hamilton
-date: "2022-12-08"
+date: "2022-12-12"
 description: The ready4 framework foundation is the first ready4 library you should install.
 slug: Foundation
 weight: 1

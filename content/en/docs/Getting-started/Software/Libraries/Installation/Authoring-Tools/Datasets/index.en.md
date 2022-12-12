@@ -1,8 +1,8 @@
 ---
-title: Installing tools for authoring and managing model datasets
+title: Installing dataset tools
 linkTitle: "Datasets"
 author: Matthew Hamilton
-date: "2022-12-08"
+date: "2022-12-12"
 description: Instructions for installing the ready4use library.
 weight: 2
 categories: 

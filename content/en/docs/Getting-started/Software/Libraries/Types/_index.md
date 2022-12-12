@@ -1,5 +1,5 @@
 ---
-title: "Types of ready4 library"
+title: "Code library types"
 linkTitle: "Types"
 weight: 264
 description: >

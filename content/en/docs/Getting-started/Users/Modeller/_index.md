@@ -1,5 +1,5 @@
 ---
-title: "ready4 users who are modellers"
+title: "Modellers"
 linkTitle: "Modellers"
 weight: 24
 description: >

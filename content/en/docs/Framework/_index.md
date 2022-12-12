@@ -5,7 +5,7 @@ linkTitle: "Framework"
 weight: 30
 date: 2017-01-05
 description: >
-  ready4 can be used to develop computational models, supply them with data and apply them to decision problems.
+  The foundational elements of our modelling framework are distributed in an R package called ready4.
 ---
 
 

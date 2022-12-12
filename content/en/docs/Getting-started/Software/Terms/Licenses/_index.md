@@ -1,5 +1,5 @@
 ---
-title: "Open source licensing for ready4 software"
+title: "Open source licensing"
 linkTitle: "Licenses"
 weight: 267
 description: >

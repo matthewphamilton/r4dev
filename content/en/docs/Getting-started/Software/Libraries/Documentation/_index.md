@@ -1,5 +1,5 @@
 ---
-title: "Documentation of ready4 code libraries"
+title: "Code library documentation"
 linkTitle: "Documentation"
 weight: 266
 description: >

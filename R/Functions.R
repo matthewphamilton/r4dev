@@ -27,7 +27,7 @@ make_code_releases_tbl <- function(repository_type_1L_chr = "Framework",
     model_repos_chr <- make_modules_pks_chr(what_chr = "all")
   }
   if(identical(subroutine_repos_chr,character(0))){
-    subroutine_repos_chr <- c( "ttu_mdl_ctlg","ms_tmpl","ttu_lng_ss")
+    subroutine_repos_chr <- make_subroutine_repos()
   }
   if(identical(program_repos_chr,character(0))){
     program_repos_chr <- setdiff(natmanager::list_repo(organisation_1L_chr),
@@ -263,6 +263,10 @@ make_programs_tbl <- function(what_1L_chr = "Program",
       kableExtra::kable_styling(...)   
   }
   return(programs_xx)
+}
+make_subroutine_repos <- function(){
+  subroutine_repos_chr <- c("mychoice_results" ,"ttu_mdl_ctlg","ms_tmpl","ttu_lng_ss")
+  return(subroutine_repos_chr)
 }
 write_blog_entries <- function(dir_path_1L_chr,
                                fl_nm_1L_chr){

@@ -1,6 +1,6 @@
 ---
-title: "User interface for a spatial epidemiology model"
-linkTitle: "User Interface"
+title: "Predicting the spatial epidemiology of emergeing mental disorders"
+linkTitle: "Geospatial"
 date: 2017-01-05
 tags:
 - Choice modelling
@@ -8,7 +8,7 @@ tags:
 - Model - People
 - mychoice
 categories:
-- Analysis programs
+- Decision aids
 - Documentation
 weight: 97
 description: >

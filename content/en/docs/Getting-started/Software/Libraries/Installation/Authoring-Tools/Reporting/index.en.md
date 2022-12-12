@@ -2,7 +2,7 @@
 title: Installing tools for authoring reproducible analyses
 linkTitle: "Analyses"
 author: Matthew Hamilton
-date: "2022-12-08"
+date: "2022-12-12"
 description: Instructions for installing the ready4show library.
 weight: 3
 categories: 

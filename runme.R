@@ -14,12 +14,21 @@ c("Foundation",
   "Modules") %>%
 write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Installation",
                      is_RMD_1L_lgl = F)
-c("Modules-and-sub-modules") %>%
-  write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model-modules/Finding-modules")
+# c("Modules-and-sub-modules") %>%
+#   write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model-modules/Finding-modules")
+write_to_render_post("Finding-Modules",
+                     path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model",
+                     is_RMD_1L_lgl = F)
 # Render program and sub-routine summaries
 c("Programs",
   "Subroutines") %>%
   write_to_render_post("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Programs")
+rmarkdown::render("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Analyses/Replication-Code/Make-Fakes/Clincal_Primary.Rmd")
+write_to_trim_html("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Analyses/Replication-Code/Make-Fakes/Clincal_Primary.md")
+###
+
+
+###
 ### BLOG SECTION
 # Render release summaries
 c("Framework_Software",

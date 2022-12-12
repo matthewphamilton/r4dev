@@ -1,5 +1,5 @@
 ---
-title: "Development releases of ready4 software"
+title: "Development releases"
 linkTitle: "Development"
 weight: 2611
 description: >

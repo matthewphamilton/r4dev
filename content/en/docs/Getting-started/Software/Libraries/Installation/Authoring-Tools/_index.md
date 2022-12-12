@@ -1,5 +1,5 @@
 ---
-title: Installing ready4 framework authoring tools
+title: Installing authoring tools
 linkTitle: "Authoring"
 author: Matthew Hamilton
 date: "2022-12-06"

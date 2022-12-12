@@ -1,5 +1,5 @@
 ---
-title: "ready4 library and function dependencies"
+title: "Dependencies"
 linkTitle: "Dependencies"
 weight: 267
 tags:

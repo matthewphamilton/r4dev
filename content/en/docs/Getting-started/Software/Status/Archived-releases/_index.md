@@ -1,5 +1,5 @@
 ---
-title: "Archived releases of ready4 software"
+title: "Archived releases"
 linkTitle: "Archived"
 weight: 2614
 description: >

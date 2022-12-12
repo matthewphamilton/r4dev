@@ -63,7 +63,7 @@ anchor = "center"
 [languages]
 [languages.en]
 title = ""
-description = "A framework for modular, open source models of youth mental health"
+description = "A modular, open source computational model of youth mental health"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
@@ -132,7 +132,7 @@ algolia_docsearch = false
 offlineSearch = false
 
 # Enable syntax highlighting and copy buttons on code blocks with Prism
-prism_syntax_highlighting = false
+prism_syntax_highlighting = true
 
 # User interface configuration
 [params.ui]

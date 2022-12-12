@@ -1,5 +1,5 @@
 ---
-title: "ready4 syntax"
+title: "Syntax"
 linkTitle: "Syntax"
 date: 2017-01-05
 tags:
