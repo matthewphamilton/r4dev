@@ -62,7 +62,7 @@ anchor = "center"
 
 [languages]
 [languages.en]
-title = ""
+title = "ready4"
 description = "A modular, open source computational model of youth mental health"
 languageName ="English"
 # Weight used for sorting.
@@ -108,12 +108,12 @@ version = "0.0"
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
-url_latest_version = "https://example.com"
+url_latest_version = "https://ready4-dev.com"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
 github_repo = "https://github.com/ready4-dev/ready4web"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-#github_project_repo = "https://github.com/ready4-dev"
+github_project_repo = "https://github.com/ready4-dev"
 
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""
@@ -141,11 +141,11 @@ breadcrumb_disable = false
 # Set to true to disable the About link in the site footer
 footer_about_disable = false
 # Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top navbar
-navbar_logo = true
+navbar_logo = false
 # Set to true if you don't want the top navbar to be translucent when over a `block/cover`, like on the homepage.
 navbar_translucent_over_cover_disable = false
 # Enable to show the side bar menu in its compact state.
-sidebar_menu_compact = false
+sidebar_menu_compact = true
 # Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
 sidebar_search_disable = false
 
@@ -168,11 +168,11 @@ enable = false
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
 # Note add Zenodo and Dataverse
-#[[params.links.user]]
-#  name = "User mailing list"
-#  url = "https://example.org/mail"
-#  icon = "fa fa-envelope"
-#  desc = "Discussion and help from your fellow users"
+[[params.links.user]]
+  name = "User mailing list"
+  url = "https://colossal-trailblazer-967.ck.page/6bae362276"
+  icon = "fa fa-envelope"
+  desc = "Periodic updates sent direct to your inbox"
 #[[params.links.user]]
 #  name ="Twitter"
 #  url = "https://example.org/twitter"
@@ -213,7 +213,6 @@ enable = false
   [[module.imports]]
     path = "github.com/google/docsy/dependencies"
     disable = false
-
 [menu]
 [[menu.main]]
 name = "Documentation"
@@ -235,6 +234,11 @@ name = "About"
 url = "/about/"
 pre = "<i class='fas fa-store'></i>"
 weight = 13
+[[menu.main]]
+name = "Community"
+url = "/community/"
+pre = "<i class='fas fa-store'></i>"
+weight = 14
 
 
 

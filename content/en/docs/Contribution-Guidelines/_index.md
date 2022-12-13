@@ -1,14 +1,12 @@
 ---
-title: "Contribution Guidelines for Modellers"
-linkTitle: "Modellers"
-date: 2017-01-05
-weight: 1
+title: "Contribution guidelines"
+linkTitle: "Contribute"
+weight: 110
 description: >
-  Guidelines outlining how decision modellers in youth mental health can contribute to the development of ready4.
+  How to contribute to the ready4.
 ---
 
-
-First things first - **you do not have to ask us permission or pay us any money to use, extend or derive new works from ready4 modules, data or analysis scripts.** Your only obligations are explained in the (liberal) licenese / terms for each item that you are using. These obligations typically relate to you agreeing to distribute any derivative code your project creates under similarly liberal licenses to those we use and to not undertaking unethical analyses (for example, those designed to re-identify research participants).
+First things first - **you do not have to ask us permission or pay us any money to use, extend or derive new works from ready4 modules, data or analysis scripts.** Your only obligations are explained in the (liberal) [licenese / terms](../getting-started/software/terms/) for each item that you are using. These obligations typically relate to you agreeing to distribute any derivative code your project creates under similarly liberal licenses to those we use and to not undertaking unethical analyses (for example, those designed to re-identify research participants).
 
 Secondly, modelling youth mental health systems is a big and complex task, so the more skilled hands applied to this task the better. Our field will benefit if more research teams apply open source approaches to their modelling and share their methods, data and tools with their peers.
 
