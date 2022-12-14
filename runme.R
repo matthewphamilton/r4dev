@@ -17,6 +17,18 @@ write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Broc
 c("Modularity","Paradigm", "Syntax") %>%
   write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Framework",
                      is_RMD_1L_lgl = F)
+c("Authoring-Algorithms","Authoring-Classes", "Packaging-Modules") %>%
+  write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model/Authoring-Modules",
+                       is_RMD_1L_lgl = F)
+c(#"Add-Metadata",
+  "Assess-Cost-Utility", 
+  #"Explore-Models", 
+  #"Map-To-Utility", 
+  "Predict-Choice",
+  "Predict-Utility", 
+  "Score-Health-Utility", "Validate-Variables") %>%
+  write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model/Using-Modules/People",
+                       is_RMD_1L_lgl = F)
 write_to_render_post("Finding-Modules",
                      path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model",
                      is_RMD_1L_lgl = F)
