@@ -7,19 +7,19 @@ description: >
 ---
 
 ## What is ready4?
-ready4 is a modular, open source computational model of the systems that shape young people's mental health that is being developed with a novel modelling framework. 
+ready4 is a modular computational model of the systems that shape young people's mental health that is being developed as an open source project. 
 
 ## What is a computational model?
 When we use the term [computational model](../getting-started/concepts/model), we are typically referring to a simplified representation of a system of interest that is implemented in computer code.
 
-## Why is it modular?
-The [modular](../framework/modularity/) approach we are taking to computational model development means multiple self-contained computational model components can be both [combined (to model more extensive systems) and reused (in other models)](../model).
+## What makes it modular?
+The approach we are taking to computational model development means that individual model components ([modules](../framework/modularity/)) can be independently [reused (in other models) and flexibly combined (to model more extensive systems)](../model) as if they were Lego bricks.
 
-## What do you mean by framework?
-Our [framework](../getting-started/concepts/framework) comprises a set of common standards and the [software](../getting-started/software) (in our case, written in R) to help implement a computational model that adheres to those guidelines.
+## How as that achieved?
+To facilitate interoperability between modules developed by multiple modelling teams, we have defined a [framework](../getting-started/concepts/framework) for model development that comprises a set of explicit standards and the [software](../getting-started/software) (in our case, written in R) to implement modules that adhere to those standards.
 
 ## Why is that useful?
-As a modular and open-source project, we hope that ready4 will facilitate more transparent, collaborative, extensive and flexible approaches to [implementing analyses](../analyses) and [sharing data](../datasets) that [generate valuable insights for youth mental health policymakers and system planners](../examples).
+Modelling youth mental health systems is a complex task - that means its easy to make mistakes and is more likely to be done well if approached collaboratively, transparently and given sufficient time. We hope that ready4 will support these approaches and in so doing help to [share data](../datasets), improve the reproducibility of [modelling analyses](../analyses) and [generate valuable insights for youth mental health policymakers and system planners](../examples).
 
 ## Can I use it?
 ready4 is designed to be used by [coders](../getting-started/users/coder), [modellers](../getting-started/users/modeller) and [planners](../getting-started/users/planner). ready4 is free for you to inspect (to find tools you trust and find useful), apply (to generate novel insights into decision problems of interest to you) and to derive your own derivative works from (that both leverage and enhances the work of other modellers), [under liberal licensing arrangements](../getting-started/software/terms/).

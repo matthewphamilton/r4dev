@@ -338,3 +338,26 @@ write_to_trim_html <- function(path_to_html_1L_chr){
              path_to_html_1L_chr)
 
 }
+write_to_force_links_in <- function(path_to_md_1L_chr,
+                                    shorten_doi_1L_lgl = T){
+  file_chr <- readLines(path_to_md_1L_chr)
+  file_chr <- file_chr %>% 
+    purrr::map_chr(~{
+      url_1L_chr <- paste0("https://",
+                           stringr::str_match(.x,
+                                       "<https://\\s*(.*?)\\s*>")[2])
+      
+      link_1L_chr <- paste0('<a href="',
+                            url_1L_chr,
+                            '">',
+                            ifelse(shorten_doi_1L_lgl,
+                                   stringr::str_remove(url_1L_chr,"https://doi.org/"),
+                                   url_1L_chr),
+                            '</a>')
+      stringr::str_replace(.x,
+                           "<https://\\s*(.*?)\\s*>", 
+                           link_1L_chr)
+      })
+  writeLines(file_chr,
+             path_to_md_1L_chr)
+}

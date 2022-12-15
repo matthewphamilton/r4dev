@@ -14,24 +14,39 @@ c("Foundation",
   "Modules") %>%
 write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Installation",
                      is_RMD_1L_lgl = F)
+# Render framework articles
 c("Modularity","Paradigm", "Syntax") %>%
   write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Framework",
                      is_RMD_1L_lgl = F)
+# Render Module articles
 c("Authoring-Algorithms","Authoring-Classes", "Packaging-Modules") %>%
   write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model/Authoring-Modules",
                        is_RMD_1L_lgl = F)
 c(#"Add-Metadata",
-  "Assess-Cost-Utility", 
+  "Assess-Cost-Utility", # Add scroll box args
   #"Explore-Models", 
   #"Map-To-Utility", 
   "Predict-Choice",
-  "Predict-Utility", 
-  "Score-Health-Utility", "Validate-Variables") %>%
+  #"Predict-Utility", 
+  "Score-Health-Utility", # Add scroll box args
+  "Validate-Variables") %>%
   write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model/Using-Modules/People",
                        is_RMD_1L_lgl = F)
 write_to_render_post("Finding-Modules",
                      path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model",
                      is_RMD_1L_lgl = F)
+# Render Dataset articles
+c("Label-Data","Share-Data") %>%
+write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Datasets/Authoring-Data",
+                     is_RMD_1L_lgl = F)
+c("Ingest", "Search") %>%
+  write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Datasets/Finding-Data",
+                       is_RMD_1L_lgl = F)
+write_to_force_links_in("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Datasets/Finding-Data/Search/index.en.md")
+# Render Analyses articles
+c("Scientific-Summaries") %>% # Do not evaluate write fns, add scroll text and then restore link to online RMD
+  write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Analyses/Authoring-Analyses",
+                       is_RMD_1L_lgl = F)
 # Render program and sub-routine summaries
 c("Programs",
   "Subroutines") %>%
@@ -49,8 +64,8 @@ c("Framework_Software",
   "Spring_To_Life_Modules") %>%
   write_to_render_post("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/blog/releases")
 #
-# write_to_copy_rmds(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Programs",
-#                    fl_nm_1L_chr = "Programs",
+# write_to_copy_rmds(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model/Using-Modules/People",
+#                    fl_nm_1L_chr = "TEST",
 #                    rmds_dir_1L_chr = "R/RMD Templates/Include_HTML")
 write_new_credentials("./content/en/docs/Readyforwhatsnext/Spring To Life/Modules/Predict choice.md",
                       new_credentials_1L_chr = "d7d86c443e2b45c1b43c7db36ad50bf3",
