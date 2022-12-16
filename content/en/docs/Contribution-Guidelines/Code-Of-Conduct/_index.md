@@ -1,4 +1,10 @@
-# Contributor Covenant Code of Conduct
+---
+title: "Contributor covenant code of conduct"
+linkTitle: "Code of conduct"
+weight: 264
+description: >
+  To foster an inclusive and respectful community, all contributors to ready4 are expected to adhere to the Contributor Covenant.
+---
 
 ## Our Pledge
 

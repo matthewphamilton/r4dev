@@ -16,4 +16,4 @@ The main purposes of ready4 user-interfaces are:
 
 The [user interface for exploring the dependencies of ready4 libraries](../libraries/dependencies/) is an example of the latter use.
 
-We do not have any current releases of ready4 user interfaces for running models. However, an old and [deprecated user interface for running the Springtides model](../../../model-applications/spatial-modelling/springtides-app/) is available for purely illustrative purposes.
+We do not have any current releases of ready4 user interfaces for running models. However, an old and [deprecated user interface for running the Springtides model](../../../analyses/decision-aids/springtides-app/) is available for purely illustrative purposes.

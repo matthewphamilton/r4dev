@@ -6,8 +6,6 @@ description: >
   Help improve the reliability, functionality and ease of use of ready4 software.
 ---
 
-[comment]: <> (Adapted from: https://opensource.com/life/16/3/contributor-guidelines-template-and-tips)
-
 ## What do I need to know to help?
 
 If you are looking to improve [our existing software](../getting-started/software) with a code contribution, you will need familiarity with R, R Markdown () and git. You will also need a GitHub account.
@@ -65,7 +63,6 @@ Never made an open source contribution before? Wondering how contributions work 
 
 9. Submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) to the upstream repository.
 
-
 10. Title the pull request with a short description of the changes made and the issue or bug number associated with your change. For example, you can title an issue like so "Added more log outputting to resolve #4352".
 
 11. In the description of the pull request, explain the changes that you made, any issues you think exist with the pull request you made, and any questions you have for the maintainer. It's OK if your pull request is not perfect (no pull request is), the reviewer will be able to help you fix any problems and improve it!
@@ -78,8 +75,10 @@ Never made an open source contribution before? Wondering how contributions work 
 
 ## Where can I go for help?
 
-If you need help, you can ask questions on our mailing list.
+If you need further help to make a contribution, you can [contact the ready4 project maintainer directly](https://mph-economist.netlify.app/#contact).
 
 ## What does the Code of Conduct mean for me?
+As a contributor to ready4, you will be expected to adhere to the [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](../../code-of-conduct/)
 
-Our Code of Conduct means that you are responsible for treating everyone on the project with respect and courtesy regardless of their identity. If you are the victim of any inappropriate behavior or comments as described in our Code of Conduct, we are here for you and will do the best to ensure that the abuser is reprimanded appropriately, per our code.
+## Attribution
+This guide to contributing code was adapted from the template available at https://opensource.com/life/16/3/contributor-guidelines-template-and-tips
