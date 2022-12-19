@@ -1,5 +1,5 @@
 ---
-title: "Improve documentation and support"
+title: "Improve support"
 linkTitle: "Community"
 date: 2017-01-05
 weight: 111

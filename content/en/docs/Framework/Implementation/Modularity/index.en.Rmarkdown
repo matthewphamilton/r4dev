@@ -1,6 +1,6 @@
 ---
-title: "Modular computational models"
-linkTitle: "Modularity"
+title: "Modules"
+linkTitle: "Modules"
 date: "`r Sys.Date()`"
 description: "ready4 supports a modular approach to computational model development."
 weight: 62

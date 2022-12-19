@@ -1,7 +1,7 @@
 ---
 title: "Project"
 linkTitle: "Project"
-weight: 22
+weight: 24
 description: >
   You can apply ready4 to the three main parts of a computational modelling project.
 ---

@@ -1,6 +1,6 @@
 
 ---
-title: "Apply computational models to data to undertake analyses"
+title: "Run analyses"
 linkTitle: "Analyses"
 date: 2017-01-05
 weight: 68

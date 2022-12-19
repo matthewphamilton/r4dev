@@ -1,6 +1,6 @@
 
 ---
-title: "Manage input and output data"
+title: "Add and share data"
 linkTitle: "Data"
 date: 2017-01-05
 weight: 67
