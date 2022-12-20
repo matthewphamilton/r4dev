@@ -28,7 +28,7 @@ ready4 is designed to be primarily used by [coders](/docs/getting-started/users/
 ready4 is a collaborative project and we'd love your help in progressing our [priorty project goals](/docs/contribution-guidelines/priorities/)! You can [contribute code improvements](/docs/contribution-guidelines/contribution-types/code/), enhance our [documentation and community support](/docs/contribution-guidelines/contribution-types/community/), [extend the ready4 model](/docs/contribution-guidelines/contribution-types/extensions/), give us [advice](/docs/contribution-guidelines/contribution-types/advisory/) and help [fund our development](/docs/contribution-guidelines/contribution-types/funding/).
 
 ## Why is it called ready4?
-ready4 is shorthand for "ready for what's next". The name refers to both how better mental health can improve the lives of young people and to how better computational models can improve the preparedness of decision makers and system planners.
+ready4 is shorthand for "readyforwhatsnext", the title of [the research project that catalysed this model](/about/) and a reference to both how better mental health can improve the lives of young people and to how better computational models can improve the preparedness of decision makers and system planners.
 
 ## Where should I go next?
 We'd recommend reading the documentation in the order in which sections appear in the table of contents (so go next to [Examples](/docs/examples/), then to [Getting Started](/docs/getting-started/) and so on). Some sections of the documentation are labelled as being written for a specific type of reader. 

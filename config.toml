@@ -223,21 +223,21 @@ weight = 10
 name = "Blog"
 url = "/blog/"
 pre = "<i class='fas fa-blog'></i>"
-weight = 11
+weight = 12
 [[menu.main]]
 name = "GitHub"
 url = "https://github.com/ready4-dev"
 pre = "<i class='fab fa-github'></i>"
-weight = 12
+weight = 16
 [[menu.main]]
 name = "About"
 url = "/about/"
-pre = "<i class='fas fa-store'></i>"
-weight = 13
+pre = "<i class='fas fa-building'></i>"
+weight = 11
 [[menu.main]]
 name = "Community"
 url = "/community/"
-pre = "<i class='fas fa-store'></i>"
+pre = "<i class='fas fa-globe'></i>"
 weight = 14
 
 
