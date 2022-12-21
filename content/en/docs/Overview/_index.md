@@ -7,15 +7,15 @@ description: >
 ---
 
 ## What is ready4?
-ready4 is a [modular](/docs/getting-started/concepts/module/) computational model of the systems that shape young people's mental health that is being developed as [an open source project](/docs/getting-started/software/terms/licenses/). 
+ready4 is a [modular](/docs/getting-started/concepts/module/) computational model of the systems that shape young people's mental health that is being developed as [an open source project](/docs/getting-started/software/terms/licenses/) led by [researchers at Orygen and Monash University](/about/). 
 
 ## What is a computational model?
 A [computational model](/docs/getting-started/concepts/model) is a simplified representation of a system of interest that is implemented in computer code.
 
 ## What makes it modular?
-The approach we are taking to computational model development means that individual model components ([ready4 modules](/docs/framework/implementation/modularity/)) can be independently [reused (in other models) and flexibly combined (to model more extensive systems)](/docs/model) as if they were Lego bricks.
+The approach we are taking to computational model development means that individual model components ([ready4 modules](/docs/framework/implementation/modularity/)) can be independently [reused (in other models)](/docs/model/using-modules/) and [be safely and flexibly combined (to model more extensive systems)](/docs/framework/implementation/paradigm//#modular-computational-models) as if they were Lego bricks.
 
-## How as that achieved?
+## How is that achieved?
 To facilitate interoperability between modules developed by multiple modelling teams, we have defined a [framework](/docs/framework/) for model development that comprises a set of explicit [standards](/docs/framework/standards) and the [software](/docs/getting-started/software) (in our case, written in R) to implement modules that adhere to those standards.
 
 ## Why is that useful?

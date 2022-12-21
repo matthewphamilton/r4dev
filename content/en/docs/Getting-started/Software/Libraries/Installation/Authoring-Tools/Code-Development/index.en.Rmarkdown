@@ -29,7 +29,7 @@ If you are a [coder](../../../../../users/coder) planning on using ready4 to aut
 As ready4class and ready4fun are bundled as [dependencies](../../../dependencies/)) of ready4pack, you can install all three from [our GitHub organisation](https://github.com/ready4-dev) using one command.
 
 ```{r, eval=FALSE}
-devtools::install_github("ready4-dev/ready4use")
+devtools::install_github("ready4-dev/ready4pack")
 ```
 
 ## Configuration

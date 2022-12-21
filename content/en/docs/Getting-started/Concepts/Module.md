@@ -6,7 +6,7 @@ description: >
   ready4 is comprised of self-contained, reusable components called "modules".
 ---
 
-A modular [computational model](/docs/getting-started/concepts/model/) is one that constructed from multiple self-contained components, called modules. [Each ready4 module describes a data structure and the set of algorithms that can be applied to it](/docs/framework/implementation/modularity/). 
+A modular [computational model](/docs/getting-started/concepts/model/) is one that constructed from multiple self-contained components, called modules. Each ready4 module describes a data structure and the set of algorithms that can be applied to it. 
 
 The advantages of developing ready4 as a modular model include:
 
@@ -16,3 +16,4 @@ The advantages of developing ready4 as a modular model include:
 
 - long term and resource intensive model development is more feasible through combining multiple [independently managed and financed modelling projects](/docs/getting-started/concepts/project/) from [multiple contributors](/docs/contribution-guidelines/).
 
+To ensure that all ready4 modules can be [safely and flexibly combined](/docs/framework/implementation/paradigm/#modular-computational-models), each module is created from a [template](/docs/framework/implementation/modularity/) using [authoring tools that support standardisation](/docs/getting-started/software/libraries/installation/authoring-tools/code-development/). 

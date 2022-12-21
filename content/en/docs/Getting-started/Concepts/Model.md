@@ -3,7 +3,7 @@ title: "Model"
 linkTitle: "Model"
 weight: 22
 description: >
-  The ready4 model represents youth mental health systems in computer code.
+  ready4 represents youth mental health systems in computer code.
 ---
 
 A model is a simplified representation of a system of interest. In the way we use the term, we also mean that a model is:
@@ -24,5 +24,5 @@ A mathematical model formalises a conceptual model as a set of equations.
 ### Computational Model
 A computational model implements the conceptual and mathematical models of a system of interest as computer code. 
 
-ready4 is a **computational model** of youth mental health.
+ready4 is a **computational model** of youth mental health. More specifically, the ready4 computational model is the complete set of ready4 [modules](/docs/getting-started/concepts/module/).
 
