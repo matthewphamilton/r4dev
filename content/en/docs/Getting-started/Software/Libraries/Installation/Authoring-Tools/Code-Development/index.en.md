@@ -1,8 +1,8 @@
 ---
-title: Installing module authoring tools
+title: Installing tools for authoring computational models
 linkTitle: "Models"
 author: Matthew Hamilton
-date: "2022-12-12"
+date: "2022-12-22"
 description: Instructions for installing the ready4class, ready4fun and ready4pack libraries.
 weight: 1
 categories: 
@@ -16,7 +16,7 @@ tags:
 - ready4fun
 - ready4pack
 output: hugodown::md_document
-rmd_hash: 2d69d57721c56f8e
+rmd_hash: 2ec1d87f1b543e54
 
 ---
 

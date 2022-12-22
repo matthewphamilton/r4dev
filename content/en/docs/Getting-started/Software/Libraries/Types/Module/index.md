@@ -1,7 +1,7 @@
 ---
 title: "Model module libraries"
 linkTitle: "Module"
-date: "2022-12-08"
+date: "2022-12-22"
 description: "There are three types of model module libraries - those for describing input data, developing models and making predictions."
 weight: 2662
 categories: 
@@ -10,7 +10,7 @@ tags:
 - Modules
 - R packages
 output: hugodown::md_document
-rmd_hash: 9a04b60f4a69e91d
+rmd_hash: 937d40471c432e8b
 
 ---
 

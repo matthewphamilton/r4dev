@@ -1,7 +1,7 @@
 ---
 title: "Develop choice models"
 linkTitle: "Predict choice"
-date: "2022-12-14"
+date: "2022-12-22"
 description: "Using tools (soon to be formalised into ready4 framework modules) from the mychoice R package, it is possible to develop choice models from responses to a discrete choice experiment survey."
 weight: 97
 categories: 

@@ -22,10 +22,6 @@ This below section renders a vignette article from the ready4 library. You can u
 {{% /pageinfo %}}
 
 
-```{r, include=FALSE}
-source("../../../../../R/Functions.R", local = knitr::knit_global())
-```
-
 ```{r echo=FALSE, results='hide'}
 #setInternet2(use = TRUE)
 x <- tempfile(fileext = "Rmd")

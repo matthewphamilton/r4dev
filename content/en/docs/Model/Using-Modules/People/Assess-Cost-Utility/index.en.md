@@ -1,7 +1,7 @@
 ---
 title: "Use utility mapping algorithms to help implement cost-utility analyses"
 linkTitle: "Assess cost-utility"
-date: "2022-12-14"
+date: "2022-12-22"
 description: "Using tools (soon to be formalised into ready4 framework modules) from the youthu R package, it is possible to use utility mapping algorithms to help implement cost-utility analyses. This tutorial illustrates the main steps for doing so using psychological and functional measures collected on clinical samples of young people."
 weight: 97
 categories: 
@@ -101,7 +101,7 @@ Participant_20
 Baseline
 </td>
 <td style="text-align:right;">
-2022-05-09
+2022-05-17
 </td>
 <td style="text-align:right;">
 0S
@@ -130,7 +130,7 @@ Participant_593
 Baseline
 </td>
 <td style="text-align:right;">
-2022-03-16
+2022-03-24
 </td>
 <td style="text-align:right;">
 0S
@@ -159,7 +159,7 @@ Participant_593
 Follow-up
 </td>
 <td style="text-align:right;">
-2022-09-07
+2022-09-15
 </td>
 <td style="text-align:right;">
 175d 0H 0M 0S
@@ -188,7 +188,7 @@ Participant_20
 Follow-up
 </td>
 <td style="text-align:right;">
-2022-11-03
+2022-11-11
 </td>
 <td style="text-align:right;">
 178d 0H 0M 0S
@@ -217,7 +217,7 @@ Participant_259
 Baseline
 </td>
 <td style="text-align:right;">
-2022-07-04
+2022-07-12
 </td>
 <td style="text-align:right;">
 0S
@@ -246,7 +246,7 @@ Participant_962
 Baseline
 </td>
 <td style="text-align:right;">
-2022-08-16
+2022-08-24
 </td>
 <td style="text-align:right;">
 0S
@@ -495,10 +495,10 @@ Control
 243
 </td>
 <td style="text-align:right;">
-2022-02-22
+2022-03-02
 </td>
 <td style="text-align:right;">
-2022-08-18
+2022-08-26
 </td>
 <td style="text-align:right;">
 0S
@@ -566,10 +566,10 @@ Control
 191
 </td>
 <td style="text-align:right;">
-2022-04-20
+2022-04-28
 </td>
 <td style="text-align:right;">
-2022-10-21
+2022-10-29
 </td>
 <td style="text-align:right;">
 0S
@@ -637,10 +637,10 @@ Intervention
 230
 </td>
 <td style="text-align:right;">
-2022-03-15
+2022-03-23
 </td>
 <td style="text-align:right;">
-2022-09-10
+2022-09-18
 </td>
 <td style="text-align:right;">
 0S
@@ -708,10 +708,10 @@ Intervention
 115
 </td>
 <td style="text-align:right;">
-2022-04-13
+2022-04-21
 </td>
 <td style="text-align:right;">
-2022-10-12
+2022-10-20
 </td>
 <td style="text-align:right;">
 0S
@@ -779,10 +779,10 @@ Intervention
 183
 </td>
 <td style="text-align:right;">
-2022-07-15
+2022-07-23
 </td>
 <td style="text-align:right;">
-2023-01-17
+2023-01-25
 </td>
 <td style="text-align:right;">
 0S
@@ -850,10 +850,10 @@ Intervention
 219
 </td>
 <td style="text-align:right;">
-2022-08-10
+2022-08-18
 </td>
 <td style="text-align:right;">
-2023-02-05
+2023-02-13
 </td>
 <td style="text-align:right;">
 0S

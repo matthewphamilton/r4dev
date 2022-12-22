@@ -1,7 +1,7 @@
 ---
 title: "Add a data dictionary to a dataset"
 linkTitle: "Labelling"
-date: "2022-12-15"
+date: "2022-12-22"
 description: "Pairing a dataset with its dictionary makes it easier to interpret. This tutorial describes how a module from the ready4use R package can help you to pair a dataset and its dictionary."
 weight: 92
 categories: 
@@ -41,6 +41,8 @@ Note: **This vignette is illustrated with fake data**. The dataset explored in t
 
 </div>
 
+ready4use includes a number of tools for labeling data used in conjunction with the [ready4 open source model of youth mental health systems](https://www.ready4-dev.com).
+
 ## Create a dataset-dictionary pair
 
 A data dictionary containts useful metadata about a dataset. We can ingest examples of a fake dataset and its data-dictionary [using the method explained in another vignette](V_01.html).
@@ -79,9 +81,13 @@ We can inspect `X` by printing selected information about it to console using th
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span> <span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibit-methods.html'>exhibit</a></span><span class='o'>(</span><span class='nv'>X</span>,</span>
-<span>         display_1L_chr <span class='o'>=</span> <span class='s'>"head"</span><span class='o'>)</span></span>
+<span>         display_1L_chr <span class='o'>=</span> <span class='s'>"head"</span>,</span>
+<span>         scroll_box_args_ls <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='o'>(</span>width <span class='o'>=</span> <span class='s'>"100%"</span><span class='o'>)</span><span class='o'>)</span></span>
 </code></pre>
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
 Dataset
 </caption>
@@ -513,6 +519,8 @@ Not studying or working
 
 </div>
 
+</div>
+
 The dataset may be more meaningful if variables are labelled using the descriptive information from the data dictionary. This can be accomplished using the `renew` method.
 
 <div class="highlight">
@@ -525,9 +533,13 @@ The dataset may be more meaningful if variables are labelled using the descripti
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibit-methods.html'>exhibit</a></span><span class='o'>(</span><span class='nv'>X</span>,</span>
-<span>        display_1L_chr <span class='o'>=</span> <span class='s'>"head"</span><span class='o'>)</span></span>
+<span>        display_1L_chr <span class='o'>=</span> <span class='s'>"head"</span>,</span>
+<span>         scroll_box_args_ls <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='o'>(</span>width <span class='o'>=</span> <span class='s'>"100%"</span><span class='o'>)</span><span class='o'>)</span></span>
 </code></pre>
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
 Dataset
 </caption>
@@ -959,6 +971,8 @@ Not studying or working
 
 </div>
 
+</div>
+
 To remove dataset labels, use the `renew` method with "unlabel" passed to the `type_1L_chr` argument.
 
 <div class="highlight">
@@ -974,9 +988,13 @@ By default, the `exhibit` method will print the dataset part of the `Ready4useDy
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibit-methods.html'>exhibit</a></span><span class='o'>(</span><span class='nv'>X</span>,</span>
 <span>        display_1L_chr <span class='o'>=</span> <span class='s'>"head"</span>,</span>
-<span>        type_1L_chr <span class='o'>=</span> <span class='s'>"dict"</span><span class='o'>)</span></span>
+<span>        type_1L_chr <span class='o'>=</span> <span class='s'>"dict"</span>,</span>
+<span>        scroll_box_args_ls <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='o'>(</span>width <span class='o'>=</span> <span class='s'>"100%"</span><span class='o'>)</span><span class='o'>)</span></span>
 </code></pre>
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
 Data Dictionary
 </caption>
@@ -1090,6 +1108,8 @@ factor
 </tr>
 </tfoot>
 </table>
+
+</div>
 
 </div>
 

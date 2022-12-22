@@ -1,11 +1,13 @@
 # Run each time an RMD is changed prior to commit. [IGNORE THIS]
 # blogdown::build_site(run_hugo = F, build_rmd =T)
-source("R/Functions.R")
+#source("R/Functions.R")
+library(ready4)
 ### DOCUMENTATION SECTION
 ## Render itemisation of currently available ready4 libraries
 c("Framework",
   "Module") %>%
-  write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Types")  
+  write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Types",
+                       consent_1L_chr = "Y")  
 # Render ready4 library installation instructions
 c("Foundation",
   "Authoring-Tools/Reporting",
@@ -13,15 +15,18 @@ c("Foundation",
   "Authoring-Tools/Code-Development",
   "Modules") %>%
 write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Libraries/Installation",
-                     is_RMD_1L_lgl = F)
+                     consent_1L_chr = "Y",
+                     is_rmd_1L_lgl = F)
 # Render framework articles
 c("Modularity","Paradigm", "Syntax") %>%
-  write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Framework",
-                     is_RMD_1L_lgl = F)
+  write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Framework/Implementation",
+                       consent_1L_chr = "Y",
+                       is_rmd_1L_lgl = F)
 # Render Module articles
 c("Authoring-Algorithms","Authoring-Classes", "Packaging-Modules") %>%
   write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model/Authoring-Modules",
-                       is_RMD_1L_lgl = F)
+                       consent_1L_chr = "Y",
+                       is_rmd_1L_lgl = F)
 c(#"Add-Metadata",
   "Assess-Cost-Utility", # Add scroll box args
   #"Explore-Models", 
@@ -31,26 +36,33 @@ c(#"Add-Metadata",
   "Score-Health-Utility", # Add scroll box args
   "Validate-Variables") %>%
   write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model/Using-Modules/People",
-                       is_RMD_1L_lgl = F)
+                       consent_1L_chr = "Y",
+                       is_rmd_1L_lgl = F)
 write_to_render_post("Finding-Modules",
                      path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model",
-                     is_RMD_1L_lgl = F)
+                     consent_1L_chr = "Y",
+                     is_rmd_1L_lgl = F)
 # Render Dataset articles
 c("Label-Data","Share-Data") %>%
 write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Datasets/Authoring-Data",
-                     is_RMD_1L_lgl = F)
+                     consent_1L_chr = "Y",
+                     is_rmd_1L_lgl = F)
 c("Ingest", "Search") %>%
   write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Datasets/Finding-Data",
-                       is_RMD_1L_lgl = F)
-write_to_force_links_in("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Datasets/Finding-Data/Search/index.en.md")
+                       consent_1L_chr = "Y",
+                       is_rmd_1L_lgl = F)
+write_to_force_links_in("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Datasets/Finding-Data/Search/index.en.md",
+                        consent_1L_chr = "Y")
 # Render Analyses articles
 c("Scientific-Summaries") %>% # Do not evaluate write fns, add scroll text and then restore link to online RMD
   write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Analyses/Authoring-Analyses",
-                       is_RMD_1L_lgl = F)
+                       consent_1L_chr = "Y",
+                       is_rmd_1L_lgl = F)
 # Render program and sub-routine summaries
 c("Programs",
   "Subroutines") %>%
-  write_to_render_post("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Programs")
+  write_to_render_post("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Programs",
+                       consent_1L_chr = "Y")
 rmarkdown::render("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Analyses/Replication-Code/Make-Fakes/Clincal_Primary.Rmd")
 write_to_trim_html("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Analyses/Replication-Code/Make-Fakes/Clincal_Primary.md")
 ###

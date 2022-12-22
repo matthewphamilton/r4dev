@@ -1,7 +1,7 @@
 ---
 title: "Why ready4 is object oriented"
 linkTitle: "Paradigm"
-date: "2022-12-12"
+date: "2022-12-22"
 description: "ready4 uses an object oriented programming (OOP) paradigm to implement computational models."
 weight: 61
 categories: 
@@ -11,7 +11,7 @@ tags:
 - Object Oriented Programming
 - ready4 (library)
 output: hugodown::md_document
-rmd_hash: 9537b0220098ffe8
+rmd_hash: 9717828ced7db652
 
 ---
 
@@ -37,17 +37,17 @@ rmd_hash: 9537b0220098ffe8
 
 ## Motivation
 
-The practical utility and ease of use of computational models of mental health systems are in part shaped by the choice of programming paradigm used to develop them. [The framework being used to develop the readyforwhatsnext model](https://www.ready4-dev.com/framework/) adopts an object oriented programming (OOP) paradigm which in practice means that the framework principally consists of classes (representations of data structures useful for modelling mental health systems) and methods (algorithms that can be applied to these data-structures to generate insight useful for policy-making). Adopting an OOP approach is particular useful for making the [readyforwhatsnext model](https://www.ready4-dev.com) both modular and transparent.
+The practical utility and ease of use of computational models of mental health systems are in part shaped by the choice of programming paradigm used to develop them. ready4 adopts an object oriented programming (OOP) paradigm which in practice means that the framework principally consists of classes (representations of data structures useful for modelling mental health systems) and methods (algorithms that can be applied to these data-structures to generate insight useful for policy-making). Adopting an OOP approach is particular useful for making the [ready4 model](https://www.ready4-dev.com) both modular and transparent.
 
 ## Implementation
 
 ### Modular Computational Models
 
-Two commonly noted features of OOP - encapsulation and inheritance are particularly useful when developing [modular computational models](V_01.html).
+Two commonly noted features of OOP - encapsulation and inheritance are particularly useful when developing [modular computational models](https://ready4-dev.github.io/ready4/articles/V_01.html).
 
 #### Encapsulation
 
-Encapsulation allows us to define the data structures ("classes") used in modelling projects in a manner that allows them to be safely combined. For example, assume there are two computational models, one (**A**) focused on predicting the types and intensity of services used by individuals that present to mental health services and the other (**B**) that [predicts outcomes for recipients of these services](https://ready4-dev.github.io/youthu/articles/Prediction_With_Mdls.html). It may be desirable to develop a new model (**C**) that combines **A** and **B** to model both service use and outcomes. Using encapsulated code allows all of the features and functionality of **A** can be made available to **B** in a manner that protects the integrity of **A**. Specifically, **B** can only interact with **A** using the algorithms ("methods") that have been already defined for **A**.
+Encapsulation allows us to define the data structures ("classes") used in computational modelling projects in a manner that allows them to be safely combined. For example, assume there are two computational models, one (**A**) focused on predicting the types and intensity of services used by individuals that present to mental health services and the other (**B**) that [predicts outcomes for recipients of these services](https://ready4-dev.github.io/youthu/articles/Prediction_With_Mdls.html). It may be desirable to develop a new model (**C**) that combines **A** and **B** to model both service use and outcomes. Using encapsulated code allows all of the features and functionality of **A** can be made available to **B** in a manner that protects the integrity of **A**. Specifically, **B** can only interact with **A** using the algorithms ("methods") that have been already defined for **A**.
 
 Furthermore, if appropriately implemented, methods associated with a class will work with any combination of input values that can be encapsulated by that class - making computational models more generalisabe. For example, imagine a class (**X**) that is used to structure summary data relevant to mental health systems. Methods associated with **X** (e.g. a method to derive an unmet need statistic) can then applied to two instances of **X** - one containing data relevant to the Australian context and one with data from the UK context.
 
@@ -59,7 +59,7 @@ Similarly, inheritance would allow re-use of much of the code from a model of th
 
 ### Transparent Computational Models
 
-To make analyses implemented using the readyforwhatsnext model more readily understood, the `ready4` package provides the model's [simple and consistent syntax](V_02.html). Such simplified approaches are facilitated by two other commonly noted features of OOP - polymorphism and abstraction.
+To make analyses implemented using the ready4 model more readily understood, the `ready4` package provides the model's [simple and consistent syntax](https://ready4-dev.github.io/ready4/articles/V_02.html). Such simplified approaches are facilitated by two other commonly noted features of OOP - polymorphism and abstraction.
 
 #### Polymorphism
 
