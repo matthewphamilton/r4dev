@@ -11,7 +11,7 @@ tags:
 - R packages
 - ready4pack
 output: hugodown::md_document
-rmd_hash: 51fe003e68013b71
+rmd_hash: 569fe66e4279a51a
 
 ---
 
@@ -27,134 +27,90 @@ rmd_hash: 51fe003e68013b71
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='s'><a href='https://ready4-dev.github.io/ready4/'>"ready4"</a></span><span class='o'>)</span> </span></code></pre>
-
-</div>
-
-## Motivation
-
-A potentially attractive approach to modelling complex youth mental health systems is to begin with a relatively simple computational model and to progressively extend its scope and sophistication. Such an approach could be described as "modular" if it is possible to readily combine multiple discrete modelling projects (potentially developed by different modelling teams) that each independently describe distinct aspects of the system being modelled. This modular and collaborative approach is being used in the development of [ready4 - an open source health economic model of the systems shaping mental health and wellbeing in young people](https://www.ready4-dev.com). The `ready4` package provides the foundational tools to support the development and application of the ready4 modular model.
-
-## Implementation
-
-The ready4 model is being implemented in R and its modular nature is enabled by the [encapsulation and inheritance features of Object Oriented Programming (OOP)](https://ready4-dev.github.io/ready4/articles/V_03.html). Specifically, ready4 uses two of R's systems for implementing OOP - S3 and S4. An in-depth explanation of R's different class system is beyond the scope of this article, but is explored in [Hadley Wickham's Advanced R handbook](https://adv-r.hadley.nz/oo.html). However, it is useful to know some very high level information about S3 and S4 classes:
-
--   S4 classes are frequently said to be "formal", "strict" or "rigorous". The elements of an S4 class are called slots and the type of data that each slot is allowed to contain is specified in the class definition. An S4 class can be comprised of slots that contain different types of data (e.g. a slot that contains a character vector and another slot that contains tabular data).
-
--   S3 classes are often described as "simple", "informal" and "flexible". S3 objects attach an attribute label to base type objects (e.g. a character vector, a data.frame, a list), which in turn is used to work out what methods should be applied to the class.
-
-### ready4 Model Modules
-
-A ready4 model module is a data-structure and associated algorithms that is used to model a discrete component of a system relevant to young people's mental health. Each ready4 model module is created using the `ready4` package's `Ready4Module` class. We can create an instance (`X`) of `Ready4Module` using the following command.
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>X</span> <span class='o'>&lt;-</span> <span class='nf'>ready4</span><span class='nf'>::</span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/Ready4Module-class.html'>Ready4Module</a></span><span class='o'>(</span><span class='o'>)</span></span></code></pre>
-
-</div>
-
-However, if we inspect `X` we can see it is of limited use as it contains no data other than an empty element called `dissemination_1L_chr`.
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='o'>(</span><span class='nv'>X</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt; Formal class 'Ready4Module' [package "ready4"] with 1 slot</span></span>
-<span><span class='c'>#&gt;   ..@ dissemination_1L_chr: chr NA</span></span></code></pre>
-
-</div>
-
-The `Ready4Module` class is therefore not intended to be called directly. Instead, the purpose of `Ready4Module` is to be the parent-class of all ready4 model modules. `Ready4Module` and all of its child-classes (ie all ready4 model modules) are "S4" classes.
-
-<div class="card border-primary mb-3" style="max-width: 20rem;">
-
-<div class="card-header">
-
-**ready4 Concept**
-
-</div>
-
-<div class="card-body">
-
-<div class="card-title">
-
-#### Module
-
-</div>
-
-A formal (S4) `Ready4Module` child-class and its associated methods used to implement a discrete sub-component of the ready4 youth mental health model.
-
-</div>
-
-</div>
-
-`ready4` includes two child classes of `Ready4Module`. These are `Ready4Public` and `Ready4Private` and both are almost as minimally informative as their parent (the only difference being that their instances have the values "Public" or "Private" assigned to the `dissemination_1L_chr` slot).
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>Y</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/Ready4Public-class.html'>Ready4Public</a></span><span class='o'>(</span><span class='o'>)</span></span>
-<span><span class='nf'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='o'>(</span><span class='nv'>Y</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt; Formal class 'Ready4Public' [package "ready4"] with 1 slot</span></span>
-<span><span class='c'>#&gt;   ..@ dissemination_1L_chr: chr "Public"</span></span></code></pre>
-
 </div>
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>Z</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/Ready4Private-class.html'>Ready4Private</a></span><span class='o'>(</span><span class='o'>)</span></span>
-<span><span class='nf'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='o'>(</span><span class='nv'>Z</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt; Formal class 'Ready4Private' [package "ready4"] with 1 slot</span></span>
-<span><span class='c'>#&gt;   ..@ dissemination_1L_chr: chr "Private"</span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://ready4-dev.github.io/ready4pack/'>ready4pack</a></span><span class='o'>)</span></span></code></pre>
 
 </div>
 
-Like the `Ready4Module` class they inherit from, the purpose of `Ready4Public` and `Ready4Private` is to be used as parent classes. Using either of `Ready4Public` and `Ready4Private` can be a potentially efficient way of partially automating access policies for model data. If **all** the data contained in a module can **always** be shared publicly, it may be convenient to note this by using a module that has been created as a child-class of `Ready4Public`. Similarly, if at least some of the data contained in a module will always be unsuitable for public dissemination, it can be useful to use a module that is a child of `Ready4Private`. When the dissemination policy for data contained in a module will vary depending on user or context, it is more appropriate to use a module that inherits from `Ready4Module` without being a child of either `Ready4Public` and `Ready4Private`. In this latest case, users may choose to add descriptive information about the data access policy themselves using the `renewSlot` method. The dissemination policy can be inspected with the `procureSlot` method.
+`ready4pack` is a toolkit for extending the [ready4 framework](https://www.ready4-dev.com/) for open and modular mental health systems models with R packages that are:
+
+-   *Citable* (with a Zenodo generated DOI and an algorithm generated CITATION file);
+-   *Community-minded* (applying deprecation conventions supported by `lifecycle`);
+-   *Documented* (applying a function self-documenting algorithm that extends `sinew`, deploying a GitHub pages hosted and `pkgdown` generated website and authoring PDF manuals stored in a GitHub Release via `piggyback`);
+-   *Internally consistent* implementing automated checks to ensure consistency in naming conventions, etc;
+-   *Licensed* (via a `usethis` generated GPL-3 license);
+-   *Quality assured* (using continuous integration via GitHub actions and R-CMD-Check); and
+-   *Versioned* (applying `usethis` version increments).
+
+`ready4pack` builds on both third party development workflow tools (such as `devtools`) and ready4 tools for authoring functions ([ready4fun](https://ready4-dev.github.io/ready4fun/articles/V_01.html)) and classes ([ready4class](https://ready4-dev.github.io/ready4class/articles/V_01.html)). `ready4pack` integrates these tools in a common workflow, while adding tools for authoring and documenting R package datasets.
+
+A combination of the `ready4_pack_manifest` class and `author` method are used to implement this workflow. This workflow has been used to author all public versions of the ready4 framework R packages available in the [ready4 github repository](https://github.com/ready4-dev).
+
+## Workflow
+
+### Manifest
+
+The main class exported as part of `ready4pack` is `readypack_manifest` list based [ready4 Framework sub-module](https://ready4-dev.github.io/ready4/articles/V_01.html), that extends the [`ready4fun_manifest`](https://ready4-dev.github.io/ready4fun/articles/V_01.html) and [`ready4class_manifest`](https://ready4-dev.github.io/ready4class/articles/V_01.html) sub-modules.
+
+### Typical usage
+
+`readypack_manifest` sub-module is most efficiently created with the aid of the `make_pt_ready4pack_manifest` function and combines instances of the `ready4fun_manifest` and [`ready4class_constructor`](https://ready4-dev.github.io/ready4class/articles/V_01.html) sub-modules.
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>X</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/renewSlot-methods.html'>renewSlot</a></span><span class='o'>(</span><span class='nv'>X</span>,</span>
-<span>               <span class='s'>"dissemination_1L_chr"</span>,</span>
-<span>               <span class='s'>"Staff and students of research institutes"</span><span class='o'>)</span></span>
-<span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/procureSlot-methods.html'>procureSlot</a></span><span class='o'>(</span><span class='nv'>X</span>,</span>
-<span>            <span class='s'>"dissemination_1L_chr"</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt; [1] "Staff and students of research institutes"</span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>x</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://ready4-dev.github.io/ready4pack/reference/ready4pack_manifest.html'>make_pt_ready4pack_manifest</a></span><span class='o'>(</span><span class='nf'>ready4fun</span><span class='nf'>::</span><span class='nf'><a href='https://ready4-dev.github.io/ready4fun/reference/ready4fun_manifest.html'>ready4fun_manifest</a></span><span class='o'>(</span><span class='o'>)</span>,</span>
+<span>                                 constructor_r3 <span class='o'>=</span> <span class='nf'>ready4class</span><span class='nf'>::</span><span class='nf'><a href='https://ready4-dev.github.io/ready4class/reference/ready4class_constructor.html'>ready4class_constructor</a></span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='nf'><a href='https://ready4-dev.github.io/ready4pack/reference/ready4pack_manifest.html'>ready4pack_manifest</a></span><span class='o'>(</span><span class='o'>)</span></span></code></pre>
 
 </div>
 
-### ready4 Model Sub-modules
-
-In ready4, S3 classes are principally used to help define the structural properties of slots (array elements) of model modules and the methods that can be applied to these slots. S3 classes created for these purposes are called **sub-modules**.
-
-<div class="card border-primary mb-3" style="max-width: 20rem;">
-
-<div class="card-header">
-
-**\`ready4 Concept**
-
-</div>
-
-<div class="card-body">
-
-<div class="card-title">
-
-#### Sub-Module
-
-</div>
-
-An informal (S3) class and its associated methods that describes, validates and applies algorithms to a slot of a ready4 module.
-
-</div>
-
-</div>
-
-### Module and Sub-module Methods
-
-All methods associated with ready4 modules and sub-modules adopt [a common syntax](https://ready4-dev.github.io/ready4/articles/V_02.html). However, the algorithms implemented by each command in that syntax will vary depending on which module it is applied to. A limited number of methods are defined at the level of the `Ready4Module` parent class and are therefore inherited by all ready4 modules. Currently, the only methods defined for `Ready4Module` are [slot-methods](https://ready4-dev.github.io/ready4/articles/V_02.html#slot-generics-and-methods) and these can be itemised using the `get_methods` function.
+The main method defined for `readypack_manifest` is `author` which extends the `author` method for `ready4class_manifest` to author a consistently documented R package.
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/get_methods.html'>get_methods</a></span><span class='o'>(</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt;  [1] "authorSlot"        "characterizeSlot"  "depictSlot"        "enhanceSlot"       "exhibitSlot"       "ingestSlot"        "investigateSlot"   "manufactureSlot"  </span></span>
-<span><span class='c'>#&gt;  [9] "metamorphoseSlot"  "procureSlot"       "prognosticateSlot" "ratifySlot"        "reckonSlot"        "renewSlot"         "shareSlot"</span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>## Not run</span></span>
+<span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/author-methods.html'>author</a></span><span class='o'>(</span><span class='nv'>x</span><span class='o'>)</span></span></code></pre>
 
 </div>
+
+### Examples
+
+#### Workflow example one
+
+[The program to author and document the ready4show package](https://github.com/ready4-dev/ready4show/blob/main/data-raw/DATASET.R) is relatively simple and authors:
+
+-   the `ready4show` package [CITATION](https://github.com/ready4-dev/ready4show/blob/main/inst/CITATION), [DESCRIPTION](https://github.com/ready4-dev/ready4show/blob/main/DESCRIPTION), [LICENSE](https://github.com/ready4-dev/ready4show/blob/main/LICENSE) and [README](https://github.com/ready4-dev/ready4show/blob/main/README.md) files;
+
+-   [all files in the `ready4show` package R directory](https://github.com/ready4-dev/ready4show/tree/main/R);
+
+-   the `ready4show` package [website](https://ready4-dev.github.io/ready4show/);
+
+-   two versions of the `ready4show` package manual - [a slimmed down version for end-users](https://github.com/ready4-dev/ready4show/releases/download/Documentation_0.0/ready4show_User.pdf) and [a more detailed inventory of contents intended for developers](https://github.com/ready4-dev/ready4show/releases/download/Documentation_0.0/ready4show_Developer.pdf);
+
+-   an [initial `ready4show` release](https://github.com/ready4-dev/ready4show/releases/tag/Documentation_0.0) for hosting supporting files, the creation of which will trigger archiving on [Zenodo with a `ready4show` package DOI](https://doi.org/10.5281/zenodo.5644569); and
+
+-   an [R-CMD-check continuous integration](https://github.com/ready4-dev/ready4show/actions/workflows/R-CMD-check.yaml) algorithm to be implemented each time a new version of `ready4show` is pushed to the `main` branch of the GitHub source code repository.
+
+#### Workflow example two
+
+[The program to author and document the youthvars package](https://github.com/ready4-dev/youthvars/blob/main/data-raw/DATASET.R) is a bit more complex as it includes syntax to create package datasets. In addition to the package datasets, the algorithm creates content corresponding to the previous example, specifically:
+
+-   the `youthvars` package [CITATION](https://github.com/ready4-dev/youthvars/blob/main/inst/CITATION), [DESCRIPTION](https://github.com/ready4-dev/youthvars/blob/main/DESCRIPTION), [LICENSE](https://github.com/ready4-dev/youthvars/blob/main/LICENSE) and [README](https://github.com/ready4-dev/youthvars/blob/main/README.md) files;
+
+-   [all files in the `youthvars` package R directory](https://github.com/ready4-dev/youthvars/tree/main/R);
+
+-   the `youthvars` package [website](https://ready4-dev.github.io/youthvars/);
+
+-   two versions of the `youthvars` package manual - [a slimmed down version for end-users](https://github.com/ready4-dev/youthvars/releases/download/Documentation_0.0/youthvars_User.pdf) and [a more detailed inventory of contents intended for developers](https://github.com/ready4-dev/youthvars/releases/download/Documentation_0.0/youthvars_Developer.pdf);
+
+-   an [initial `youthvars` release](https://github.com/ready4-dev/youthvars/releases/tag/Documentation_0.0) for hosting supporting files, the creation of which will trigger archiving on [Zenodo with a `youthvars` package DOI](https://zenodo.org/record/5646551); and
+
+-   an [R-CMD-check continuous integration](https://github.com/ready4-dev/youthvars/actions/workflows/R-CMD-check.yaml) algorithm to be implemented each time a new version of `youthvars` is pushed to the `main` branch of the GitHub source code repository.
+
+## Future documentation
+
+A more detailed guide to using `ready4pack` will be created in 2022.
 

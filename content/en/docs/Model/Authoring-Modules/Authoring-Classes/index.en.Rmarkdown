@@ -24,7 +24,7 @@ This below section renders a vignette article from the ready4class library. You 
 ```{r echo=FALSE, results='hide'}
 x <- tempfile(fileext = "Rmd")
 on.exit(unlink(x))
-download.file("https://raw.githubusercontent.com/ready4-dev/ready4/master/vignettes/V_01.Rmd", x)
+download.file("https://raw.githubusercontent.com/ready4-dev/ready4class/master/vignettes/V_01.Rmd", x)
 ```
 
 ```{r test-main, child=x}
