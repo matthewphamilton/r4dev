@@ -1,7 +1,7 @@
 ---
 title: "Programs"
 linkTitle: "Programs"
-date: "2022-12-08"
+date: "2022-12-23"
 description: "Programs are used to generate and report a model analysis."
 weight: 3
 categories: 
@@ -146,25 +146,6 @@ package (<a href="https://github.com/ready4-dev/mychoice" class="uri">https://gi
 <td style="text-align:left;">
 <a href="https://github.com/ready4-dev/dce_sa_design" style="     ">Dev</a>,
 <a href="https://doi.org/10.5281/zenodo.6626256" style="     ">Archive</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-mychoice_results
-</td>
-<td style="text-align:left;">
-0.1
-</td>
-<td style="text-align:left;">
-07-Nov-2022
-</td>
-<td style="text-align:left;">
-Report results from a Discrete Choice Experiment implemented with the
-mychoice R package.
-</td>
-<td style="text-align:left;">
-<a href="https://github.com/ready4-dev/mychoice_results" style="     ">Dev</a>,
-<a href="https://doi.org/10.5281/zenodo.7297904" style="     ">Archive</a>
 </td>
 </tr>
 <tr>

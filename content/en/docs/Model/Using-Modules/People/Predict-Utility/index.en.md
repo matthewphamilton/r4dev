@@ -1,7 +1,7 @@
 ---
 title: "Find and deploy utility mapping models"
 linkTitle: "Predict utility"
-date: "2022-12-14"
+date: "2022-12-23"
 description: "Using tools (soon to be formalised into ready4 framework modules) from the youthu R package, it is possible to find and deploy relevant utility mapping algorithms. This tutorial illustrates the main steps for predicting AQoL-6D utility from psychological and functional measures collected on clinical samples of young people."
 weight: 96
 categories: 
@@ -10,17 +10,19 @@ tags:
 - Model - People
 - Utility mapping
 - youthu
+params:
+  output_type_1L_chr: HTML
 output: hugodown::md_document
-rmd_hash: 9ee890aec97e63cc
+rmd_hash: 7b7f3015f7da654c
 html_dependencies:
 - <script src="kePrint-0.0.1/kePrint.js"></script>
 - <link href="lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 ---
 
-{{% pageinfo %}} This below section embeds an article from the documentation website of the youthu R package. You can use the following links to:
+{{% pageinfo %}} This below section renders a vignette article from the youthu library. You can use the following links to:
 
--   [view the article outside of enclosing frame (recommended if you plan to follow any links)](https://ready4-dev.github.io/youthu/articles/Prediction_With_Mdls.html)
+-   [view the vignette on the library website (adds useful hyperlinks to code blocks)](https://ready4-dev.github.io/youthu/articles/Prediction_With_Mdls.html)
 -   [view the source file](https://github.com/ready4-dev/youthu/blob/main/vignettes/Prediction_With_Mdls.Rmd) from that article, and;
 -   [edit its contents](https://github.com/ready4-dev/youthu/edit/main/vignettes/Prediction_With_Mdls.Rmd) (requires a GitHub account). {{% /pageinfo %}}
 
@@ -30,543 +32,1129 @@ html_dependencies:
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='s'><a href='https://ready4-dev.github.io/ready4/'>"ready4"</a></span><span class='o'>)</span> </span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://ready4-dev.github.io/youthu/'>youthu</a></span><span class='o'>)</span></span></code></pre>
 
 </div>
 
-## Motivation
+This vignette outlines a workflow for:
 
-A potentially attractive approach to modelling complex youth mental health systems is to begin with a relatively simple computational model and to progressively extend its scope and sophistication. Such an approach could be described as "modular" if it is possible to readily combine multiple discrete modelling projects (potentially developed by different modelling teams) that each independently describe distinct aspects of the system being modelled. This modular and collaborative approach is being used in the development of [readyforwhatsnext - an open source health economic model of the systems shaping mental health and wellbeing in young people](https://www.ready4-dev.com). The `ready4` package provides tools to support the development and application of the readyforwhatsnext modular model.
+-   Searching, selecting and retrieving transfer to utility models;
+-   Preparing a prediction dataset for use with a selected transfer to utility model; and
+-   Applying the selected transfer to utility model to a prediction dataset to predict Quality Adjusted Life Years (QALYs).
 
-## Implementation
+The practical value of implementing such a workflow is discussed in the [economic analysis vignette](https://ready4-dev.github.io/youthu/articles/Economic_Analysis.html) and [a scientific manuscript](https://www.medrxiv.org/content/10.1101/2021.07.07.21260129v2.full). Note, this example uses fake data - it should should not be used to inform decision making.
 
-The readyforwhatsnext model is being implemented in R its modular nature is enabled by the [encapsulation and inheritance features of Object Oriented Programming (OOP)](V_03.html). Specifically, [the framework being used to develop the model](https://www.ready4-dev.com/framework/) uses two of R's systems for implementing OOP - S3 and S4. An in-depth explanation of R's different class system is beyond the scope of this article, but is explored in [Hadley Wickham's Advanced R handbook](https://adv-r.hadley.nz/oo.html). However, it is useful to know some very high level information about S3 and S4 classes:
+## Search, select and retrieve transfer to utility models
 
--   S4 classes are frequently said to be "formal", "strict" or "rigorous". The elements of an S4 class are called slots and the type of data that each slot is allowed to contain is specified in the class definition. An S4 class can be comprised of slots that contain different types of data (e.g. a slot that contains a character vector and another slot that contains tabular data).
-
--   S3 classes are often described as "simple", "informal" and "flexible". S3 objects attach an attribute label to base type objects (e.g. a character vector, a data.frame, a list), which in turn is used to work out what methods should be applied to the class.
-
-### readyforwhatsnext Model Modules
-
-A readyforwhatsnext model module is a data-structure and associated algorithms that is used to model a discrete component of a system relevant to young people's mental health. Each readyforwhatsnext model module is created using the `ready4` package's `Ready4Module` class. We can create an instance (`X`) of `Ready4Module` using the following command.
+To identify datasets that contain transfer to utility models compatible with youthu (ie those developped with the [TTU package](https://ready4-dev.github.io/TTU/index.html)), you can use the `get_ttu_dv_dss` function. The function searches specified dataverses (in the below example, the [TTU dataverse](https://dataverse.harvard.edu/dataverse/TTU)) for datasets containing output from the TTU package.
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>X</span> <span class='o'>&lt;-</span> <span class='nf'>ready4</span><span class='nf'>::</span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/Ready4Module-class.html'>Ready4Module</a></span><span class='o'>(</span><span class='o'>)</span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>ttu_dv_dss_tb</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://ready4-dev.github.io/youthu/reference/get_ttu_dv_dss.html'>get_ttu_dv_dss</a></span><span class='o'>(</span><span class='s'>"TTU"</span><span class='o'>)</span></span></code></pre>
 
 </div>
 
-However, if we inspect `X` we can see it is of limited use as it contains no data other than an empty element called `dissemination_1L_chr`.
+The `ttu_dv_dss_tb` table summarises some pertinent details about each dataset containing TTU models found by the preceding command. These details include a link to any scientific summary (the "Article" column) associated with a dataset.
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='o'>(</span><span class='nv'>X</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt; Formal class 'Ready4Module' [package "ready4"] with 1 slot</span></span>
-<span><span class='c'>#&gt;   ..@ dissemination_1L_chr: chr NA</span></span></code></pre>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 
-</div>
-
-The `Ready4Module` class is therefore not intended to be called directly. Instead, the purpose of `Ready4Module` is to be the parent-class of all readyforwhatsnext model modules. `Ready4Module` and all of its child-classes (ie all readyforwhatsnext model modules) are "S4" classes.
-
-<div class="card border-primary mb-3" style="max-width: 20rem;">
-
-<div class="card-header">
-
-**readyforwhatsnext Concept**
-
-</div>
-
-<div class="card-body">
-
-<div class="card-title">
-
-#### Module
-
-</div>
-
-A formal (S4) `Ready4Module` child-class and its associated methods used to implement a discrete sub-component of the readyforwhatsnext youth mental health model.
-
-</div>
-
-</div>
-
-`ready4` includes two child classes of `Ready4Module`. These are `Ready4Public` and `Ready4Private` and both are almost as minimally informative as their parent (the only difference being that their instances have the values "Public" or "Private" assigned to the `dissemination_1L_chr` slot).
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>Y</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/Ready4Public-class.html'>Ready4Public</a></span><span class='o'>(</span><span class='o'>)</span></span>
-<span><span class='nf'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='o'>(</span><span class='nv'>Y</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt; Formal class 'Ready4Public' [package "ready4"] with 1 slot</span></span>
-<span><span class='c'>#&gt;   ..@ dissemination_1L_chr: chr "Public"</span></span></code></pre>
-
-</div>
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>Z</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/Ready4Private-class.html'>Ready4Private</a></span><span class='o'>(</span><span class='o'>)</span></span>
-<span><span class='nf'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='o'>(</span><span class='nv'>Z</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt; Formal class 'Ready4Private' [package "ready4"] with 1 slot</span></span>
-<span><span class='c'>#&gt;   ..@ dissemination_1L_chr: chr "Private"</span></span></code></pre>
-
-</div>
-
-Like the `Ready4Module` class they inherit from, the purpose of `Ready4Public` and `Ready4Private` is to be used as parent classes. Using either of `Ready4Public` and `Ready4Private` can be a potentially efficient way of partially automating access policies for model data. If **all** the data contained in a module can **always** be shared publicly, it may be convenient to note this by using a module that has been created as a child-class of `Ready4Public`. Similarly, if at least some of the data contained in a module will always be unsuitable for public dissemination, it can be useful to use a module that is a child of `Ready4Private`. When the dissemination policy for data contained in a module will vary depending on user or context, it is more appropriate to use a module that inherits from `Ready4Module` without being a child of either `Ready4Public` and `Ready4Private`. In this latest case, users may choose to add descriptive information about the data access policy themselves using the `renewSlot` method. The dissemination policy can be inspected with the `procureSlot` method.
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>X</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/renewSlot-methods.html'>renewSlot</a></span><span class='o'>(</span><span class='nv'>X</span>,</span>
-<span>               <span class='s'>"dissemination_1L_chr"</span>,</span>
-<span>               <span class='s'>"Staff and students of research institutes"</span><span class='o'>)</span></span>
-<span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/procureSlot-methods.html'>procureSlot</a></span><span class='o'>(</span><span class='nv'>X</span>,</span>
-<span>            <span class='s'>"dissemination_1L_chr"</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt; [1] "Staff and students of research institutes"</span></span></code></pre>
-
-</div>
-
-### readyforwhatsnext Model Sub-modules
-
-In the framework being used to develop the readyforwhatsnext model, S3 classes are principally used to help define the structural properties of slots (array elements) of model modules and the methods that can be applied to these slots. S3 classes created for these purposes are called **sub-modules**.
-
-<div class="card border-primary mb-3" style="max-width: 20rem;">
-
-<div class="card-header">
-
-**\`readyforwhatsnext Concept**
-
-</div>
-
-<div class="card-body">
-
-<div class="card-title">
-
-#### Sub-Module
-
-</div>
-
-An informal (S3) class and its associated methods that describes, validates and applies algorithms to a slot of a readyforwhatsnext module.
-
-</div>
-
-</div>
-
-### Module and Sub-module Methods
-
-All methods associated with readyforwhatsnext modules and sub-modules adopt [a common syntax](V_02.html). However, the algorithms implemented by each command in that syntax will vary depending on which module it is applied to. However, a limited number of methods are defined at the level of the `Ready4Module` parent class and are therefore inherited by all readyforwhatsnext modules. Currently, the only methods defined for `Ready4Module` are [slot-methods](V_02.html#slot-generics-and-methods) and these can be itemised using the `get_methods` function.
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/get_methods.html'>get_methods</a></span><span class='o'>(</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt;  [1] "authorSlot"        "characterizeSlot"  "depictSlot"        "enhanceSlot"       "exhibitSlot"      </span></span>
-<span><span class='c'>#&gt;  [6] "ingestSlot"        "investigateSlot"   "manufactureSlot"   "metamorphoseSlot"  "procureSlot"      </span></span>
-<span><span class='c'>#&gt; [11] "prognosticateSlot" "ratifySlot"        "reckonSlot"        "renewSlot"         "shareSlot"</span></span></code></pre>
-
-</div>
-
-### Authoring new readyforwhatsnext Modules and Sub-Modules
-
-R provides an array of potential approaches to creating and documenting S3 and S4 classes. However, standardisation is an important enabler of modular approaches to computational model development, so [all readyforwhatsnext modules and sub-modules are authored and documented using a common house-style](https://ready4-dev.github.io/ready4pack/articles/V_01.html).
-
-### Finding existing readyforwhatsnext Modules and Sub-Modules
-
-A table of all currently available readyforwhatsnext model modules (S4 classes) and sub-modules (S3 classes) can be generated by web-scraping using `make_modules_tb`. This function produces up to date results but is a little slow to execute, so an alternative is to downloaded a periodically updated database of model modules using `get_modules_tb`. Note, this quicker to implement method may omit the most recently authored model modules.
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'># Not run</span></span>
-<span><span class='c'># a &lt;- make_modules_tb()</span></span></code></pre>
-
-</div>
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>a</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/get_modules_tb.html'>get_modules_tb</a></span><span class='o'>(</span><span class='o'>)</span></span></code></pre>
-
-</div>
-
-HTML versions of the table of model modules and sub-modules can be displayed using the `print_modules` function. To display only modules (not submodules), supply the value "S4" to the `what_1L_chr` argument.
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/print_modules.html'>print_modules</a></span><span class='o'>(</span><span class='nv'>a</span>,</span>
-<span>              what_1L_chr <span class='o'>=</span> <span class='s'>"S4"</span><span class='o'>)</span></span>
-</code></pre>
-<table class="table table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+Transfer to Utility Datasets
+</caption>
 <thead>
 <tr>
 <th style="text-align:left;">
-Class
+ID
 </th>
 <th style="text-align:left;">
-Description
+Utility
 </th>
 <th style="text-align:left;">
-Examples
+Predictors
+</th>
+<th style="text-align:left;">
+Article
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
-<a href="https://ready4-dev.github.io/scorz/reference/ScorzProfile-class.html" style="     ">ScorzProfile</a>
+1
 </td>
 <td style="text-align:left;">
-A dataset to be scored, its associated metadata and details of the scoring instrument
+aqol6dtotalw
 </td>
 <td style="text-align:left;">
+BADS total score , GAD7 total score , K6 total score , OASIS total score , PHQ9 total score , SCARED total score, SOFAS total score
 </td>
-</tr>
-<tr>
 <td style="text-align:left;">
-<a href="https://ready4-dev.github.io/scorz/reference/ScorzAqol6-class.html" style="     ">ScorzAqol6</a>
-</td>
-<td style="text-align:left;">
-A dataset and metadata to support implementation of an AQoL-6D scoring algorithm
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/scorz/reference/ScorzAqol6Adol-class.html" style="     ">ScorzAqol6Adol</a>
-</td>
-<td style="text-align:left;">
-A dataset and metadata to support implementation of a scoring algorithm for the adolescent version of AQoL-6D
-</td>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/scorz/articles/V_01.html" style="     ">3</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/scorz/reference/ScorzAqol6Adult-class.html" style="     ">ScorzAqol6Adult</a>
-</td>
-<td style="text-align:left;">
-A dataset and metadata to support implementation of a scoring algorithm for the adult version of AQoL-6D
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/scorz/reference/ScorzEuroQol5-class.html" style="     ">ScorzEuroQol5</a>
-</td>
-<td style="text-align:left;">
-A dataset and metadata to support implementation of an EQ-5D scoring algorithm
-</td>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/scorz/articles/V_02.html" style="     ">4</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/reference/SpecificParameters-class.html" style="     ">SpecificParameters</a>
-</td>
-<td style="text-align:left;">
-Input parameters that specify candidate models to be explored
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/reference/SpecificPrivate-class.html" style="     ">SpecificPrivate</a>
-</td>
-<td style="text-align:left;">
-Analysis outputs not intended for public dissemination
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/reference/SpecificShareable-class.html" style="     ">SpecificShareable</a>
-</td>
-<td style="text-align:left;">
-Analysis outputs intended for public dissemination
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/reference/SpecificResults-class.html" style="     ">SpecificResults</a>
-</td>
-<td style="text-align:left;">
-Analysis results
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/reference/SpecificProject-class.html" style="     ">SpecificProject</a>
-</td>
-<td style="text-align:left;">
-Modelling project dataset, parameters and results
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/reference/SpecificInitiator-class.html" style="     ">SpecificInitiator</a>
-</td>
-<td style="text-align:left;">
-Modelling project dataset, input parameters and empty results placeholder
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/reference/SpecificModels-class.html" style="     ">SpecificModels</a>
-</td>
-<td style="text-align:left;">
-Modelling project dataset, input parameters and model comparison results
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/reference/SpecificPredictors-class.html" style="     ">SpecificPredictors</a>
-</td>
-<td style="text-align:left;">
-Modelling project dataset, input parameters and predictor comparison results
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/reference/SpecificFixed-class.html" style="     ">SpecificFixed</a>
-</td>
-<td style="text-align:left;">
-Modelling project dataset, input parameters and complete fixed models results
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/reference/SpecificMixed-class.html" style="     ">SpecificMixed</a>
-</td>
-<td style="text-align:left;">
-Modelling project dataset, input parameters and complete mixed models results
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/reference/SpecificConverter-class.html" style="     ">SpecificConverter</a>
-</td>
-<td style="text-align:left;">
-Container for seed objects used for creating SpecificModels modules
-</td>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/articles/V_01.html" style="     ">6</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/reference/SpecificSynopsis-class.html" style="     ">SpecificSynopsis</a>
-</td>
-<td style="text-align:left;">
-Input, Output and Authorship Data For Generating Reports
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/TTU/reference/TTUSynopsis-class.html" style="     ">TTUSynopsis</a>
-</td>
-<td style="text-align:left;">
-Input, Output and Authorship Data For Generating Utility Mapping Study Reports
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/TTU/reference/TTUReports-class.html" style="     ">TTUReports</a>
-</td>
-<td style="text-align:left;">
-Metadata to produce utility mapping study reports
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/reference/YouthvarsDescriptives-class.html" style="     ">YouthvarsDescriptives</a>
-</td>
-<td style="text-align:left;">
-Metadata about descriptive statistics to be generated
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/reference/YouthvarsProfile-class.html" style="     ">YouthvarsProfile</a>
-</td>
-<td style="text-align:left;">
-A dataset and its associated dictionary, descriptive statistics and metadata
-</td>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/articles/V_02.html" style="     ">2</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/reference/YouthvarsSeries-class.html" style="     ">YouthvarsSeries</a>
-</td>
-<td style="text-align:left;">
-A longitudinal dataset and its associated dictionary, descriptive statistics and metadata
-</td>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/articles/V_02.html" style="     ">2</a>
+<https://doi.org/10.1101/2021.07.07.21260129>
 </td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup>
+</td>
+</tr>
+</tfoot>
 </table>
 
 </div>
 
-To display a table of readyforwhatsnext model sub-modules , supply the value "S3" to the `what_1L_chr` argument.
+</div>
+
+To identify models that predict a specified type of health utility from one or more of a specified subset of predictors, use:
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/print_modules.html'>print_modules</a></span><span class='o'>(</span><span class='nv'>a</span>,</span>
-<span>              what_1L_chr <span class='o'>=</span> <span class='s'>"S3"</span><span class='o'>)</span></span>
-</code></pre>
-<table class="table table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>mdls_lup</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://ready4-dev.github.io/youthu/reference/get_mdls_lup.html'>get_mdls_lup</a></span><span class='o'>(</span>ttu_dv_dss_tb <span class='o'>=</span> <span class='nv'>ttu_dv_dss_tb</span>,</span>
+<span>                         utility_type_chr <span class='o'>=</span> <span class='s'>"AQoL-6D"</span>,</span>
+<span>                         mdl_predrs_in_ds_chr <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='o'>(</span><span class='s'>"PHQ9 total score"</span>,</span>
+<span>                                                  <span class='s'>"SOFAS total score"</span><span class='o'>)</span><span class='o'>)</span></span></code></pre>
+
+</div>
+
+The preceding command will produce a lookup table with information that includes the catalogue names of models, the predictors used in each model and the analysis that generated each one.
+
+<div class="highlight">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+Selected elements from Models Look-Up Table
+</caption>
 <thead>
 <tr>
 <th style="text-align:left;">
-Class
+Catalogue reference
 </th>
-<th style="text-align:left;">
-Description
+<th style="text-align:right;">
+Predictors
 </th>
-<th style="text-align:left;">
-Examples
+<th style="text-align:right;">
+Analysis
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/reference/specific_models.html" style="     ">specific_models</a>
+PHQ9_1\_GLM_GSN_LOG
 </td>
-<td style="text-align:left;">
-Candidate models lookup table
+<td style="text-align:right;">
+PHQ9
 </td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/specific/reference/specific_predictors.html" style="     ">specific_predictors</a>
-</td>
-<td style="text-align:left;">
-Candidate predictors lookup table
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+Primary Analysis
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/reference/youthvars_aqol6d_adol.html" style="     ">youthvars_aqol6d_adol</a>
+PHQ9_1\_OLS_CLL
 </td>
-<td style="text-align:left;">
-youthvars S3 class for Assessment of Quality of Life Six Dimension Health Utility - Adolescent Version (AQoL6d Adolescent))
+<td style="text-align:right;">
+PHQ9
 </td>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/articles/V_01.html" style="     ">1</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/reference/youthvars_phq9.html" style="     ">youthvars_phq9</a>
-</td>
-<td style="text-align:left;">
-youthvars S3 class for Patient Health Questionnaire (PHQ-9) scores
-</td>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/articles/V_01.html" style="     ">1</a>
+<td style="text-align:right;">
+Primary Analysis
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/reference/youthvars_bads.html" style="     ">youthvars_bads</a>
+PHQ9_SOFAS_1\_GLM_GSN_LOG
 </td>
-<td style="text-align:left;">
-youthvars S3 class for Behavioural Activation for Depression Scale (BADS) scores
+<td style="text-align:right;">
+PHQ9 , SOFAS
 </td>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/articles/V_01.html" style="     ">1</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/reference/youthvars_gad7.html" style="     ">youthvars_gad7</a>
-</td>
-<td style="text-align:left;">
-youthvars S3 class for Generalised Anxiety Disorder Scale (GAD-7) scores
-</td>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/articles/V_01.html" style="     ">1</a>
+<td style="text-align:right;">
+Primary Analysis
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/reference/youthvars_oasis.html" style="     ">youthvars_oasis</a>
+PHQ9_SOFAS_1\_OLS_CLL
 </td>
-<td style="text-align:left;">
-youthvars S3 class for Overall Anxiety Severity and Impairment Scale (OASIS) scores
+<td style="text-align:right;">
+PHQ9 , SOFAS
 </td>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/articles/V_01.html" style="     ">1</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/reference/youthvars_scared.html" style="     ">youthvars_scared</a>
-</td>
-<td style="text-align:left;">
-youthvars S3 class for Screen for Child Anxiety Related Disorders (SCARED) scores
-</td>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/articles/V_01.html" style="     ">1</a>
+<td style="text-align:right;">
+Primary Analysis
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/reference/youthvars_k6.html" style="     ">youthvars_k6</a>
+OASIS_SOFAS_1\_GLM_GSN_LOG
 </td>
-<td style="text-align:left;">
-youthvars S3 class for Kessler Psychological Distress Scale (K6) - US Scoring System scores
+<td style="text-align:right;">
+OASIS, SOFAS
 </td>
-<td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/articles/V_01.html" style="     ">1</a>
+<td style="text-align:right;">
+Primary Analysis
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/reference/youthvars_sofas.html" style="     ">youthvars_sofas</a>
+OASIS_SOFAS_1\_OLS_CLL
 </td>
-<td style="text-align:left;">
-youthvars S3 class for Social and Occupational Functioning Assessment Scale (SOFAS)
+<td style="text-align:right;">
+OASIS, SOFAS
 </td>
+<td style="text-align:right;">
+Primary Analysis
+</td>
+</tr>
+<tr>
 <td style="text-align:left;">
-<a href="https://ready4-dev.github.io/youthvars/articles/V_01.html" style="     ">1</a>
+BADS_SOFAS_1\_GLM_GSN_LOG
+</td>
+<td style="text-align:right;">
+BADS , SOFAS
+</td>
+<td style="text-align:right;">
+Primary Analysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BADS_SOFAS_1\_OLS_CLL
+</td>
+<td style="text-align:right;">
+BADS , SOFAS
+</td>
+<td style="text-align:right;">
+Primary Analysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+K6_SOFAS_1\_GLM_GSN_LOG
+</td>
+<td style="text-align:right;">
+K6 , SOFAS
+</td>
+<td style="text-align:right;">
+Primary Analysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+K6_SOFAS_1\_OLS_CLL
+</td>
+<td style="text-align:right;">
+K6 , SOFAS
+</td>
+<td style="text-align:right;">
+Primary Analysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SCARED_SOFAS_1\_GLM_GSN_LOG
+</td>
+<td style="text-align:right;">
+SCARED, SOFAS
+</td>
+<td style="text-align:right;">
+Primary Analysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SCARED_SOFAS_1\_OLS_CLL
+</td>
+<td style="text-align:right;">
+SCARED, SOFAS
+</td>
+<td style="text-align:right;">
+Primary Analysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GAD7_SOFAS_1\_GLM_GSN_LOG
+</td>
+<td style="text-align:right;">
+GAD7 , SOFAS
+</td>
+<td style="text-align:right;">
+Primary Analysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GAD7_SOFAS_1\_OLS_CLL
+</td>
+<td style="text-align:right;">
+GAD7 , SOFAS
+</td>
+<td style="text-align:right;">
+Primary Analysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SOFAS_1\_GLM_GSN_LOG
+</td>
+<td style="text-align:right;">
+SOFAS
+</td>
+<td style="text-align:right;">
+Secondary Analysis A
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SOFAS_1\_OLS_CLL
+</td>
+<td style="text-align:right;">
+SOFAS
+</td>
+<td style="text-align:right;">
+Secondary Analysis A
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+OASIS_PHQ9_1\_GLM_GSN_LOG
+</td>
+<td style="text-align:right;">
+OASIS, PHQ9
+</td>
+<td style="text-align:right;">
+Secondary Analysis B
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+OASIS_PHQ9_1\_OLS_CLL
+</td>
+<td style="text-align:right;">
+OASIS, PHQ9
+</td>
+<td style="text-align:right;">
+Secondary Analysis B
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GAD7_PHQ9_1\_GLM_GSN_LOG
+</td>
+<td style="text-align:right;">
+GAD7, PHQ9
+</td>
+<td style="text-align:right;">
+Secondary Analysis B
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GAD7_PHQ9_1\_OLS_CLL
+</td>
+<td style="text-align:right;">
+GAD7, PHQ9
+</td>
+<td style="text-align:right;">
+Secondary Analysis B
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SCARED_PHQ9_1\_GLM_GSN_LOG
+</td>
+<td style="text-align:right;">
+SCARED, PHQ9
+</td>
+<td style="text-align:right;">
+Secondary Analysis B
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SCARED_PHQ9_1\_OLS_CLL
+</td>
+<td style="text-align:right;">
+SCARED, PHQ9
+</td>
+<td style="text-align:right;">
+Secondary Analysis B
 </td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup>
+</td>
+</tr>
+</tfoot>
 </table>
+
+</div>
+
+</div>
+
+To review the summary information about the predictive performance of a specific model, use:
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/youthu/reference/get_dv_mdl_smrys.html'>get_dv_mdl_smrys</a></span><span class='o'>(</span><span class='nv'>mdls_lup</span>,</span>
+<span>                 mdl_nms_chr <span class='o'>=</span> <span class='s'>"PHQ9_SOFAS_1_OLS_CLL"</span><span class='o'>)</span></span>
+<span><span class='c'>#&gt; $PHQ9_SOFAS_1_OLS_CLL</span></span>
+<span><span class='c'>#&gt;        Parameter Estimate    SE          95% CI</span></span>
+<span><span class='c'>#&gt; 1 SD (Intercept)    0.348 0.017   0.312 , 0.382</span></span>
+<span><span class='c'>#&gt; 2      Intercept    0.428 0.129   0.174 , 0.686</span></span>
+<span><span class='c'>#&gt; 3  PHQ9 baseline   -9.115 0.249 -9.601 , -8.618</span></span>
+<span><span class='c'>#&gt; 4    PHQ9 change   -7.331 0.339 -8.007 , -6.665</span></span>
+<span><span class='c'>#&gt; 5 SOFAS baseline    0.960 0.172   0.616 , 1.292</span></span>
+<span><span class='c'>#&gt; 6   SOFAS change    1.146 0.235   0.674 , 1.607</span></span>
+<span><span class='c'>#&gt; 7             R2    0.767 0.012   0.743 , 0.788</span></span>
+<span><span class='c'>#&gt; 8           RMSE    0.925 0.004   0.922 , 0.928</span></span>
+<span><span class='c'>#&gt; 9          Sigma    0.406 0.012   0.384 , 0.429</span></span></code></pre>
+
+</div>
+
+More information about a selected model can be found in the online model catalogue, the link to which can be obtained with the following command:
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/youthu/reference/get_mdl_ctlg_url.html'>get_mdl_ctlg_url</a></span><span class='o'>(</span><span class='nv'>mdls_lup</span>,</span>
+<span>                 mdl_nm_1L_chr <span class='o'>=</span> <span class='s'>"PHQ9_SOFAS_1_OLS_CLL"</span><span class='o'>)</span></span>
+</code></pre>
+
+\[1\] "<https://dataverse.harvard.edu/api/access/datafile/6484935>"
+
+</div>
+
+## Prepare a prediction dataset for use with a selected transfer to utility model
+
+### Import data
+
+You can now import and inspect the dataset you plan on using for prediction. In the below example we use fake data.
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>data_tb</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://ready4-dev.github.io/youthu/reference/make_fake_ds_one.html'>make_fake_ds_one</a></span><span class='o'>(</span><span class='o'>)</span></span></code></pre>
+
+</div>
+
+<div class="highlight">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+Illustrative example of a prediction dataset
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+UID
+</th>
+<th style="text-align:right;">
+Timepoint
+</th>
+<th style="text-align:right;">
+Date
+</th>
+<th style="text-align:right;">
+PHQ_total
+</th>
+<th style="text-align:right;">
+SOFAS_total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Participant_1
+</td>
+<td style="text-align:right;">
+Baseline
+</td>
+<td style="text-align:right;">
+2021-09-20
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+69
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_10
+</td>
+<td style="text-align:right;">
+Baseline
+</td>
+<td style="text-align:right;">
+2021-08-18
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+60
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_10
+</td>
+<td style="text-align:right;">
+Follow-up
+</td>
+<td style="text-align:right;">
+2021-11-02
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+64
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_100
+</td>
+<td style="text-align:right;">
+Baseline
+</td>
+<td style="text-align:right;">
+2021-05-09
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+76
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_1000
+</td>
+<td style="text-align:right;">
+Baseline
+</td>
+<td style="text-align:right;">
+2021-07-18
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+71
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_1000
+</td>
+<td style="text-align:right;">
+Follow-up
+</td>
+<td style="text-align:right;">
+2021-10-13
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+71
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup>
+</td>
+</tr>
+</tfoot>
+</table>
+
+</div>
+
+</div>
+
+### Confirm dataset can be used as a prediction dataset
+
+The prediction dataset must contain variables that correspond to all the predictors of the model you intend to apply. The allowable range and required class of each predictor variable are described in the `min_val_dbl`, `max_val_dbl` and `class_chr` columns of the model predictors lookup table, which can be accessed with a call to the `get_predictors_lup` function.
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>predictors_lup</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://ready4-dev.github.io/youthu/reference/get_predictors_lup.html'>get_predictors_lup</a></span><span class='o'>(</span>mdls_lup <span class='o'>=</span> <span class='nv'>mdls_lup</span>,</span>
+<span>                                     mdl_nm_1L_chr <span class='o'>=</span> <span class='s'>"PHQ9_SOFAS_1_OLS_CLL"</span><span class='o'>)</span></span></code></pre>
+
+</div>
+
+<div class="highlight">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+Model predictors lookup table
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+short_name_chr
+</th>
+<th style="text-align:right;">
+long_name_chr
+</th>
+<th style="text-align:left;">
+min_val_dbl
+</th>
+<th style="text-align:right;">
+max_val_dbl
+</th>
+<th style="text-align:left;">
+class_chr
+</th>
+<th style="text-align:right;">
+increment_dbl
+</th>
+<th style="text-align:left;">
+class_fn_chr
+</th>
+<th style="text-align:right;">
+mdl_scaling_dbl
+</th>
+<th style="text-align:left;">
+covariate_lgl
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+PHQ9
+</td>
+<td style="text-align:right;">
+PHQ9 total score
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+youthvars::youthvars_phq9
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SOFAS
+</td>
+<td style="text-align:right;">
+SOFAS total score
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+youthvars::youthvars_sofas
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup>
+</td>
+</tr>
+</tfoot>
+</table>
+
+</div>
+
+</div>
+
+The prediction dataset must also include both a unique client identifier variable and a measurement time-point identifier variable (which must be a `factor` with two levels). The dataset also needs to be in long format (ie where measures at different time-points for the same individual are stacked on top of each other in separate rows). We can confirm these conditions hold by creating a dataset metadata object using the `make_predn_metadata_ls` function. In creating the metadata object, the function checks that the dataset can be used in conjunction with the model specified at the `mdl_nm_1L_chr` argument. If the prediction dataset uses different variable names for the predictors to those specified in the `predictors_lup` lookup table, a named vector detailing the correspondence between the two sets of variable names needs to be passed to the `predr_vars_nms_chr` argument. Finally, if you wish to specify a preferred variable name to use for the predicted utility values when applying the model, you can do this by passing this name to the `utl_var_nm_1L_chr` argument.
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>predn_ds_ls</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://ready4-dev.github.io/youthu/reference/make_predn_metadata_ls.html'>make_predn_metadata_ls</a></span><span class='o'>(</span><span class='nv'>data_tb</span>,</span>
+<span>                                      id_var_nm_1L_chr <span class='o'>=</span> <span class='s'>"UID"</span>,</span>
+<span>                                      msrmnt_date_var_nm_1L_chr <span class='o'>=</span> <span class='s'>"Date"</span>,</span>
+<span>                                      predr_vars_nms_chr <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='o'>(</span>PHQ9 <span class='o'>=</span> <span class='s'>"PHQ_total"</span>,SOFAS <span class='o'>=</span> <span class='s'>"SOFAS_total"</span><span class='o'>)</span>,</span>
+<span>                                      round_var_nm_1L_chr <span class='o'>=</span> <span class='s'>"Timepoint"</span>,</span>
+<span>                                      round_bl_val_1L_chr <span class='o'>=</span> <span class='s'>"Baseline"</span>,</span>
+<span>                                      utl_var_nm_1L_chr <span class='o'>=</span> <span class='s'>"AQoL6D_HU"</span>,</span>
+<span>                                      mdls_lup <span class='o'>=</span> <span class='nv'>mdls_lup</span>,</span>
+<span>                                      mdl_nm_1L_chr <span class='o'>=</span> <span class='s'>"PHQ9_SOFAS_1_OLS_CLL"</span><span class='o'>)</span></span></code></pre>
+
+</div>
+
+## Apply the selected transfer to utility model to a prediction dataset to predict Quality Adjusted Life Years (QALYs)
+
+### Predict health utility at baseline and follow-up timepoints
+
+To generate utility predictions we use the `add_utl_predn` function. The function needs to be supplied with the prediction dataset (the value passed to argument `data_tb`) and the validated prediction metadata object we created in the previous step.
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>data_tb</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://ready4-dev.github.io/youthu/reference/add_utl_predn.html'>add_utl_predn</a></span><span class='o'>(</span><span class='nv'>data_tb</span>,</span>
+<span>                         predn_ds_ls <span class='o'>=</span> <span class='nv'>predn_ds_ls</span><span class='o'>)</span></span>
+<span><span class='c'>#&gt; Joining, by = c("UID", "Timepoint")</span></span></code></pre>
+
+</div>
+
+By default the `add_utl_predn` function samples model parameter values based on a table of model coefficients when making predictions and constrains predictions to an allowed range. You can override these defaults by adding additional arguments `new_data_is_1L_chr = "Predicted"` (which uses mean parameter values), `force_min_max_1L_lgl = F` (removes range constraint) and (if the source dataset makes available downloadable model objects) `make_from_tbl_1L_lgl = F`. These settings will produce different predictions. It is strongly recommended that you consult the model catalogue (see above) to understand how such decisions may affect the validity of the predicted values that will be generated.
+
+<div class="highlight">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+Prediction dataset with predicted utilities
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+UID
+</th>
+<th style="text-align:right;">
+Timepoint
+</th>
+<th style="text-align:right;">
+Date
+</th>
+<th style="text-align:right;">
+PHQ_total
+</th>
+<th style="text-align:right;">
+SOFAS_total
+</th>
+<th style="text-align:right;">
+AQoL6D_HU
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Participant_1
+</td>
+<td style="text-align:right;">
+Baseline
+</td>
+<td style="text-align:right;">
+2021-09-20
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+69
+</td>
+<td style="text-align:right;">
+0.9080468
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_10
+</td>
+<td style="text-align:right;">
+Baseline
+</td>
+<td style="text-align:right;">
+2021-08-18
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+0.5533808
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_10
+</td>
+<td style="text-align:right;">
+Follow-up
+</td>
+<td style="text-align:right;">
+2021-11-02
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+64
+</td>
+<td style="text-align:right;">
+0.4006010
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_100
+</td>
+<td style="text-align:right;">
+Baseline
+</td>
+<td style="text-align:right;">
+2021-05-09
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+76
+</td>
+<td style="text-align:right;">
+0.6809903
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_1000
+</td>
+<td style="text-align:right;">
+Baseline
+</td>
+<td style="text-align:right;">
+2021-07-18
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+71
+</td>
+<td style="text-align:right;">
+0.9877882
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_1000
+</td>
+<td style="text-align:right;">
+Follow-up
+</td>
+<td style="text-align:right;">
+2021-10-13
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+71
+</td>
+<td style="text-align:right;">
+0.9602037
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup>
+</td>
+</tr>
+</tfoot>
+</table>
+
+</div>
+
+</div>
+
+Our health utility predictions are now available for use and are summarised below.
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='o'>(</span><span class='nv'>data_tb</span><span class='o'>$</span><span class='nv'>AQoL6D_HU</span><span class='o'>)</span></span>
+<span><span class='c'>#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span></span>
+<span><span class='c'>#&gt; 0.06646 0.42781 0.63403 0.62335 0.83351 1.00000</span></span></code></pre>
+
+</div>
+
+### Calculate QALYs
+
+The last step is to calculate Quality Adjusted Life Years, using a method assuming a linear rate of change between timepoints.
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>data_tb</span> <span class='o'>&lt;-</span> <span class='nv'>data_tb</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='nf'><a href='https://ready4-dev.github.io/youthu/reference/add_qalys_to_ds.html'>add_qalys_to_ds</a></span><span class='o'>(</span>predn_ds_ls <span class='o'>=</span> <span class='nv'>predn_ds_ls</span>,</span>
+<span>                                       include_predrs_1L_lgl <span class='o'>=</span> <span class='kc'>F</span>,</span>
+<span>                                       reshape_1L_lgl <span class='o'>=</span> <span class='kc'>F</span><span class='o'>)</span></span></code></pre>
+
+</div>
+
+<div class="highlight">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+Prediction dataset with QALYs
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+UID
+</th>
+<th style="text-align:right;">
+Timepoint
+</th>
+<th style="text-align:right;">
+Date
+</th>
+<th style="text-align:right;">
+PHQ_total
+</th>
+<th style="text-align:right;">
+SOFAS_total
+</th>
+<th style="text-align:right;">
+AQoL6D_HU
+</th>
+<th style="text-align:left;">
+AQoL6D_HU_change_dbl
+</th>
+<th style="text-align:right;">
+duration_prd
+</th>
+<th style="text-align:right;">
+qalys_dbl
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Participant_1
+</td>
+<td style="text-align:right;">
+Baseline
+</td>
+<td style="text-align:right;">
+2021-09-20
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+69
+</td>
+<td style="text-align:right;">
+0.9080468
+</td>
+<td style="text-align:left;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0S
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_10
+</td>
+<td style="text-align:right;">
+Baseline
+</td>
+<td style="text-align:right;">
+2021-08-18
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+0.5533808
+</td>
+<td style="text-align:left;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0S
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_10
+</td>
+<td style="text-align:right;">
+Follow-up
+</td>
+<td style="text-align:right;">
+2021-11-02
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+64
+</td>
+<td style="text-align:right;">
+0.4006010
+</td>
+<td style="text-align:left;">
+-0.1527798
+</td>
+<td style="text-align:right;">
+76d 0H 0M 0S
+</td>
+<td style="text-align:right;">
+0.0992507
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_100
+</td>
+<td style="text-align:right;">
+Baseline
+</td>
+<td style="text-align:right;">
+2021-05-09
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+76
+</td>
+<td style="text-align:right;">
+0.6809903
+</td>
+<td style="text-align:left;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0S
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_1000
+</td>
+<td style="text-align:right;">
+Baseline
+</td>
+<td style="text-align:right;">
+2021-07-18
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+71
+</td>
+<td style="text-align:right;">
+0.9877882
+</td>
+<td style="text-align:left;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0S
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Participant_1000
+</td>
+<td style="text-align:right;">
+Follow-up
+</td>
+<td style="text-align:right;">
+2021-10-13
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+71
+</td>
+<td style="text-align:right;">
+0.9602037
+</td>
+<td style="text-align:left;">
+-0.0275845
+</td>
+<td style="text-align:right;">
+87d 0H 0M 0S
+</td>
+<td style="text-align:right;">
+0.2319990
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup>
+</td>
+</tr>
+</tfoot>
+</table>
+
+</div>
 
 </div>
 

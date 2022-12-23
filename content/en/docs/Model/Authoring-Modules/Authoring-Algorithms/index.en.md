@@ -1,7 +1,7 @@
 ---
 title: "Authoring model algorithms"
 linkTitle: "Algorithms"
-date: "2022-12-22"
+date: "2022-12-23"
 description: "The ready4fun R package supports standardised approaches to code authoring that facilitate partial automation of the documenting of model algorithms."
 weight: 64
 categories: 

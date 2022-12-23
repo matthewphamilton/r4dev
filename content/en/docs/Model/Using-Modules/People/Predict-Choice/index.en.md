@@ -1,7 +1,7 @@
 ---
 title: "Develop choice models"
 linkTitle: "Predict choice"
-date: "2022-12-22"
+date: "2022-12-23"
 description: "Using tools (soon to be formalised into ready4 framework modules) from the mychoice R package, it is possible to develop choice models from responses to a discrete choice experiment survey."
 weight: 97
 categories: 
@@ -31,6 +31,8 @@ rmd_hash: 23a1849f0442c087
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://ready4-dev.github.io/mychoice/'>mychoice</a></span><span class='o'>)</span></span></code></pre>
 
 </div>
+
+The tools in mychoice are designed to make it easier to develop and use choice models with [ready4 - an open source health economic model of the systems shaping mental health and wellbeing in young people](https://www.ready4-dev.com).
 
 This development version of the mychoice package has been made available as part of the process of testing and documenting the package.
 

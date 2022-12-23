@@ -1,7 +1,7 @@
 ---
 title: "Add a data dictionary to a dataset"
 linkTitle: "Labelling"
-date: "2022-12-22"
+date: "2022-12-23"
 description: "Pairing a dataset with its dictionary makes it easier to interpret. This tutorial describes how a module from the ready4use R package can help you to pair a dataset and its dictionary."
 weight: 92
 categories: 

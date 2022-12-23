@@ -1,7 +1,7 @@
 ---
 title: "Modules"
 linkTitle: "Modules"
-date: "2022-12-22"
+date: "2022-12-23"
 description: "ready4 supports a modular approach to computational model development."
 weight: 62
 categories: 
@@ -127,7 +127,7 @@ In ready4, S3 classes are principally used to help define the structural propert
 
 <div class="card-header">
 
-**\`ready4 Concept**
+**ready4 Concept**
 
 </div>
 
@@ -152,8 +152,9 @@ All methods associated with ready4 modules and sub-modules adopt [a common synta
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/get_methods.html'>get_methods</a></span><span class='o'>(</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt;  [1] "authorSlot"        "characterizeSlot"  "depictSlot"        "enhanceSlot"       "exhibitSlot"       "ingestSlot"        "investigateSlot"   "manufactureSlot"  </span></span>
-<span><span class='c'>#&gt;  [9] "metamorphoseSlot"  "procureSlot"       "prognosticateSlot" "ratifySlot"        "reckonSlot"        "renewSlot"         "shareSlot"</span></span></code></pre>
+<span><span class='c'>#&gt;  [1] "authorSlot"        "characterizeSlot"  "depictSlot"        "enhanceSlot"       "exhibitSlot"       "ingestSlot"        "investigateSlot"  </span></span>
+<span><span class='c'>#&gt;  [8] "manufactureSlot"   "metamorphoseSlot"  "procureSlot"       "prognosticateSlot" "ratifySlot"        "reckonSlot"        "renewSlot"        </span></span>
+<span><span class='c'>#&gt; [15] "shareSlot"</span></span></code></pre>
 
 </div>
 

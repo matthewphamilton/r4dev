@@ -1,7 +1,7 @@
 ---
 title: "ready4 framework taxonomies"
 linkTitle: "Framework taxonomies"
-date: "2022-12-08"
+date: "2022-12-23"
 description: "Releases of taxonomies used to help standardise computational models developed with the ready4 framework."
 weight: 2
 categories: 
@@ -52,6 +52,20 @@ Number of files
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:left;">
+23-Dec-2022
+</td>
+<td style="text-align:left;">
+<a href="https://doi.org/10.7910/DVN/RIQTKK" class="uri">https://doi.org/10.7910/DVN/RIQTKK</a>
+</td>
+<td style="text-align:left;">
+3.0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
 <tr>
 <td style="text-align:left;">
 25-May-2022

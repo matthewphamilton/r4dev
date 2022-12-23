@@ -27,12 +27,12 @@ c("Authoring-Algorithms","Authoring-Classes", "Packaging-Modules") %>%
   write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model/Authoring-Modules",
                        consent_1L_chr = "Y",
                        is_rmd_1L_lgl = F)
-c(#"Add-Metadata",
+c("Add-Metadata",
   "Assess-Cost-Utility", # Add scroll box args
-  #"Explore-Models", 
-  #"Map-To-Utility", 
+  "Explore-Models", 
+  "Map-To-Utility", 
   "Predict-Choice",
-  #"Predict-Utility", 
+  "Predict-Utility", 
   "Score-Health-Utility", # Add scroll box args
   "Validate-Variables") %>%
   write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model/Using-Modules/People",
@@ -61,32 +61,40 @@ c("Scientific-Summaries") %>% # Do not evaluate write fns, add scroll text and t
 # Render program and sub-routine summaries
 c("Programs",
   "Subroutines") %>%
-  write_to_render_post("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Programs",
+  write_to_render_post("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Getting-started/Software/Executables",
                        consent_1L_chr = "Y")
-rmarkdown::render("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Analyses/Replication-Code/Make-Fakes/Clincal_Primary.Rmd")
-write_to_trim_html("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Analyses/Replication-Code/Make-Fakes/Clincal_Primary.md")
+c("Make-Fakes") %>% # Do not evaluate write fns, add scroll text and then restore link to online RMD
+  write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Analyses/Replication-Code",
+                       consent_1L_chr = "Y",
+                       is_rmd_1L_lgl = F)
+#write_to_trim_html("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Analyses/Replication-Code/Make-Fakes/Clincal_Primary.md")
 ###
-
-
 ###
 ### BLOG SECTION
 # Render release summaries
-c("Framework_Software",
-  "Framework_Taxonomies", 
-  "Spring_To_Life_Modules") %>%
-  write_to_render_post("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/blog/releases")
+c("Framework-Software",
+  "Framework-Taxonomies", 
+  "Module-Libraries") %>%
+  write_to_render_post("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/blog/releases",
+                       consent_1L_chr = "Y")
 #
 # write_to_copy_rmds(dir_path_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model/Using-Modules/People",
 #                    fl_nm_1L_chr = "TEST",
 #                    rmds_dir_1L_chr = "R/RMD Templates/Include_HTML")
-write_new_credentials("./content/en/docs/Readyforwhatsnext/Spring To Life/Modules/Predict choice.md",
-                      new_credentials_1L_chr = "d7d86c443e2b45c1b43c7db36ad50bf3",
-                      old_credentials_1L_chr = "93f800c0e2594268b9482bea99e2e434") # Prior to deployment
-write_new_credentials("./content/en/docs/Readyforwhatsnext/Spring To Life/Modules/Predict choice.md",
-                      old_credentials_1L_chr = "d7d86c443e2b45c1b43c7db36ad50bf3",
-                      new_credentials_1L_chr = "93f800c0e2594268b9482bea99e2e434") # For local preview
+c("Map-Utility/aqol6dmap_use.md",
+  "Map-Utility/ttu_lng_aqol6d_csp.md",
+  "Model-Choice/dce_sa_analysis.md",
+  "Model-Choice/dce_sa_design.md") %>%
+  purrr::walk(~write_new_credentials(paste0("~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Analyses/Replication-Code/",.x),
+                                     new_credentials_1L_chr = "d7d86c443e2b45c1b43c7db36ad50bf3",
+                                     old_credentials_1L_chr = "93f800c0e2594268b9482bea99e2e434", 
+                                     consent_1L_chr = "Y"))
+# Prior to deployment
+# write_new_credentials("./content/en/docs/Readyforwhatsnext/Spring To Life/Modules/Predict choice.md",
+#                       old_credentials_1L_chr = "d7d86c443e2b45c1b43c7db36ad50bf3",
+#                       new_credentials_1L_chr = "93f800c0e2594268b9482bea99e2e434") # For local preview
 ## Deploy dependencies app
-library(rsconnect)
-deployApp("R/Shiny/Dependencies")
+# library(rsconnect)
+# deployApp("R/Shiny/Dependencies")
 
 

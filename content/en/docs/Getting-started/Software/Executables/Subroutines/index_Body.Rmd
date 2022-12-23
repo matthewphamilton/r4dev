@@ -3,12 +3,12 @@ output: html_document
 ---
 
 ```{r, include=FALSE}
-source("../../../../../../../R/Functions.R", local = knitr::knit_global())
+library(ready4)#source("../../../../../../../R/Functions.R", local = knitr::knit_global())
 ```
 
 ```{r echo=F, message=FALSE, warning=FALSE}
 make_programs_tbl(what_1L_chr = "Subroutine",
-                  as_kable_1L_lgl = T,
+                  as_kbl_1L_lgl = T,
                   bootstrap_options = c("hover", 
                                         "condensed"))
 ```

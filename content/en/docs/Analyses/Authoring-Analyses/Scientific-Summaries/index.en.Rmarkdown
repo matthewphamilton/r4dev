@@ -22,10 +22,10 @@ This below section renders a vignette article from the ready4show library. You c
 {{% /pageinfo %}}
 
 ```{r echo=FALSE, results='hide'}
-x <- "UntitledRMD.Rmd"
-# x <- tempfile(fileext = "Rmd")
-# on.exit(unlink(x))
-# download.file("https://raw.githubusercontent.com/ready4-dev/ready4show/master/vignettes/V_01.Rmd", x)
+# x <- "UntitledRMD.Rmd"
+x <- tempfile(fileext = "Rmd")
+on.exit(unlink(x))
+download.file("https://raw.githubusercontent.com/ready4-dev/ready4show/master/vignettes/V_01.Rmd", x)
 ```
 
 ```{r test-main, child=x}

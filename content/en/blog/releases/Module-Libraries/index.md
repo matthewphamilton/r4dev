@@ -1,21 +1,21 @@
 ---
-title: "Spring To Life model module releases"
-linkTitle: "People model modules"
-date: "2022-12-08"
-description: "Releases of modules for modelling people."
+title: "Module library releases"
+linkTitle: "Module libraries"
+date: "2022-12-23"
+description: "Releases of model module libraries."
 weight: 3
 categories: 
 - Releases
 tags: 
+- Libraries
 - R packages
 - Model Modules
-- Model - People
 output: hugodown::md_document
-rmd_hash: 0eea2e81f6a35c4f
+rmd_hash: f59c1f6007ff08d3
 
 ---
 
-One goal of the *readyforwhatsnext* model is to model the people relevant to youth mental health systems design and policy development. The name of the "people" model we are developing for this task is Spring To Life. The Spring To Life model is comprised of modules that each focus on discrete tasks (e.g. describing data, scoring variables, mapping health utility, modelling choice). Currently available (as at 08-Dec-2022) releases of the R packages of modules used in developing the Spring To Life model are reproduced below.
+Currently available (as at 23-Dec-2022) releases of the ready4 module libraries are reproduced below.
 
 <html>
 

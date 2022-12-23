@@ -1,7 +1,7 @@
 ---
 title: "Validate variable total scores"
 linkTitle: "Validate data"
-date: "2022-12-14"
+date: "2022-12-23"
 description: "Vector based classes can be used to help validate variable values. This tutorial describes how to do that with sub-module classes exported as part of the youthvars R package."
 weight: 92
 categories: 
@@ -41,7 +41,7 @@ rmd_hash: e13a0c5ba9133f1a
 
 The `youthvars` package defines a number of vector based classes that can be used to quality assure the data recorded for individual variables. `youthvars` variable classes are potentially useful for:
 
-1.  facilitating automated data integrity checks that verify no impermissible values (e.g. utility scores greater than one) are present in source data, within calculation transformed data or results; and
+1.  facilitating automated data integrity checks that verify no impermissible values (e.g. utility scores greater than one) are present in source data, transformed data or results; and
 2.  automating the selection of the appropriate method to apply to each data type.
 
 ## Included classes

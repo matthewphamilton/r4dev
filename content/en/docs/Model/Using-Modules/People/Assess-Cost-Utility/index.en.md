@@ -1,7 +1,7 @@
 ---
 title: "Use utility mapping algorithms to help implement cost-utility analyses"
 linkTitle: "Assess cost-utility"
-date: "2022-12-22"
+date: "2022-12-23"
 description: "Using tools (soon to be formalised into ready4 framework modules) from the youthu R package, it is possible to use utility mapping algorithms to help implement cost-utility analyses. This tutorial illustrates the main steps for doing so using psychological and functional measures collected on clinical samples of young people."
 weight: 97
 categories: 
@@ -36,7 +36,7 @@ html_dependencies:
 
 </div>
 
-This vignette illustrates the rationale for and practical decision-making utility of youthu's [QALYs prediction workflow](Prediction_With_Mdls.html). Note, this example is illustrated with fake data and should not be used to inform decision-making.
+This vignette illustrates the rationale for and practical decision-making utility of youthu's [QALYs prediction workflow](https://ready4-dev.github.io/youthu/articles/Prediction_With_Mdls.html). Note, this example is illustrated with fake data and should not be used to inform decision-making.
 
 ## Motivation
 
@@ -57,7 +57,9 @@ Our dataset includes 268 matched comparisons, with each comparison containing ba
 
 <div class="highlight">
 
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
 First few records from input dataset
 </caption>
@@ -101,7 +103,7 @@ Participant_20
 Baseline
 </td>
 <td style="text-align:right;">
-2022-05-17
+2022-05-18
 </td>
 <td style="text-align:right;">
 0S
@@ -130,7 +132,7 @@ Participant_593
 Baseline
 </td>
 <td style="text-align:right;">
-2022-03-24
+2022-03-25
 </td>
 <td style="text-align:right;">
 0S
@@ -159,7 +161,7 @@ Participant_593
 Follow-up
 </td>
 <td style="text-align:right;">
-2022-09-15
+2022-09-16
 </td>
 <td style="text-align:right;">
 175d 0H 0M 0S
@@ -188,7 +190,7 @@ Participant_20
 Follow-up
 </td>
 <td style="text-align:right;">
-2022-11-11
+2022-11-12
 </td>
 <td style="text-align:right;">
 178d 0H 0M 0S
@@ -217,7 +219,7 @@ Participant_259
 Baseline
 </td>
 <td style="text-align:right;">
-2022-07-12
+2022-07-13
 </td>
 <td style="text-align:right;">
 0S
@@ -246,7 +248,7 @@ Participant_962
 Baseline
 </td>
 <td style="text-align:right;">
-2022-08-24
+2022-08-25
 </td>
 <td style="text-align:right;">
 0S
@@ -279,7 +281,9 @@ Intervention
 
 </div>
 
-This dataset contains features that make it possible to use in conjunction with youthu's economic analysis functions. These requirements are described in the vignette about [finding and using models compatible models to predict QALYs](Prediction_With_Mdls.html);
+</div>
+
+This dataset contains features that make it possible to use in conjunction with youthu's economic analysis functions. These requirements are described in the vignette about [finding and using models compatible models to predict QALYs](https://ready4-dev.github.io/youthu/articles/Prediction_With_Mdls.html);
 
 The dataset also contains a cost variable, which is a requirement for most, though not all, of the economic analyses that can be undertaken with youthu.
 
@@ -358,7 +362,7 @@ The rest of this article demonstrates how youthu functions can be used to undert
 
 ### Predict adolescent AQoL-6D health utility
 
-Our first step is to identify which youthu models we will use to predict adolescent AQoL-6D and apply these models to our data. This step was explained in more detail in [another vignette article about finding and using transfer to utility models](Prediction_With_Mdls.html), so will be dealt with briefly here.
+Our first step is to identify which youthu models we will use to predict adolescent AQoL-6D and apply these models to our data. This step was explained in more detail in [another vignette article about finding and using transfer to utility models](https://ready4-dev.github.io/youthu/articles/Prediction_With_Mdls.html), so will be dealt with briefly here.
 
 First we make sure that our dataset can be used as a prediction dataset in conjunction with the model we intend using.
 
@@ -406,7 +410,9 @@ Next we combine the health utility data with the interval between measurement da
 
 <div class="highlight">
 
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
 First few records from updated dataset with QALYs
 </caption>
@@ -495,10 +501,10 @@ Control
 243
 </td>
 <td style="text-align:right;">
-2022-03-02
+2022-03-03
 </td>
 <td style="text-align:right;">
-2022-08-26
+2022-08-27
 </td>
 <td style="text-align:right;">
 0S
@@ -566,10 +572,10 @@ Control
 191
 </td>
 <td style="text-align:right;">
-2022-04-28
+2022-04-29
 </td>
 <td style="text-align:right;">
-2022-10-29
+2022-10-30
 </td>
 <td style="text-align:right;">
 0S
@@ -637,10 +643,10 @@ Intervention
 230
 </td>
 <td style="text-align:right;">
-2022-03-23
+2022-03-24
 </td>
 <td style="text-align:right;">
-2022-09-18
+2022-09-19
 </td>
 <td style="text-align:right;">
 0S
@@ -708,10 +714,10 @@ Intervention
 115
 </td>
 <td style="text-align:right;">
-2022-04-21
+2022-04-22
 </td>
 <td style="text-align:right;">
-2022-10-20
+2022-10-21
 </td>
 <td style="text-align:right;">
 0S
@@ -779,10 +785,10 @@ Intervention
 183
 </td>
 <td style="text-align:right;">
-2022-07-23
+2022-07-24
 </td>
 <td style="text-align:right;">
-2023-01-25
+2023-01-26
 </td>
 <td style="text-align:right;">
 0S
@@ -850,10 +856,10 @@ Intervention
 219
 </td>
 <td style="text-align:right;">
-2022-08-18
+2022-08-19
 </td>
 <td style="text-align:right;">
-2023-02-13
+2023-02-14
 </td>
 <td style="text-align:right;">
 0S
@@ -919,6 +925,8 @@ Intervention
 </tr>
 </tfoot>
 </table>
+
+</div>
 
 </div>
 

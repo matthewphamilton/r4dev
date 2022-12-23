@@ -1,7 +1,7 @@
 ---
 title: "Authoring scientific manuscripts"
 linkTitle: "Authoring manuscripts"
-date: "2022-12-15"
+date: "2022-12-23"
 description: "Tools from the ready4show R package support authoring of scientific summaries of analyses with ready4."
 weight: 92
 categories: 
@@ -11,7 +11,7 @@ tags:
 - Library - ready4show
 - Reproducibility
 output: hugodown::md_document
-rmd_hash: 9707b356bb92d6c0
+rmd_hash: fca3abb8efc9e205
 html_dependencies:
 - <script src="kePrint-0.0.1/kePrint.js"></script>
 - <link href="lightable-0.0.1/lightable.css" rel="stylesheet" />
@@ -37,7 +37,6 @@ html_dependencies:
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://ready4-dev.github.io/ready4/'>ready4</a></span><span class='o'>)</span></span>
 <span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://ready4-dev.github.io/ready4show/'>ready4show</a></span><span class='o'>)</span></span>
 <span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://github.com/rstudio/bookdown'>bookdown</a></span><span class='o'>)</span></span>
-<span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://ardata-fr.github.io/officeverse/'>officedown</a></span><span class='o'>)</span></span>
 <span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://github.com/rstudio/rticles'>rticles</a></span><span class='o'>)</span></span></code></pre>
 
 </div>
@@ -48,11 +47,11 @@ Open science workflows should ideally span an unbroken chain between data-ingest
 
 ## Implementation
 
-`ready4show` includes a number of classes and methods that help integrate manuscript authoring into a reproducible workflow.
+`ready4show` includes a number of classes and methods that help integrate manuscript authoring into a reproducible workflow. These tools are principally intended for use with the [ready4 youth mental health system model](https://www.ready4-dev.com).
 
 ### Create a synopsis of the manuscript to be authored
 
-To start with we create `X`, an instance of `Ready4showSynopsis`, a ready4framework module (S4) class. We can use `X` to record metadata about the manuscript to be authored (including details about the study being summarised and the title and format of the intended output).
+To start with we create `X`, an instance of `Ready4showSynopsis`, a ready4 module (S4 class). We can use `X` to record metadata about the manuscript to be authored (including details about the study being summarised and the title and format of the intended output).
 
 <div class="highlight">
 
@@ -72,16 +71,20 @@ To start with we create `X`, an instance of `Ready4showSynopsis`, a ready4framew
 
 ### Add authorship details
 
-Authorship details can be added to slots of `X` that contain `ready4show_authors` and `ready4show_instututes` ready4 framework sub-modules.
+Authorship details can be added to slots of `X` that contain `ready4show_authors` and `ready4show_instututes` ready4 sub-modules.
 
 As we can see from the below call to `exhibitSlot`, `X` was created with no authorship information.
 
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibitSlot-methods.html'>exhibitSlot</a></span><span class='o'>(</span><span class='nv'>X</span>,</span>
-<span>            <span class='s'>"authors_r3"</span><span class='o'>)</span> </span>
+<span>            <span class='s'>"authors_r3"</span>,</span>
+<span>            scroll_box_args_ls <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='o'>(</span>width <span class='o'>=</span> <span class='s'>"100%"</span><span class='o'>)</span><span class='o'>)</span> </span>
 </code></pre>
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -131,6 +134,8 @@ Joint-first
 
 </div>
 
+</div>
+
 We can add details on each author by repeated calls to the `renewSlot` method.
 
 <div class="highlight">
@@ -163,9 +168,13 @@ The updated authorship table can now be inspected.
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>X</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
-<span>  <span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibitSlot-methods.html'>exhibitSlot</a></span><span class='o'>(</span><span class='s'>"authors_r3"</span><span class='o'>)</span> </span>
+<span>  <span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibitSlot-methods.html'>exhibitSlot</a></span><span class='o'>(</span><span class='s'>"authors_r3"</span>,</span>
+<span>              scroll_box_args_ls <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='o'>(</span>width <span class='o'>=</span> <span class='s'>"100%"</span><span class='o'>)</span><span class='o'>)</span> </span>
 </code></pre>
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -277,6 +286,8 @@ NA
 
 </div>
 
+</div>
+
 We now need to add additional information for each author institute.
 
 <div class="highlight">
@@ -300,9 +311,13 @@ The updated institutes table can now be inspected.
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>X</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
-<span>  <span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibitSlot-methods.html'>exhibitSlot</a></span><span class='o'>(</span><span class='s'>"institutes_r3"</span><span class='o'>)</span> </span>
+<span>  <span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibitSlot-methods.html'>exhibitSlot</a></span><span class='o'>(</span><span class='s'>"institutes_r3"</span>,</span>
+<span>              scroll_box_args_ls <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='o'>(</span>width <span class='o'>=</span> <span class='s'>"100%"</span><span class='o'>)</span><span class='o'>)</span> </span>
 </code></pre>
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -350,6 +365,8 @@ Highly Ranked Uni, Montreal
 
 </div>
 
+</div>
+
 ### Add correspondences
 
 We can also add a look-up table about any changes we wish to make from the analysis code of how names of variables / parameters are presented in the manuscript text.
@@ -368,9 +385,13 @@ These edits can now be inspected with a call to `exhibitSlot`.
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>X</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
-<span>  <span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibitSlot-methods.html'>exhibitSlot</a></span><span class='o'>(</span><span class='s'>"correspondences_r3"</span><span class='o'>)</span> <span class='c'># Add Exhibit Method</span></span>
+<span>  <span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibitSlot-methods.html'>exhibitSlot</a></span><span class='o'>(</span><span class='s'>"correspondences_r3"</span>,</span>
+<span>              scroll_box_args_ls <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='o'>(</span>width <span class='o'>=</span> <span class='s'>"100%"</span><span class='o'>)</span><span class='o'>)</span> <span class='c'># Add Exhibit Method</span></span>
 </code></pre>
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -407,6 +428,8 @@ GAD-7
 </tr>
 </tfoot>
 </table>
+
+</div>
 
 </div>
 

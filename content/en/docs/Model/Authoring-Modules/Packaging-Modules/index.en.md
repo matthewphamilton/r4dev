@@ -1,7 +1,7 @@
 ---
 title: "Dissemating citable, documented and quality assured model modules"
 linkTitle: "Packages"
-date: "2022-12-22"
+date: "2022-12-23"
 description: "ready4 supports tools to streamline the testing, description and distribution of computational model modules."
 weight: 66
 categories: 
@@ -35,7 +35,7 @@ rmd_hash: 569fe66e4279a51a
 
 </div>
 
-`ready4pack` is a toolkit for extending the [ready4 framework](https://www.ready4-dev.com/) for open and modular mental health systems models with R packages that are:
+`ready4pack` is a toolkit for authoring collections of modules for the [ready4 youth mental health systems model](https://www.ready4-dev.com/) and disseminating them as R packages that are:
 
 -   *Citable* (with a Zenodo generated DOI and an algorithm generated CITATION file);
 -   *Community-minded* (applying deprecation conventions supported by `lifecycle`);
@@ -47,13 +47,13 @@ rmd_hash: 569fe66e4279a51a
 
 `ready4pack` builds on both third party development workflow tools (such as `devtools`) and ready4 tools for authoring functions ([ready4fun](https://ready4-dev.github.io/ready4fun/articles/V_01.html)) and classes ([ready4class](https://ready4-dev.github.io/ready4class/articles/V_01.html)). `ready4pack` integrates these tools in a common workflow, while adding tools for authoring and documenting R package datasets.
 
-A combination of the `ready4_pack_manifest` class and `author` method are used to implement this workflow. This workflow has been used to author all public versions of the ready4 framework R packages available in the [ready4 github repository](https://github.com/ready4-dev).
+A combination of the `ready4_pack_manifest` class and `author` method are used to implement this workflow. This workflow has been used to author all public versions of the ready4 R packages available in the [ready4 github repository](https://github.com/ready4-dev).
 
 ## Workflow
 
 ### Manifest
 
-The main class exported as part of `ready4pack` is `readypack_manifest` list based [ready4 Framework sub-module](https://ready4-dev.github.io/ready4/articles/V_01.html), that extends the [`ready4fun_manifest`](https://ready4-dev.github.io/ready4fun/articles/V_01.html) and [`ready4class_manifest`](https://ready4-dev.github.io/ready4class/articles/V_01.html) sub-modules.
+The main class exported as part of `ready4pack` is `readypack_manifest` list based [ready4 sub-module](https://ready4-dev.github.io/ready4/articles/V_01.html), that extends the [`ready4fun_manifest`](https://ready4-dev.github.io/ready4fun/articles/V_01.html) and [`ready4class_manifest`](https://ready4-dev.github.io/ready4class/articles/V_01.html) sub-modules.
 
 ### Typical usage
 
@@ -112,5 +112,5 @@ The main method defined for `readypack_manifest` is `author` which extends the `
 
 ## Future documentation
 
-A more detailed guide to using `ready4pack` will be created in 2022.
+A more detailed guide to using `ready4pack` will be created in 2023.
 

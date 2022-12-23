@@ -41,5 +41,5 @@ make_code_releases_tbl("Module")
 
 ```{r echo=F, message=FALSE, warning=FALSE}
 make_code_releases_tbl("Program",
-                as_kable_1L_lgl = F) ->ds_tb
+                as_kbl_1L_lgl = F) ->ds_tb
 ```

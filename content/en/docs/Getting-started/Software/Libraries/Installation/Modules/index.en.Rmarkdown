@@ -17,7 +17,7 @@ output: hugodown::md_document
 ## Before you install
 If you plan on using existing ready4 modules for a modelling project, you can review [currently available module libraries](../../types/module), to identify which libraries are relevant to your project. 
 
-**However, please note that no ready4 module library is yet available as a [production release](../../../../status/production-releases/). You should therefore understand the limitations of using ready4 software [development releases](../../../../status/development-releases/) before you make the decision to install this software.**
+**However, please note that no ready4 module library is yet available as a [production release](/docs/getting-started/software/status/production-releases/. You should therefore understand the limitations of using ready4 software [development releases](/docs/getting-started/software/status/development-releases/) before you make the decision to install this software.**
 
 ## Installation
 The command to install each ready4 module takes the following format.

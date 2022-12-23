@@ -1,7 +1,7 @@
 ---
 title: "Subroutines"
 linkTitle: "Subroutines"
-date: "2022-12-08"
+date: "2022-12-23"
 description: "Subroutines perform part of an analysis and reporting algorithm."
 weight: 4
 categories: 
@@ -87,6 +87,25 @@ an incorrectly specified version number.
 <td style="text-align:left;">
 <a href="https://github.com/ready4-dev/ms_tmpl" style="     ">Dev</a> ,
 <a href="https://doi.org/10.5281/zenodo.5866880" style="     ">Archive</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mychoice_results
+</td>
+<td style="text-align:left;">
+0.1
+</td>
+<td style="text-align:left;">
+07-Nov-2022
+</td>
+<td style="text-align:left;">
+Report results from a Discrete Choice Experiment implemented with the
+mychoice R package.
+</td>
+<td style="text-align:left;">
+<a href="https://github.com/ready4-dev/mychoice_results" style="     ">Dev</a>,
+<a href="https://doi.org/10.5281/zenodo.7297904" style="     ">Archive</a>
 </td>
 </tr>
 <tr>

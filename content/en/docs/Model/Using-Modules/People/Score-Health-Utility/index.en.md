@@ -1,7 +1,7 @@
 ---
 title: "Score health utility"
 linkTitle: "Score health utility"
-date: "2022-12-14"
+date: "2022-12-23"
 description: "Using modules from the scorz R package, individual responses to a multi-attribute utility instrument survey can be converted into health utility total scores. This tutorial describes how to do for adolescent AQoL-6D health utility."
 weight: 93
 categories: 
@@ -30,7 +30,7 @@ html_dependencies:
 
 </div>
 
-Note: **This vignette is illustrated with fake data**. The dataset explored in this example should not be used to inform decision-making. Some of the methods illustrated in this AQoL-6D vignette can also be used to score other health utility instruments - see [a vignette about scoring EQ-5D](V_02.html).
+Note: **This vignette is illustrated with fake data**. The dataset explored in this example should not be used to inform decision-making. Some of the methods illustrated in this AQoL-6D vignette can also be used to score other health utility instruments - see [a vignette about scoring EQ-5D](https://ready4-dev.github.io/scorz/articles/V_02.html).
 
 <div class="highlight">
 
@@ -73,9 +73,13 @@ We can now inspect our ingested dataset using the `exhibit` method.
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibit-methods.html'>exhibit</a></span><span class='o'>(</span><span class='nv'>X</span>,</span>
-<span>        display_1L_chr <span class='o'>=</span> <span class='s'>"head"</span><span class='o'>)</span></span>
+<span>        display_1L_chr <span class='o'>=</span> <span class='s'>"head"</span>,</span>
+<span>         scroll_box_args_ls <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='o'>(</span>width <span class='o'>=</span> <span class='s'>"100%"</span><span class='o'>)</span><span class='o'>)</span></span>
 </code></pre>
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
 Dataset
 </caption>
@@ -1011,6 +1015,8 @@ Anxiety
 
 </div>
 
+</div>
+
 We now add meta-data that identifies our dataset as being longitudinal using the `YouthvarsSeries` class of the [youthvars package](https://ready4-dev.github.io/youthvars/).
 
 <div class="highlight">
@@ -1066,9 +1072,13 @@ We can inspect our updated dataset using the `exhibit` method. We can see that t
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibit-methods.html'>exhibit</a></span><span class='o'>(</span><span class='nv'>Y</span>,</span>
-<span>        display_1L_chr <span class='o'>=</span> <span class='s'>"head"</span><span class='o'>)</span></span>
+<span>        display_1L_chr <span class='o'>=</span> <span class='s'>"head"</span>,</span>
+<span>         scroll_box_args_ls <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='o'>(</span>width <span class='o'>=</span> <span class='s'>"100%"</span><span class='o'>)</span><span class='o'>)</span></span>
 </code></pre>
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
 Dataset
 </caption>
@@ -2844,6 +2854,8 @@ Anxiety
 
 </div>
 
+</div>
+
 ## Creating summary plots
 
 To create plots, we use the `depict` method.
@@ -2861,10 +2873,7 @@ We can then select a desired item's summary plot by using its index number.
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>plot_ls</span><span class='o'>[[</span><span class='m'>1</span><span class='o'>]</span><span class='o'>]</span></span>
-<span><span class='c'>#&gt; Warning: `stat(width * density)` was deprecated in ggplot2 3.4.0.</span></span>
-<span><span class='c'>#&gt; <span style='color: #00BBBB;'>ℹ</span> Please use `after_stat(width * density)` instead.</span></span>
-<span><span class='c'>#&gt; <span style='color: #00BBBB;'>ℹ</span> The deprecated feature was likely used in the <span style='color: #0000BB;'>youthvars</span> package.</span></span>
-<span><span class='c'>#&gt;   Please report the issue to the authors.</span></span></code></pre>
+</code></pre>
 
 <div class="figure" style="text-align: center">
 
@@ -2952,10 +2961,7 @@ AQoL-6D item responses by data-collection round
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/depict-methods.html'>depict</a></span><span class='o'>(</span><span class='nv'>Y</span>, type_1L_chr <span class='o'>=</span> <span class='s'>"comp_domain_by_time"</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt; Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.</span></span>
-<span><span class='c'>#&gt; <span style='color: #00BBBB;'>ℹ</span> Please use `after_stat(density)` instead.</span></span>
-<span><span class='c'>#&gt; <span style='color: #00BBBB;'>ℹ</span> The deprecated feature was likely used in the <span style='color: #0000BB;'>youthvars</span> package.</span></span>
-<span><span class='c'>#&gt;   Please report the issue to the authors.</span></span></code></pre>
+</code></pre>
 
 <div class="figure" style="text-align: center">
 
