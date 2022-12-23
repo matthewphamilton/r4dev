@@ -23,6 +23,7 @@ This below section renders a vignette article from the youthvars library. You ca
 {{% /pageinfo %}}
 
 ```{r echo=FALSE, results='hide'}
+# x <- "UntitledRMD.Rmd"
 x <- tempfile(fileext = "Rmd")
 on.exit(unlink(x))
 download.file("https://raw.githubusercontent.com/ready4-dev/youthvars/master/vignettes/V_02.Rmd", x)

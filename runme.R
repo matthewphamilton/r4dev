@@ -27,14 +27,16 @@ c("Authoring-Algorithms","Authoring-Classes", "Packaging-Modules") %>%
   write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model/Authoring-Modules",
                        consent_1L_chr = "Y",
                        is_rmd_1L_lgl = F)
-c("Add-Metadata",
-  "Assess-Cost-Utility", # Add scroll box args
-  "Explore-Models", 
-  "Map-To-Utility", 
-  "Predict-Choice",
-  "Predict-Utility", 
-  "Score-Health-Utility", # Add scroll box args
-  "Validate-Variables") %>%
+c("Add-Metadata"
+  # ,
+  # "Assess-Cost-Utility", # Add scroll box args
+  # "Explore-Models", 
+  # "Map-To-Utility", 
+  # "Predict-Choice",
+  # "Predict-Utility", 
+  # "Score-Health-Utility", # Add scroll box args
+  # "Validate-Variables"
+  ) %>%
   write_to_render_post(path_to_main_dir_1L_chr = "~/Documents/WIP/ready4/Code/Brochure/HTML/r4dev/content/en/docs/Model/Using-Modules/People",
                        consent_1L_chr = "Y",
                        is_rmd_1L_lgl = F)
