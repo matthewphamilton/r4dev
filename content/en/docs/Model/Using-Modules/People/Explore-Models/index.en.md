@@ -77,7 +77,9 @@ The dataset we are using has a total of 1786 records at two timepoints on 1068 s
 
 <div class="highlight">
 
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
 Dataset
 </caption>
@@ -551,6 +553,8 @@ Not studying or working
 
 </div>
 
+</div>
+
 To source dataset of `X` is contained in the `a_YouthvarsProfile` slot and is a `YouthvarsSeries` module. For more information about methods that can be used to explore this dataset, [read this vignette from the youthvars package](https://ready4-dev.github.io/youthvars/articles/V_02.html).
 
 ## Specify parameters
@@ -615,9 +619,13 @@ The `specific_predictors` object that we have added to `X` can be inspected usin
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibitSlot-methods.html'>exhibitSlot</a></span><span class='o'>(</span><span class='nv'>X</span>,</span>
-<span>            <span class='s'>"b_SpecificParameters@predictors_lup"</span><span class='o'>)</span></span>
+<span>            <span class='s'>"b_SpecificParameters@predictors_lup"</span>,</span>
+<span>            scroll_box_args_ls <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='o'>(</span>width <span class='o'>=</span> <span class='s'>"100%"</span><span class='o'>)</span><span class='o'>)</span></span>
 </code></pre>
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -720,6 +728,8 @@ FALSE
 
 </div>
 
+</div>
+
 ### Covariates
 
 We also specify the covariates that we aim to explore in conjunction with each candidate predictor.
@@ -780,9 +790,13 @@ However, we also need to specify the name of the variable that contains the date
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibitSlot-methods.html'>exhibitSlot</a></span><span class='o'>(</span><span class='nv'>X</span>,</span>
-<span>            <span class='s'>"b_SpecificParameters@candidate_mdls_lup"</span><span class='o'>)</span></span>
+<span>            <span class='s'>"b_SpecificParameters@candidate_mdls_lup"</span>,</span>
+<span>            scroll_box_args_ls <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='o'>(</span>width <span class='o'>=</span> <span class='s'>"100%"</span><span class='o'>)</span><span class='o'>)</span></span>
 </code></pre>
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
 Model types lookup table
 </caption>
@@ -1170,6 +1184,8 @@ Binomial distribution and complementary log log link
 
 </div>
 
+</div>
+
 We can choose to select just a subset of these to explore using the `renewSlot` method. As this is an illustrative example, we have restricted the models we will explore to just four types, passing the relevant row numbers to the `slice_indcs_int` argument.
 
 <div class="highlight">
@@ -1298,7 +1314,8 @@ The `investigate` method also outputs a table summarising the performance of eac
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibit-methods.html'>exhibit</a></span><span class='o'>(</span><span class='nv'>X</span>,</span>
 <span>        what_1L_chr <span class='o'>=</span> <span class='s'>"mdl_cmprsn"</span>,</span>
-<span>        type_1L_chr <span class='o'>=</span> <span class='s'>"results"</span><span class='o'>)</span></span>
+<span>        type_1L_chr <span class='o'>=</span> <span class='s'>"results"</span></span>
+<span>        <span class='o'>)</span> </span>
 </code></pre>
 <table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption>
@@ -1502,9 +1519,13 @@ Now, we compare the performance of single predictor models of our preferred mode
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibit-methods.html'>exhibit</a></span><span class='o'>(</span><span class='nv'>X</span>,</span>
 <span>        what_1L_chr <span class='o'>=</span> <span class='s'>"predr_cmprsn"</span>,</span>
-<span>        type_1L_chr <span class='o'>=</span> <span class='s'>"results"</span><span class='o'>)</span></span>
+<span>        type_1L_chr <span class='o'>=</span> <span class='s'>"results"</span>,</span>
+<span>        scroll_box_args_ls <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='o'>(</span>width <span class='o'>=</span> <span class='s'>"100%"</span><span class='o'>)</span><span class='o'>)</span></span>
 </code></pre>
-<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+
+<table class=" lightable-paper lightable-hover lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
 Comparison of all candidate predictors using preferred model
 </caption>
@@ -1553,6 +1574,8 @@ Psychwell
 </tr>
 </tfoot>
 </table>
+
+</div>
 
 </div>
 
@@ -1680,7 +1703,8 @@ Updated versions of each of the models in the previous step (this time with cova
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='https://ready4-dev.github.io/ready4/reference/exhibit-methods.html'>exhibit</a></span><span class='o'>(</span><span class='nv'>X</span>,</span>
 <span>        type_1L_chr <span class='o'>=</span> <span class='s'>"results"</span>,</span>
-<span>        what_1L_chr <span class='o'>=</span> <span class='s'>"fxd_full_cmprsn"</span><span class='o'>)</span></span></code></pre>
+<span>        what_1L_chr <span class='o'>=</span> <span class='s'>"fxd_full_cmprsn"</span>,</span>
+<span>        scroll_box_args_ls <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='o'>(</span>width <span class='o'>=</span> <span class='s'>"100%"</span><span class='o'>)</span><span class='o'>)</span></span></code></pre>
 
 </div>
 

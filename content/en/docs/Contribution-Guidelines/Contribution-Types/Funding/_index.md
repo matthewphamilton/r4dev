@@ -8,5 +8,3 @@ description: >
 ---
 
 
-This is the section landing page.
-
